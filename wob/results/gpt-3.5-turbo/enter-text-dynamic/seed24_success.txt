@@ -1,0 +1,29 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+Enter "reZpD" into the text field and press Submit.
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `type 'reZpD'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Enter "a" into the text field and press Submit.
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `type 'a'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Enter "O" into the text field and press Submit.
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='tt']`
+2. `type 'O'`
+3. `clickxpath //*[@id='subbtn']`
+------------------------------
+SUCCESS

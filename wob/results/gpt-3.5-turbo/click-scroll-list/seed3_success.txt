@@ -1,0 +1,40 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickoption", Click an option HTML element in a list with a valid xpath.
+2. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+Select Zsa Zsa from the scroll list and click Submit.
+Plan:
+1. `clickoption //option[text() = 'Zsa Zsa']`
+2. `clickxpath //*[@class='secondary-action']`
+
+Observation:
+Select Cornelle, Floria from the scroll list and click Submit.
+Plan:
+1. `clickoption //option[text() = 'Cornelle']`
+2. `clickoption //option[text() = 'Floria']`
+3. `clickxpath //*[@class='secondary-action']`
+
+Observation:
+Select Christmas Island from the scroll list and click Submit.
+Plan:
+1. `clickoption //option[text() = 'Christmas Island']`
+2. `clickxpath //*[@class='secondary-action']`
+
+Observation:
+Select Aruba from the scroll list and click Submit.
+Plan:
+1. `clickoption //option[text() = 'Aruba']`
+2. `clickxpath //*[@class='secondary-action']`
+
+Observation:
+Select Heard Island and McDonald Islands, Nicaragua from the scroll list and click Submit.
+Plan:
+
+OUTPUT:
+1. `clickoption //option[text() = 'Heard Island and McDonald Islands']`
+2. `clickoption //option[text() = 'Nicaragua']`
+3. `clickxpath //*[@class='secondary-action']`
+------------------------------
+SUCCESS

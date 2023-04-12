@@ -1,0 +1,37 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+Click the "Like" button on all posts by @pulvinar and then click Submit.
+Plan:
+1. `clickxpath //div[@class='details']/span[@class='username' and text()='@pulvinar']/../../div[@class='controls']/span[@class='like']` (Click 'like' on all posts by '@pulvinar')
+2. `clickxpath //p[@id='submitRow']/button[@type='button']`
+
+Observation:
+Click the "Retweet" button on all posts by @morbi and then click Submit.
+Plan:
+1. `clickxpath //div[@class='details']/span[@class='username' and text()='@morbi']/../../div[@class='controls']/span[@class='retweet']` (Click 'retweet' on all posts by '@morbi')
+2. `clickxpath //p[@id='submitRow']/button[@type='button']`
+
+Observation:
+Click the "Share" button on all posts by @cristin and then click Submit.
+Plan:
+1. `clickxpath //div[@class='details']/span[@class='username' and text()='@cristin']/../../div[@class='controls']/span[@class='share']` (Click 'share' on all posts by '@cristin')
+2. `clickxpath //p[@id='submitRow']/button[@type='button']`
+
+Observation:
+Click the "Reply" button on all posts by @augue and then click Submit.
+Plan:
+1. `clickxpath //div[@class='details']/span[@class='username' and text()='@augue']/../../div[@class='controls']/span[@class='reply']` (Click 'reply' on all posts by '@augue')
+2. `clickxpath //p[@id='submitRow']/button[@type='button']`
+
+Observation:
+Click the "Reply" button on all posts by @livia and then click Submit.
+Plan:
+
+OUTPUT:
+1. `clickxpath //div[@class='details']/span[@class='username' and text()='@livia']/../../div[@class='controls']/span[@class='reply']` (Click 'reply' on all posts by '@livia')
+2. `clickxpath //p[@id='submitRow']/button[@type='button']`
+------------------------------
+SUCCESS

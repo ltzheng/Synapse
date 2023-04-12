@@ -1,0 +1,40 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+2. "movemouse": move mouse cursor on an HTML element with a valid xpath.
+
+Observation:
+Select Hannie>Alisa>Rosalie
+Plan:
+1. `movemouse //*[text()='Hannie']`
+2. `movemouse //*[text()='Alisa']`
+3. `clickxpath //*[text()='Rosalie']`
+
+Observation:
+Select Neely
+Plan:
+1. `clickxpath //*[text()='Neely']`
+
+Observation:
+Select Camilla>Tammara>Miranda
+Plan:
+1. `movemouse //*[text()='Camilla']`
+2. `movemouse //*[text()='Tammara']`
+3. `clickxpath //*[text()='Miranda']`
+
+Observation:
+Select Adriaens>Doti
+Plan:
+1. `movemouse //*[text()='Adriaens']`
+2. `clickxpath //*[text()='Doti']`
+
+Observation:
+Select Diandra>Mollie>Velma
+Plan:
+
+OUTPUT:
+1. `movemouse //*[text()='Diandra']`
+2. `movemouse //*[text()='Mollie']`
+3. `clickxpath //*[text()='Velma']`
+------------------------------
+SUCCESS

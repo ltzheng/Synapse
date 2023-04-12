@@ -1,0 +1,59 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="sol" class="rezp" data-wob_ref="3" data-wob_eps="e0"></div>
+  <div id="query">Type the text below into the text field and press Submit.</div>
+  <div id="area" data-wob_ref="4" data-wob_eps="e0">
+    <div id="captcha" data-wob_ref="5" data-wob_eps="e0"><span style="transform: skewX(3deg) skewY(-26deg);" data-wob_ref="6" data-wob_eps="e0">r</span><span style="transform: skewX(-4deg) skewY(-21deg);" data-wob_ref="7" data-wob_eps="e0">e</span><span style="transform: skewX(-8deg) skewY(30deg);" data-wob_ref="8" data-wob_eps="e0">z</span><span style="transform: skewX(-8deg) skewY(-25deg);" data-wob_ref="9" data-wob_eps="e0">p</span></div>
+    <div id="form" style="margin-left:13px;margin-top:14px;" data-wob_ref="10" data-wob_eps="e0">
+      <input type="text" id="tt" data-wob_ref="11" data-wob_eps="e0">
+      <button id="subbtn" class="secondary-action" style="margin-top:18px;" data-wob_ref="12" data-wob_eps="e0">Submit</button>
+    </div>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='tt']` (Locate the input box by clicking on it)
+2. `type 'rezp'` (Type the string in the input box)
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="sol" class="aoy" data-wob_ref="3" data-wob_eps="e0"></div>
+  <div id="query">Type the text below into the text field and press Submit.</div>
+  <div id="area" data-wob_ref="4" data-wob_eps="e0">
+    <div id="captcha" data-wob_ref="5" data-wob_eps="e0"><span style="transform: skewX(8deg) skewY(-24deg);" data-wob_ref="6" data-wob_eps="e0">a</span><span style="transform: skewX(12deg) skewY(-11deg);" data-wob_ref="7" data-wob_eps="e0">o</span><span style="transform: skewX(1deg) skewY(-23deg);" data-wob_ref="8" data-wob_eps="e0">y</span></div>
+    <div id="form" style="margin-left:10px;margin-top:10px;" data-wob_ref="9" data-wob_eps="e0">
+      <input type="text" id="tt" data-wob_ref="10" data-wob_eps="e0">
+      <button id="subbtn" class="secondary-action" style="margin-top:17px;" data-wob_ref="11" data-wob_eps="e0">Submit</button>
+    </div>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='tt']` (Locate the input box by clicking on it)
+2. `type 'aoy'` (Type the string in the input box)
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="sol" class="n4s" data-wob_ref="3" data-wob_eps="e0"></div>
+  <div id="query">Type the text below into the text field and press Submit.</div>
+  <div id="area" data-wob_ref="4" data-wob_eps="e0">
+    <div id="captcha" data-wob_ref="5" data-wob_eps="e0"><span style="transform: skewX(-13deg) skewY(13deg);" data-wob_ref="6" data-wob_eps="e0">n</span><span style="transform: skewX(-13deg) skewY(36deg);" data-wob_ref="7" data-wob_eps="e0">4</span><span style="transform: skewX(6deg) skewY(-39deg);" data-wob_ref="8" data-wob_eps="e0">s</span></div>
+    <div id="form" style="margin-left:15px;margin-top:15px;" data-wob_ref="9" data-wob_eps="e0">
+      <input type="text" id="tt" data-wob_ref="10" data-wob_eps="e0">
+      <button id="subbtn" class="secondary-action" style="margin-top:4px;" data-wob_ref="11" data-wob_eps="e0">Submit</button>
+    </div>
+  </div>
+</div>
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='tt']` (Locate the input box by clicking on it)
+2. `type 'n4s'` (Type the string in the input box)
+3. `clickxpath //*[@id='subbtn']`
+------------------------------
+SUCCESS

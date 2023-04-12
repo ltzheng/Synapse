@@ -1,0 +1,83 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Select words similar to despise, water, end, immoral and click Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="boxes" data-wob_ref="4" data-wob_eps="e0"><label data-wob_ref="5" data-wob_eps="e0"><input type="checkbox" id="ch0" data-wob_ref="6" data-wob_eps="e0">water</label><br><label data-wob_ref="7" data-wob_eps="e0"><input type="checkbox" id="ch1" data-wob_ref="8" data-wob_eps="e0">sinful</label><br><label data-wob_ref="9" data-wob_eps="e0"><input type="checkbox" id="ch2" data-wob_ref="10" data-wob_eps="e0">finish</label><br><label data-wob_ref="11" data-wob_eps="e0"><input type="checkbox" id="ch3" data-wob_ref="12" data-wob_eps="e0">fearless</label><br><label data-wob_ref="13" data-wob_eps="e0"><input type="checkbox" id="ch4" data-wob_ref="14" data-wob_eps="e0">aged</label><br><label data-wob_ref="15" data-wob_eps="e0"><input type="checkbox" id="ch5" data-wob_ref="16" data-wob_eps="e0">loathe</label><br></div>
+    <br>
+    <button id="subbtn" class="secondary-action" data-wob_ref="17" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //label[text() = 'water']/input`
+2. `clickxpath //label[text() = 'sinful']/input`
+3. `clickxpath //label[text() = 'finish']/input`
+4. `clickxpath //label[text() = 'loathe']/input`
+5. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Select words similar to incorrect, tragic, humorous and click Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="boxes" data-wob_ref="4" data-wob_eps="e0"><label data-wob_ref="5" data-wob_eps="e0"><input type="checkbox" id="ch0" data-wob_ref="6" data-wob_eps="e0">large</label><br><label data-wob_ref="7" data-wob_eps="e0"><input type="checkbox" id="ch1" data-wob_ref="8" data-wob_eps="e0">incorrect</label><br><label data-wob_ref="9" data-wob_eps="e0"><input type="checkbox" id="ch2" data-wob_ref="10" data-wob_eps="e0">amusing</label><br><label data-wob_ref="11" data-wob_eps="e0"><input type="checkbox" id="ch3" data-wob_ref="12" data-wob_eps="e0">sorrowful</label><br></div>
+    <br>
+    <button id="subbtn" class="secondary-action" data-wob_ref="13" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //label[text() = 'incorrect']/input`
+2. `clickxpath //label[text() = 'sorrowful']/input`
+3. `clickxpath //label[text() = 'amusing']/input`
+4. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Select words similar to houses, chubby and click Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="boxes" data-wob_ref="4" data-wob_eps="e0"><label data-wob_ref="5" data-wob_eps="e0"><input type="checkbox" id="ch0" data-wob_ref="6" data-wob_eps="e0">home</label><br><label data-wob_ref="7" data-wob_eps="e0"><input type="checkbox" id="ch1" data-wob_ref="8" data-wob_eps="e0">sad</label><br><label data-wob_ref="9" data-wob_eps="e0"><input type="checkbox" id="ch2" data-wob_ref="10" data-wob_eps="e0">television</label><br><label data-wob_ref="11" data-wob_eps="e0"><input type="checkbox" id="ch3" data-wob_ref="12" data-wob_eps="e0">fat</label><br><label data-wob_ref="13" data-wob_eps="e0"><input type="checkbox" id="ch4" data-wob_ref="14" data-wob_eps="e0">fires</label><br><label data-wob_ref="15" data-wob_eps="e0"><input type="checkbox" id="ch5" data-wob_ref="16" data-wob_eps="e0">initiate</label><br></div>
+    <br>
+    <button id="subbtn" class="secondary-action" data-wob_ref="17" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //label[text() = 'home']/input`
+2. `clickxpath //label[text() = 'fat']/input`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Select words similar to murder, cheerful, chubby, scared, depraved and click Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="boxes" data-wob_ref="4" data-wob_eps="e0"><label data-wob_ref="5" data-wob_eps="e0"><input type="checkbox" id="ch0" data-wob_ref="6" data-wob_eps="e0">conceal</label><br><label data-wob_ref="7" data-wob_eps="e0"><input type="checkbox" id="ch1" data-wob_ref="8" data-wob_eps="e0">fleshy</label><br><label data-wob_ref="9" data-wob_eps="e0"><input type="checkbox" id="ch2" data-wob_ref="10" data-wob_eps="e0">frightened</label><br><label data-wob_ref="11" data-wob_eps="e0"><input type="checkbox" id="ch3" data-wob_ref="12" data-wob_eps="e0">wicked</label><br><label data-wob_ref="13" data-wob_eps="e0"><input type="checkbox" id="ch4" data-wob_ref="14" data-wob_eps="e0">gleeful</label><br><label data-wob_ref="15" data-wob_eps="e0"><input type="checkbox" id="ch5" data-wob_ref="16" data-wob_eps="e0">kill</label><br></div>
+    <br>
+    <button id="subbtn" class="secondary-action" data-wob_ref="17" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //label[text() = 'kill']/input`
+2. `clickxpath //label[text() = 'gleeful']/input`
+3. `clickxpath //label[text() = 'fleshy']/input`
+4. `clickxpath //label[text() = 'frightened']/input`
+5. `clickxpath //label[text() = 'wicked']/input`
+6. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Select words similar to stop, keep and click Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="boxes" data-wob_ref="4" data-wob_eps="e0"><label data-wob_ref="5" data-wob_eps="e0"><input type="checkbox" id="ch0" data-wob_ref="6" data-wob_eps="e0">preserve</label><br><label data-wob_ref="7" data-wob_eps="e0"><input type="checkbox" id="ch1" data-wob_ref="8" data-wob_eps="e0">finish</label><br><label data-wob_ref="9" data-wob_eps="e0"><input type="checkbox" id="ch2" data-wob_ref="10" data-wob_eps="e0">launch</label><br></div>
+    <br>
+    <button id="subbtn" class="secondary-action" data-wob_ref="11" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+
+OUTPUT:
+1. `clickxpath //label[text() = 'finish']/input`
+2. `clickxpath //label[text() = 'preserve']/input`
+3. `clickxpath //*[@id='subbtn']`
+------------------------------
+SUCCESS

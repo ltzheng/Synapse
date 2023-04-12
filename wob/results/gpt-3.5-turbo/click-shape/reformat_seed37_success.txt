@@ -1,0 +1,57 @@
+INPUT:
+Select exactly one of the items that satisfy the given conditions.
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click on a small aqua circle</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <svg id="area_svg" data-wob_ref="4" data-wob_eps="e0"><text x="10" y="130" fill="red" text-anchor="middle" alignment-baseline="central" font-size="20px" style="cursor:pointer;" data-wob_ref="5" data-wob_eps="e0">6</text><polygon points="100,80 110,60 120,80" fill="red" style="cursor:pointer;" data-wob_ref="6" data-wob_eps="e0"></polygon><circle cx="90" cy="30" r="5" fill="aqua" style="cursor:pointer;" data-wob_ref="7" data-wob_eps="e0"></circle></svg>
+  </div>
+</div>
+Reformation:
+One of the item with a small aqua circle from the options is the small aqua circle (data-wob_ref="7").
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click on a small black item</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <svg id="area_svg" data-wob_ref="4" data-wob_eps="e0"><text x="90" y="70" fill="blue" text-anchor="middle" alignment-baseline="central" font-size="10px" style="cursor:pointer;" data-wob_ref="5" data-wob_eps="e0">n</text><text x="110" y="110" fill="black" text-anchor="middle" alignment-baseline="central" font-size="20px" style="cursor:pointer;" data-wob_ref="6" data-wob_eps="e0">p</text><text x="90" y="130" fill="black" text-anchor="middle" alignment-baseline="central" font-size="20px" style="cursor:pointer;" data-wob_ref="7" data-wob_eps="e0">8</text><text x="110" y="10" fill="blue" text-anchor="middle" alignment-baseline="central" font-size="10px" style="cursor:pointer;" data-wob_ref="8" data-wob_eps="e0">B</text><text x="50" y="90" fill="black" text-anchor="middle" alignment-baseline="central" font-size="10px" style="cursor:pointer;" data-wob_ref="9" data-wob_eps="e0">T</text><text x="90" y="90" fill="black" text-anchor="middle" alignment-baseline="central" font-size="10px" style="cursor:pointer;" data-wob_ref="10" data-wob_eps="e0">C</text><text x="70" y="130" fill="magenta" text-anchor="middle" alignment-baseline="central" font-size="10px" style="cursor:pointer;" data-wob_ref="11" data-wob_eps="e0">j</text></svg>
+  </div>
+</div>
+Reformation:
+
+OUTPUT:
+One of the small black items from the options is the "T" (data-wob_ref="9").
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+One of the item with a green E from the options is the large green 'E' (data-wob_ref="12").
+Plan:
+1. `clickxpath //*[@data-wob_ref='12']`
+
+Observation:
+One of the item with a small aqua circle from the options is the small aqua circle (data-wob_ref="7").
+Plan:
+1. `clickxpath //*[@data-wob_ref='7']`
+
+Observation:
+One of the item with a magenta item from the options is the large magenta 'g' (data-wob_ref="9").
+Plan:
+1. `clickxpath //*[@data-wob_ref='9']`
+
+Observation:
+One of the item with a red digit from the options is the large red '1' (data-wob_ref="8").
+Plan:
+1. `clickxpath //*[@data-wob_ref='8']`
+
+Observation:
+One of the small black items from the options is the "T" (data-wob_ref="9").
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@data-wob_ref='9']`
+------------------------------
+SUCCESS

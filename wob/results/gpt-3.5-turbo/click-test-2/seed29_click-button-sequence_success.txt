@@ -1,0 +1,54 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click button ONE, then click button TWO.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <button id="subbtn" style="position:absolute; left:42px; top:104px" data-wob_ref="4" data-wob_eps="e0">ONE</button>
+    <button id="subbtn2" style="position:absolute; left:107px; top:144px" data-wob_ref="5" data-wob_eps="e0">TWO</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //button[text()='ONE']`
+2. `clickxpath //button[text()='TWO']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click button ONE, then click button TWO.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <button id="subbtn" style="position:absolute; left:0px; top:56px" data-wob_ref="4" data-wob_eps="e0">ONE</button>
+    <button id="subbtn2" style="position:absolute; left:102px; top:62px" data-wob_ref="5" data-wob_eps="e0">TWO</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //button[text()='ONE']`
+2. `clickxpath //button[text()='TWO']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click button ONE, then click button TWO.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <button id="subbtn" style="position:absolute; left:70px; top:110px" data-wob_ref="4" data-wob_eps="e0">ONE</button>
+    <button id="subbtn2" style="position:absolute; left:49px; top:58px" data-wob_ref="5" data-wob_eps="e0">TWO</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //button[text()='ONE']`
+2. `clickxpath //button[text()='TWO']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click button ONE.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <button id="subbtn" style="position:absolute; left:18px; top:104px" data-wob_ref="4" data-wob_eps="e0">ONE</button>
+    <button id="subbtn2" style="position:absolute; left:107px; top:161px" data-wob_ref="5" data-wob_eps="e0">TWO</button>
+  </div>
+</div>
+Plan:
+
+OUTPUT:
+1. `clickxpath //button[text()='ONE']`
+------------------------------
+SUCCESS

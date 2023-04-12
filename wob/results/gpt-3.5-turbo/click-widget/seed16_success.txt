@@ -1,0 +1,32 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+Click on a "checkbox" widget.
+Plan:
+1. `clickxpath (//*[@data-type='checkbox'])[1]`
+
+Observation:
+Click on a "radio" widget.
+Plan:
+1. `clickxpath (//*[@data-type='radio'])[1]`
+
+Observation:
+Click on a "text" widget.
+Plan:
+1. `clickxpath (//*[@data-type='text'])[1]`
+
+Observation:
+Click on a "button" widget.
+Plan:
+1. `clickxpath (//*[@data-type='button'])[1]`
+
+Observation:
+Click on a "checkbox" widget.
+Plan:
+
+OUTPUT:
+1. `clickxpath (//*[@data-type='checkbox'])[1]`
+------------------------------
+SUCCESS

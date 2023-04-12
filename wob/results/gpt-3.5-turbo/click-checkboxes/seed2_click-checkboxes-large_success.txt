@@ -1,0 +1,55 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+Select WyhK5, 9Ba, knlOUNT, rbFpeh7, PEFB2g, okBDxo, gFeBN and click Submit.
+Plan:
+1. `clickxpath //label[text() = 'WyhK5']/input`
+2. `clickxpath //label[text() = '9Ba']/input`
+3. `clickxpath //label[text() = 'knlOUNT']/input`
+4. `clickxpath //label[text() = 'rbFpeh7']/input`
+5. `clickxpath //label[text() = 'PEFB2g']/input`
+6. `clickxpath //label[text() = 'okBDxo']/input`
+7. `clickxpath //label[text() = 'gFeBN']/input`
+8. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select Yf, 59, uaOYVOt, zlE, 9nZ2S0 and click Submit.
+Plan:
+1. `clickxpath //label[text() = 'Yf']/input`
+2. `clickxpath //label[text() = '59']/input`
+3. `clickxpath //label[text() = 'uaOYVOt']/input`
+4. `clickxpath //label[text() = 'zlE']/input`
+5. `clickxpath //label[text() = '9nZ2S0']/input`
+6. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select nothing and click Submit.
+Plan:
+1. `clickxpath //button[@id='subbtn']`
+
+Observation:
+Select tnBg, 15e, qk2f, DXxe1, 2x7XvGp, u9g, wSX, GiprgGT, RADh and click Submit.
+Plan:
+1. `clickxpath //label[text() = 'tnBg']/input`
+2. `clickxpath //label[text() = '15e']/input`
+3. `clickxpath //label[text() = 'qk2f']/input`
+4. `clickxpath //label[text() = 'DXxe1']/input`
+5. `clickxpath //label[text() = '2x7XvGp']/input`
+6. `clickxpath //label[text() = 'u9g']/input`
+7. `clickxpath //label[text() = 'wSX']/input`
+8. `clickxpath //label[text() = 'GiprgGT']/input`
+9. `clickxpath //label[text() = 'RADh']/input`
+10. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select fzzqo, NYYyS82 and click Submit.
+Plan:
+
+OUTPUT:
+1. `clickxpath //label[text() = 'fzzqo']/input`
+2. `clickxpath //label[text() = 'NYYyS82']/input`
+3. `clickxpath //*[@id='subbtn']`
+------------------------------
+SUCCESS

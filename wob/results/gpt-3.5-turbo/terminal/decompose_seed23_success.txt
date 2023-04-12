@@ -1,0 +1,262 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "press": Press a key on the keyboard, including "enter", "space", "arrowleft", "arrowright", "backspace", "arrowup", and "arrowdown".
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Use the terminal below to delete a file ending with the extension <span class="bold">.png</span></div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div data-wob_ref="4" data-wob_eps="e0">
+<div id="terminal" data-wob_ref="5" data-wob_eps="e0">
+  <div id="terminal-header" data-wob_ref="6" data-wob_eps="e0">terminal</div>
+  <div id="terminal-contents" data-wob_ref="7" data-wob_eps="e0">
+    <div class="terminal-output" data-wob_ref="8" data-wob_eps="e0">
+  <span class="output" data-wob_ref="9" data-wob_eps="e0">Welcome! Type help for a list of available commands.</span>
+</div><div class="terminal-output" data-wob_ref="10" data-wob_eps="e0">
+  <span class="output" data-wob_ref="11" data-wob_eps="e0">Last login: Tue May 02 2023</span>
+</div><div class="terminal-line" data-wob_ref="12" data-wob_eps="e0">
+      <span class="user" data-wob_ref="13" data-wob_eps="e0">user$</span>
+      <span id="active-input" class="command"></span>
+      <span id="input-flicker" data-wob_ref="14" data-wob_eps="e0">█</span>
+    </div>
+  </div>
+</div>
+<input type="text" id="terminal-target" data-wob_ref="15" data-wob_eps="e0">
+</div></div>
+</div>
+Plan:
+1. `type 'ls'`
+2. `press enter`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Use the terminal below to delete a file ending with the extension <span class="bold">.py</span></div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div data-wob_ref="4" data-wob_eps="e0">
+<div id="terminal" data-wob_ref="5" data-wob_eps="e0">
+  <div id="terminal-header" data-wob_ref="6" data-wob_eps="e0">terminal</div>
+  <div id="terminal-contents" data-wob_ref="7" data-wob_eps="e0">
+    <div class="terminal-output" data-wob_ref="8" data-wob_eps="e0">
+  <span class="output" data-wob_ref="9" data-wob_eps="e0">Welcome! Type help for a list of available commands.</span>
+</div><div class="terminal-output" data-wob_ref="10" data-wob_eps="e0">
+  <span class="output" data-wob_ref="11" data-wob_eps="e0">Last login: Tue May 02 2023</span>
+</div><div class="terminal-line" data-wob_ref="12" data-wob_eps="e0">
+      <span class="user" data-wob_ref="13" data-wob_eps="e0">user$</span>
+      <span id="active-input" class="command"></span>
+      <span id="input-flicker" data-wob_ref="14" data-wob_eps="e0">█</span>
+    </div>
+  </div>
+</div>
+<input type="text" id="terminal-target" data-wob_ref="15" data-wob_eps="e0">
+</div></div>
+</div>
+Plan:
+1. `type 'ls'`
+2. `press enter`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Use the terminal below to delete a file ending with the extension <span class="bold">.png</span></div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div data-wob_ref="4" data-wob_eps="e0">
+<div id="terminal" data-wob_ref="5" data-wob_eps="e0">
+  <div id="terminal-header" data-wob_ref="6" data-wob_eps="e0">terminal</div>
+  <div id="terminal-contents" data-wob_ref="7" data-wob_eps="e0">
+    <div class="terminal-output" data-wob_ref="8" data-wob_eps="e0">
+  <span class="output" data-wob_ref="9" data-wob_eps="e0">Welcome! Type help for a list of available commands.</span>
+</div><div class="terminal-output" data-wob_ref="10" data-wob_eps="e0">
+  <span class="output" data-wob_ref="11" data-wob_eps="e0">Last login: Tue May 02 2023</span>
+</div><div class="terminal-line" data-wob_ref="12" data-wob_eps="e0">
+      <span class="user" data-wob_ref="13" data-wob_eps="e0">user$</span>
+      <span id="active-input" class="command"></span>
+      <span id="input-flicker" data-wob_ref="14" data-wob_eps="e0">█</span>
+    </div>
+  </div>
+</div>
+<input type="text" id="terminal-target" data-wob_ref="15" data-wob_eps="e0">
+</div></div>
+</div>
+Plan:
+1. `type 'ls'`
+2. `press enter`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Use the terminal below to delete a file ending with the extension <span class="bold">.py</span></div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div data-wob_ref="4" data-wob_eps="e0">
+<div id="terminal" data-wob_ref="5" data-wob_eps="e0">
+  <div id="terminal-header" data-wob_ref="6" data-wob_eps="e0">terminal</div>
+  <div id="terminal-contents" data-wob_ref="7" data-wob_eps="e0">
+    <div class="terminal-output" data-wob_ref="8" data-wob_eps="e0">
+  <span class="output" data-wob_ref="9" data-wob_eps="e0">Welcome! Type help for a list of available commands.</span>
+</div><div class="terminal-output" data-wob_ref="10" data-wob_eps="e0">
+  <span class="output" data-wob_ref="11" data-wob_eps="e0">Last login: Tue May 02 2023</span>
+</div><div class="terminal-line" data-wob_ref="12" data-wob_eps="e0">
+      <span class="user" data-wob_ref="13" data-wob_eps="e0">user$</span>
+      <span id="active-input" class="command"></span>
+      <span id="input-flicker" data-wob_ref="14" data-wob_eps="e0">█</span>
+    </div>
+  </div>
+</div>
+<input type="text" id="terminal-target" data-wob_ref="15" data-wob_eps="e0">
+</div></div>
+</div>
+Plan:
+1. `type 'ls'`
+2. `press enter`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Use the terminal below to delete a file ending with the extension <span class="bold">.py</span></div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div data-wob_ref="4" data-wob_eps="e0">
+<div id="terminal" data-wob_ref="5" data-wob_eps="e0">
+  <div id="terminal-header" data-wob_ref="6" data-wob_eps="e0">terminal</div>
+  <div id="terminal-contents" data-wob_ref="7" data-wob_eps="e0">
+    <div class="terminal-output" data-wob_ref="8" data-wob_eps="e0">
+  <span class="output" data-wob_ref="9" data-wob_eps="e0">Welcome! Type help for a list of available commands.</span>
+</div><div class="terminal-output" data-wob_ref="10" data-wob_eps="e0">
+  <span class="output" data-wob_ref="11" data-wob_eps="e0">Last login: Thu Jun 01 2023</span>
+</div><div class="terminal-line" data-wob_ref="12" data-wob_eps="e0">
+      <span class="user" data-wob_ref="13" data-wob_eps="e0">user$</span>
+      <span id="active-input" class="command"></span>
+      <span id="input-flicker" data-wob_ref="14" data-wob_eps="e0">█</span>
+    </div>
+  </div>
+</div>
+<input type="text" id="terminal-target" data-wob_ref="15" data-wob_eps="e0">
+</div></div>
+</div>
+Plan:
+
+OUTPUT:
+1. `type 'ls'`
+2. `press enter`
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "press": Press a key on the keyboard, including "enter", "space", "arrowleft", "arrowright", "backspace", "arrowup", and "arrowdown".
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Use the terminal below to delete a file ending with the extension <span class="bold">.png</span></div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div data-wob_ref="4" data-wob_eps="e0">
+<div id="terminal" data-wob_ref="5" data-wob_eps="e0">
+  <div id="terminal-header" data-wob_ref="6" data-wob_eps="e0">terminal</div>
+  <div id="terminal-contents" data-wob_ref="7" data-wob_eps="e0">
+    <div class="terminal-output" data-wob_ref="8" data-wob_eps="e0">
+  <span class="output" data-wob_ref="9" data-wob_eps="e0">Welcome! Type help for a list of available commands.</span>
+</div><div class="terminal-output" data-wob_ref="10" data-wob_eps="e0">
+  <span class="output" data-wob_ref="11" data-wob_eps="e0">Last login: Tue May 02 2023</span>
+</div><div class="terminal-line" data-wob_ref="17" data-wob_eps="e0">
+  <span class="user" data-wob_ref="18" data-wob_eps="e0">user$</span>
+  <span class="command" data-wob_ref="19" data-wob_eps="e0">ls</span>
+</div><div class="terminal-output" data-wob_ref="20" data-wob_eps="e0">
+  <span class="output" data-wob_ref="21" data-wob_eps="e0">alloy.png script.zip shark.html sudo.gpg</span>
+</div><div class="terminal-line" data-wob_ref="12" data-wob_eps="e0">
+      <span class="user" data-wob_ref="13" data-wob_eps="e0">user$</span>
+      <span id="active-input" class="command" data-wob_ref="16" data-wob_eps="e0"></span>
+      <span id="input-flicker" data-wob_ref="14" data-wob_eps="e0" class="hide">█</span>
+    </div>
+  </div>
+</div>
+<input type="text" id="terminal-target" data-wob_ref="15" data-wob_eps="e0">
+</div></div>
+</div>
+Plan:
+1. `type 'rm alloy.png'`
+2. `press enter`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Use the terminal below to delete a file ending with the extension <span class="bold">.py</span></div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div data-wob_ref="4" data-wob_eps="e0">
+<div id="terminal" data-wob_ref="5" data-wob_eps="e0">
+  <div id="terminal-header" data-wob_ref="6" data-wob_eps="e0">terminal</div>
+  <div id="terminal-contents" data-wob_ref="7" data-wob_eps="e0">
+    <div class="terminal-output" data-wob_ref="8" data-wob_eps="e0">
+  <span class="output" data-wob_ref="9" data-wob_eps="e0">Welcome! Type help for a list of available commands.</span>
+</div><div class="terminal-output" data-wob_ref="10" data-wob_eps="e0">
+  <span class="output" data-wob_ref="11" data-wob_eps="e0">Last login: Tue May 02 2023</span>
+</div><div class="terminal-line" data-wob_ref="17" data-wob_eps="e0">
+  <span class="user" data-wob_ref="18" data-wob_eps="e0">user$</span>
+  <span class="command" data-wob_ref="19" data-wob_eps="e0">ls</span>
+</div><div class="terminal-output" data-wob_ref="20" data-wob_eps="e0">
+  <span class="output" data-wob_ref="21" data-wob_eps="e0">bash.gpg image.gif nintendo.py</span>
+</div><div class="terminal-line" data-wob_ref="12" data-wob_eps="e0">
+      <span class="user" data-wob_ref="13" data-wob_eps="e0">user$</span>
+      <span id="active-input" class="command" data-wob_ref="16" data-wob_eps="e0"></span>
+      <span id="input-flicker" data-wob_ref="14" data-wob_eps="e0" class="">█</span>
+    </div>
+  </div>
+</div>
+<input type="text" id="terminal-target" data-wob_ref="15" data-wob_eps="e0">
+</div></div>
+</div>
+Plan:
+1. `type 'rm nintendo.py'`
+2. `press enter`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Use the terminal below to delete a file that has <span class="bold">no file extension</span>.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div data-wob_ref="4" data-wob_eps="e0">
+<div id="terminal" data-wob_ref="5" data-wob_eps="e0">
+  <div id="terminal-header" data-wob_ref="6" data-wob_eps="e0">terminal</div>
+  <div id="terminal-contents" data-wob_ref="7" data-wob_eps="e0">
+    <div class="terminal-output" data-wob_ref="8" data-wob_eps="e0">
+  <span class="output" data-wob_ref="9" data-wob_eps="e0">Welcome! Type help for a list of available commands.</span>
+</div><div class="terminal-output" data-wob_ref="10" data-wob_eps="e0">
+  <span class="output" data-wob_ref="11" data-wob_eps="e0">Last login: Tue May 02 2023</span>
+</div><div class="terminal-line" data-wob_ref="17" data-wob_eps="e0">
+  <span class="user" data-wob_ref="18" data-wob_eps="e0">user$</span>
+  <span class="command" data-wob_ref="19" data-wob_eps="e0">ls</span>
+</div><div class="terminal-output" data-wob_ref="20" data-wob_eps="e0">
+  <span class="output" data-wob_ref="21" data-wob_eps="e0">encrypted.sh chrome.txt search</span>
+</div><div class="terminal-line" data-wob_ref="12" data-wob_eps="e0">
+      <span class="user" data-wob_ref="13" data-wob_eps="e0">user$</span>
+      <span id="active-input" class="command" data-wob_ref="16" data-wob_eps="e0"></span>
+      <span id="input-flicker" data-wob_ref="14" data-wob_eps="e0" class="">█</span>
+    </div>
+  </div>
+</div>
+<input type="text" id="terminal-target" data-wob_ref="15" data-wob_eps="e0">
+</div></div>
+</div>
+Plan:
+1. `type 'rm search'`
+2. `press enter`
+
+Note that it is not allowed to use *.xxx. You should type the full filename.
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Use the terminal below to delete a file ending with the extension <span class="bold">.py</span></div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div data-wob_ref="4" data-wob_eps="e0">
+<div id="terminal" data-wob_ref="5" data-wob_eps="e0">
+  <div id="terminal-header" data-wob_ref="6" data-wob_eps="e0">terminal</div>
+  <div id="terminal-contents" data-wob_ref="7" data-wob_eps="e0">
+    <div class="terminal-output" data-wob_ref="8" data-wob_eps="e0">
+  <span class="output" data-wob_ref="9" data-wob_eps="e0">Welcome! Type help for a list of available commands.</span>
+</div><div class="terminal-output" data-wob_ref="10" data-wob_eps="e0">
+  <span class="output" data-wob_ref="11" data-wob_eps="e0">Last login: Thu Jun 01 2023</span>
+</div><div class="terminal-line" data-wob_ref="17" data-wob_eps="e0">
+  <span class="user" data-wob_ref="18" data-wob_eps="e0">user$</span>
+  <span class="command" data-wob_ref="19" data-wob_eps="e0">ls</span>
+</div><div class="terminal-output" data-wob_ref="20" data-wob_eps="e0">
+  <span class="output" data-wob_ref="21" data-wob_eps="e0">flowers.gif sonic steam.txt trace.py trace.zip</span>
+</div><div class="terminal-line" data-wob_ref="12" data-wob_eps="e0">
+      <span class="user" data-wob_ref="13" data-wob_eps="e0">user$</span>
+      <span id="active-input" class="command" data-wob_ref="16" data-wob_eps="e0"></span>
+      <span id="input-flicker" data-wob_ref="14" data-wob_eps="e0" class="">█</span>
+    </div>
+  </div>
+</div>
+<input type="text" id="terminal-target" data-wob_ref="15" data-wob_eps="e0">
+</div></div>
+</div>
+Plan:
+
+OUTPUT:
+1. `type 'rm trace.py'`
+2. `press enter`
+------------------------------
+SUCCESS

@@ -1,0 +1,76 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Solve for <span class="bold">x</span> and type your answer into the textbox. Press Submit when done.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="math-problem" data-wob_ref="4" data-wob_eps="e0">3 + x = 46</div>
+    <div class="math-container" data-wob_ref="5" data-wob_eps="e0">
+      <span data-wob_ref="6" data-wob_eps="e0">x =</span>
+      <input type="text" id="math-answer" data-wob_ref="7" data-wob_eps="e0">
+    </div>
+    <button id="subbtn" class="secondary-action" data-wob_ref="8" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='math-answer']` (Locate the input box by clicking on it)
+2. `type '43'` (Type the answer in the input box)
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Solve for <span class="bold">x</span> and type your answer into the textbox. Press Submit when done.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="math-problem" data-wob_ref="4" data-wob_eps="e0">x + 0 = 5</div>
+    <div class="math-container" data-wob_ref="5" data-wob_eps="e0">
+      <span data-wob_ref="6" data-wob_eps="e0">x =</span>
+      <input type="text" id="math-answer" data-wob_ref="7" data-wob_eps="e0">
+    </div>
+    <button id="subbtn" class="secondary-action" data-wob_ref="8" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='math-answer']` (Locate the input box by clicking on it)
+2. `type '5'` (Type the answer in the input box)
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Solve for <span class="bold">x</span> and type your answer into the textbox. Press Submit when done.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="math-problem" data-wob_ref="4" data-wob_eps="e0">x - 5 = 51</div>
+    <div class="math-container" data-wob_ref="5" data-wob_eps="e0">
+      <span data-wob_ref="6" data-wob_eps="e0">x =</span>
+      <input type="text" id="math-answer" data-wob_ref="7" data-wob_eps="e0">
+    </div>
+    <button id="subbtn" class="secondary-action" data-wob_ref="8" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='math-answer']` (Locate the input box by clicking on it)
+2. `type '56'` (Type the answer in the input box)
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Solve for <span class="bold">x</span> and type your answer into the textbox. Press Submit when done.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="math-problem" data-wob_ref="4" data-wob_eps="e0">x + 6 = 22</div>
+    <div class="math-container" data-wob_ref="5" data-wob_eps="e0">
+      <span data-wob_ref="6" data-wob_eps="e0">x =</span>
+      <input type="text" id="math-answer" data-wob_ref="7" data-wob_eps="e0">
+    </div>
+    <button id="subbtn" class="secondary-action" data-wob_ref="8" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='math-answer']` (Locate the input box by clicking on it)
+2. `type '16'` (Type the answer in the input box)
+3. `clickxpath //*[@id='subbtn']`
+------------------------------
+SUCCESS

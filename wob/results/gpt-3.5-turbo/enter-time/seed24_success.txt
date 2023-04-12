@@ -1,0 +1,43 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+Enter 16:20 as the time and press submit.
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `type '1620'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Enter 19:20 as the time and press submit.
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `type '1920'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Enter 06:20 AM as the time and press submit.
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `type '0620'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Enter 07:20 PM as the time and press submit.
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `type '1920'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Enter 8:28 AM as the time and press submit.
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='tt']`
+2. `type '0828'`
+3. `clickxpath //*[@id='subbtn']`
+------------------------------
+SUCCESS

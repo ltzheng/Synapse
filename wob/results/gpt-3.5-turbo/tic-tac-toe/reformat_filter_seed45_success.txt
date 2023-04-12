@@ -1,0 +1,401 @@
+INPUT:
+Visualize the HTML of tic-tac-toe into a board state.
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Playing as 'X', win a game of tic-tac-toe.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+<div class="ttt-row" data-wob_ref="4" data-wob_eps="e0">
+  <span id="ttt-0" data-index="0" data-wob_ref="5" data-wob_eps="e0"></span>
+  <span id="ttt-1" data-index="1" data-wob_ref="6" data-wob_eps="e0"></span>
+  <span id="ttt-2" data-index="2" data-wob_ref="7" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="8" data-wob_eps="e0">
+  <span id="ttt-3" data-index="3" data-wob_ref="9" data-wob_eps="e0"></span>
+  <span id="ttt-4" data-index="4" data-wob_ref="10" data-wob_eps="e0"></span>
+  <span id="ttt-5" data-index="5" data-wob_ref="11" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="12" data-wob_eps="e0">
+  <span id="ttt-6" data-index="6" data-wob_ref="13" data-wob_eps="e0"></span>
+  <span id="ttt-7" data-index="7" data-wob_ref="14" data-wob_eps="e0"></span>
+  <span id="ttt-8" data-index="8" data-wob_ref="15" data-wob_eps="e0"></span>
+</div>
+</div>
+</div>
+Observation:
+[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Playing as 'X', win a game of tic-tac-toe.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+<div class="ttt-row" data-wob_ref="4" data-wob_eps="e0">
+  <span id="ttt-0" data-index="0" data-wob_ref="5" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-1" data-index="1" data-wob_ref="6" data-wob_eps="e0" class="mark-o"></span>
+  <span id="ttt-2" data-index="2" data-wob_ref="7" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="8" data-wob_eps="e0">
+  <span id="ttt-3" data-index="3" data-wob_ref="9" data-wob_eps="e0"></span>
+  <span id="ttt-4" data-index="4" data-wob_ref="10" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-5" data-index="5" data-wob_ref="11" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="12" data-wob_eps="e0">
+  <span id="ttt-6" data-index="6" data-wob_ref="13" data-wob_eps="e0"></span>
+  <span id="ttt-7" data-index="7" data-wob_ref="14" data-wob_eps="e0"></span>
+  <span id="ttt-8" data-index="8" data-wob_ref="15" data-wob_eps="e0" class="mark-o"></span>
+</div>
+</div>
+</div>
+Observation:
+[[1, -1, 0], [0, 1, 0], [0, 0, -1]]
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Playing as 'X', win a game of tic-tac-toe.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+<div class="ttt-row" data-wob_ref="4" data-wob_eps="e0">
+  <span id="ttt-0" data-index="0" data-wob_ref="5" data-wob_eps="e0"></span>
+  <span id="ttt-1" data-index="1" data-wob_ref="6" data-wob_eps="e0"></span>
+  <span id="ttt-2" data-index="2" data-wob_ref="7" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="8" data-wob_eps="e0">
+  <span id="ttt-3" data-index="3" data-wob_ref="9" data-wob_eps="e0"></span>
+  <span id="ttt-4" data-index="4" data-wob_ref="10" data-wob_eps="e0"></span>
+  <span id="ttt-5" data-index="5" data-wob_ref="11" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="12" data-wob_eps="e0">
+  <span id="ttt-6" data-index="6" data-wob_ref="13" data-wob_eps="e0"></span>
+  <span id="ttt-7" data-index="7" data-wob_ref="14" data-wob_eps="e0"></span>
+  <span id="ttt-8" data-index="8" data-wob_ref="15" data-wob_eps="e0"></span>
+</div>
+</div>
+</div>
+Observation:
+
+OUTPUT:
+[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+IDs from "ttt-0" to "ttt-8" represent squares from 0 to 8 of the board respectively (the number in the ID is equal to the position number).
+
+Observation:
+The next move is position 4.
+Plan:
+1. `clickxpath //*[@id='ttt-4']`
+
+Observation:
+The next move is position 3.
+Plan:
+1. `clickxpath //*[@id='ttt-3']`
+
+Observation:
+The next move is position 4.
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='ttt-4']`
+------------------------------
+INPUT:
+Visualize the HTML of tic-tac-toe into a board state.
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Playing as 'X', win a game of tic-tac-toe.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+<div class="ttt-row" data-wob_ref="4" data-wob_eps="e0">
+  <span id="ttt-0" data-index="0" data-wob_ref="5" data-wob_eps="e0"></span>
+  <span id="ttt-1" data-index="1" data-wob_ref="6" data-wob_eps="e0"></span>
+  <span id="ttt-2" data-index="2" data-wob_ref="7" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="8" data-wob_eps="e0">
+  <span id="ttt-3" data-index="3" data-wob_ref="9" data-wob_eps="e0"></span>
+  <span id="ttt-4" data-index="4" data-wob_ref="10" data-wob_eps="e0"></span>
+  <span id="ttt-5" data-index="5" data-wob_ref="11" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="12" data-wob_eps="e0">
+  <span id="ttt-6" data-index="6" data-wob_ref="13" data-wob_eps="e0"></span>
+  <span id="ttt-7" data-index="7" data-wob_ref="14" data-wob_eps="e0"></span>
+  <span id="ttt-8" data-index="8" data-wob_ref="15" data-wob_eps="e0"></span>
+</div>
+</div>
+</div>
+Observation:
+[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Playing as 'X', win a game of tic-tac-toe.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+<div class="ttt-row" data-wob_ref="4" data-wob_eps="e0">
+  <span id="ttt-0" data-index="0" data-wob_ref="5" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-1" data-index="1" data-wob_ref="6" data-wob_eps="e0" class="mark-o"></span>
+  <span id="ttt-2" data-index="2" data-wob_ref="7" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="8" data-wob_eps="e0">
+  <span id="ttt-3" data-index="3" data-wob_ref="9" data-wob_eps="e0"></span>
+  <span id="ttt-4" data-index="4" data-wob_ref="10" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-5" data-index="5" data-wob_ref="11" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="12" data-wob_eps="e0">
+  <span id="ttt-6" data-index="6" data-wob_ref="13" data-wob_eps="e0"></span>
+  <span id="ttt-7" data-index="7" data-wob_ref="14" data-wob_eps="e0"></span>
+  <span id="ttt-8" data-index="8" data-wob_ref="15" data-wob_eps="e0" class="mark-o"></span>
+</div>
+</div>
+</div>
+Observation:
+[[1, -1, 0], [0, 1, 0], [0, 0, -1]]
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Playing as 'X', win a game of tic-tac-toe.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+<div class="ttt-row" data-wob_ref="4" data-wob_eps="e0">
+  <span id="ttt-0" data-index="0" data-wob_ref="5" data-wob_eps="e0"></span>
+  <span id="ttt-1" data-index="1" data-wob_ref="6" data-wob_eps="e0"></span>
+  <span id="ttt-2" data-index="2" data-wob_ref="7" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="8" data-wob_eps="e0">
+  <span id="ttt-3" data-index="3" data-wob_ref="9" data-wob_eps="e0"></span>
+  <span id="ttt-4" data-index="4" data-wob_ref="10" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-5" data-index="5" data-wob_ref="11" data-wob_eps="e0" class="mark-o"></span>
+</div>
+<div class="ttt-row" data-wob_ref="12" data-wob_eps="e0">
+  <span id="ttt-6" data-index="6" data-wob_ref="13" data-wob_eps="e0"></span>
+  <span id="ttt-7" data-index="7" data-wob_ref="14" data-wob_eps="e0"></span>
+  <span id="ttt-8" data-index="8" data-wob_ref="15" data-wob_eps="e0"></span>
+</div>
+</div>
+</div>
+Observation:
+
+OUTPUT:
+[[0, 0, 0], [0, 1, -1], [0, 0, 0]]
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+IDs from "ttt-0" to "ttt-8" represent squares from 0 to 8 of the board respectively (the number in the ID is equal to the position number).
+
+Observation:
+The next move is position 4.
+Plan:
+1. `clickxpath //*[@id='ttt-4']`
+
+Observation:
+The next move is position 3.
+Plan:
+1. `clickxpath //*[@id='ttt-3']`
+
+Observation:
+The next move is position 0.
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='ttt-0']`
+------------------------------
+INPUT:
+Visualize the HTML of tic-tac-toe into a board state.
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Playing as 'X', win a game of tic-tac-toe.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+<div class="ttt-row" data-wob_ref="4" data-wob_eps="e0">
+  <span id="ttt-0" data-index="0" data-wob_ref="5" data-wob_eps="e0"></span>
+  <span id="ttt-1" data-index="1" data-wob_ref="6" data-wob_eps="e0"></span>
+  <span id="ttt-2" data-index="2" data-wob_ref="7" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="8" data-wob_eps="e0">
+  <span id="ttt-3" data-index="3" data-wob_ref="9" data-wob_eps="e0"></span>
+  <span id="ttt-4" data-index="4" data-wob_ref="10" data-wob_eps="e0"></span>
+  <span id="ttt-5" data-index="5" data-wob_ref="11" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="12" data-wob_eps="e0">
+  <span id="ttt-6" data-index="6" data-wob_ref="13" data-wob_eps="e0"></span>
+  <span id="ttt-7" data-index="7" data-wob_ref="14" data-wob_eps="e0"></span>
+  <span id="ttt-8" data-index="8" data-wob_ref="15" data-wob_eps="e0"></span>
+</div>
+</div>
+</div>
+Observation:
+[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Playing as 'X', win a game of tic-tac-toe.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+<div class="ttt-row" data-wob_ref="4" data-wob_eps="e0">
+  <span id="ttt-0" data-index="0" data-wob_ref="5" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-1" data-index="1" data-wob_ref="6" data-wob_eps="e0" class="mark-o"></span>
+  <span id="ttt-2" data-index="2" data-wob_ref="7" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="8" data-wob_eps="e0">
+  <span id="ttt-3" data-index="3" data-wob_ref="9" data-wob_eps="e0"></span>
+  <span id="ttt-4" data-index="4" data-wob_ref="10" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-5" data-index="5" data-wob_ref="11" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="12" data-wob_eps="e0">
+  <span id="ttt-6" data-index="6" data-wob_ref="13" data-wob_eps="e0"></span>
+  <span id="ttt-7" data-index="7" data-wob_ref="14" data-wob_eps="e0"></span>
+  <span id="ttt-8" data-index="8" data-wob_ref="15" data-wob_eps="e0" class="mark-o"></span>
+</div>
+</div>
+</div>
+Observation:
+[[1, -1, 0], [0, 1, 0], [0, 0, -1]]
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Playing as 'X', win a game of tic-tac-toe.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+<div class="ttt-row" data-wob_ref="4" data-wob_eps="e0">
+  <span id="ttt-0" data-index="0" data-wob_ref="5" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-1" data-index="1" data-wob_ref="6" data-wob_eps="e0"></span>
+  <span id="ttt-2" data-index="2" data-wob_ref="7" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="8" data-wob_eps="e0">
+  <span id="ttt-3" data-index="3" data-wob_ref="9" data-wob_eps="e0"></span>
+  <span id="ttt-4" data-index="4" data-wob_ref="10" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-5" data-index="5" data-wob_ref="11" data-wob_eps="e0" class="mark-o"></span>
+</div>
+<div class="ttt-row" data-wob_ref="12" data-wob_eps="e0">
+  <span id="ttt-6" data-index="6" data-wob_ref="13" data-wob_eps="e0" class="mark-o"></span>
+  <span id="ttt-7" data-index="7" data-wob_ref="14" data-wob_eps="e0"></span>
+  <span id="ttt-8" data-index="8" data-wob_ref="15" data-wob_eps="e0"></span>
+</div>
+</div>
+</div>
+Observation:
+
+OUTPUT:
+[[1, 0, 0], [0, 1, -1], [-1, 0, 0]]
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+IDs from "ttt-0" to "ttt-8" represent squares from 0 to 8 of the board respectively (the number in the ID is equal to the position number).
+
+Observation:
+The next move is position 4.
+Plan:
+1. `clickxpath //*[@id='ttt-4']`
+
+Observation:
+The next move is position 3.
+Plan:
+1. `clickxpath //*[@id='ttt-3']`
+
+Observation:
+The next move is position 1.
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='ttt-1']`
+------------------------------
+INPUT:
+Visualize the HTML of tic-tac-toe into a board state.
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Playing as 'X', win a game of tic-tac-toe.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+<div class="ttt-row" data-wob_ref="4" data-wob_eps="e0">
+  <span id="ttt-0" data-index="0" data-wob_ref="5" data-wob_eps="e0"></span>
+  <span id="ttt-1" data-index="1" data-wob_ref="6" data-wob_eps="e0"></span>
+  <span id="ttt-2" data-index="2" data-wob_ref="7" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="8" data-wob_eps="e0">
+  <span id="ttt-3" data-index="3" data-wob_ref="9" data-wob_eps="e0"></span>
+  <span id="ttt-4" data-index="4" data-wob_ref="10" data-wob_eps="e0"></span>
+  <span id="ttt-5" data-index="5" data-wob_ref="11" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="12" data-wob_eps="e0">
+  <span id="ttt-6" data-index="6" data-wob_ref="13" data-wob_eps="e0"></span>
+  <span id="ttt-7" data-index="7" data-wob_ref="14" data-wob_eps="e0"></span>
+  <span id="ttt-8" data-index="8" data-wob_ref="15" data-wob_eps="e0"></span>
+</div>
+</div>
+</div>
+Observation:
+[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Playing as 'X', win a game of tic-tac-toe.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+<div class="ttt-row" data-wob_ref="4" data-wob_eps="e0">
+  <span id="ttt-0" data-index="0" data-wob_ref="5" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-1" data-index="1" data-wob_ref="6" data-wob_eps="e0" class="mark-o"></span>
+  <span id="ttt-2" data-index="2" data-wob_ref="7" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="8" data-wob_eps="e0">
+  <span id="ttt-3" data-index="3" data-wob_ref="9" data-wob_eps="e0"></span>
+  <span id="ttt-4" data-index="4" data-wob_ref="10" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-5" data-index="5" data-wob_ref="11" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="12" data-wob_eps="e0">
+  <span id="ttt-6" data-index="6" data-wob_ref="13" data-wob_eps="e0"></span>
+  <span id="ttt-7" data-index="7" data-wob_ref="14" data-wob_eps="e0"></span>
+  <span id="ttt-8" data-index="8" data-wob_ref="15" data-wob_eps="e0" class="mark-o"></span>
+</div>
+</div>
+</div>
+Observation:
+[[1, -1, 0], [0, 1, 0], [0, 0, -1]]
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Playing as 'X', win a game of tic-tac-toe.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+<div class="ttt-row" data-wob_ref="4" data-wob_eps="e0">
+  <span id="ttt-0" data-index="0" data-wob_ref="5" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-1" data-index="1" data-wob_ref="6" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-2" data-index="2" data-wob_ref="7" data-wob_eps="e0"></span>
+</div>
+<div class="ttt-row" data-wob_ref="8" data-wob_eps="e0">
+  <span id="ttt-3" data-index="3" data-wob_ref="9" data-wob_eps="e0"></span>
+  <span id="ttt-4" data-index="4" data-wob_ref="10" data-wob_eps="e0" class="mark-x" data-tampered="e0"></span>
+  <span id="ttt-5" data-index="5" data-wob_ref="11" data-wob_eps="e0" class="mark-o"></span>
+</div>
+<div class="ttt-row" data-wob_ref="12" data-wob_eps="e0">
+  <span id="ttt-6" data-index="6" data-wob_ref="13" data-wob_eps="e0" class="mark-o"></span>
+  <span id="ttt-7" data-index="7" data-wob_ref="14" data-wob_eps="e0" class="mark-o"></span>
+  <span id="ttt-8" data-index="8" data-wob_ref="15" data-wob_eps="e0"></span>
+</div>
+</div>
+</div>
+Observation:
+
+OUTPUT:
+[[1, 1, 0], [0, 1, 0], [-1, -1, 0]]
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+IDs from "ttt-0" to "ttt-8" represent squares from 0 to 8 of the board respectively (the number in the ID is equal to the position number).
+
+Observation:
+The next move is position 4.
+Plan:
+1. `clickxpath //*[@id='ttt-4']`
+
+Observation:
+The next move is position 3.
+Plan:
+1. `clickxpath //*[@id='ttt-3']`
+
+Observation:
+The next move is position 2.
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='ttt-2']`
+------------------------------
+SUCCESS

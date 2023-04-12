@@ -1,0 +1,53 @@
+INPUT:
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Expand the sections below, to find and click on the link "morbi".</div>
+  <div id="area" class="ui-accordion ui-widget ui-helper-reset" role="tablist" data-wob_ref="3" data-wob_eps="e0"><h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="false" aria-expanded="false" tabindex="0" data-wob_ref="4" data-wob_eps="e0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span> Section #1</h3><div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-2" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="true" style="display: none; height: 55px;">Eros sodales. Odio sodales et. Lacus sed. <span class="alink">Ornare</span> amet. Nulla amet, id. Rhoncus <span class="alink">tincidunt</span> dolor, <span class="alink">morbi</span> sed. Imperdiet amet nullam.</div><h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-3" aria-controls="ui-id-4" aria-selected="false" aria-expanded="false" tabindex="-1" data-wob_ref="5" data-wob_eps="e0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span> Section #2</h3><div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-4" aria-labelledby="ui-id-3" role="tabpanel" aria-hidden="true" style="display: none; height: 55px;">Neque semper. <span class="alink">Sit</span> a <span class="alink">faucibus</span> a,. Eget risus. Mauris fermentum <span class="alink">at</span> dictum dis amet. Quisque <span class="alink">egestas</span> volutpat eget sem ullamcorper.</div><h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-5" aria-controls="ui-id-6" aria-selected="false" aria-expanded="false" tabindex="-1" data-wob_ref="6" data-wob_eps="e0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span> Section #3</h3><div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-6" aria-labelledby="ui-id-5" role="tabpanel" aria-hidden="true" style="display: none; height: 55px;"><span class="alink">Hendrerit</span> <span class="alink">ultrices</span> euismod sit proin. Risus <span class="alink">facilisis</span> <span class="alink">in</span> egestas dignissim nibh nunc <span class="alink">diam</span> placerat <span class="alink">condimentum.</span> Diam sapien nunc ipsum enim.</div></div>
+</div>
+Reformation:
+Expand Section #1 (because "morbi" is in Section #1), and then click "morbi".
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Expand the sections below, to find and click on the link "Gravida.".</div>
+  <div id="area" class="ui-accordion ui-widget ui-helper-reset" role="tablist" data-wob_ref="3" data-wob_eps="e0"><h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="false" aria-expanded="false" tabindex="0" data-wob_ref="4" data-wob_eps="e0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span> Section #1</h3><div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-2" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="true" style="display: none; height: 69px;">Arcu pulvinar massa, <span class="alink">rhoncus</span> vulputate tristique vestibulum. Consectetur. Imperdiet bibendum sagittis adipiscing <span class="alink">in</span> praesent. Neque. Diam <span class="alink">tincidunt</span> amet. Etiam urna.</div><h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-3" aria-controls="ui-id-4" aria-selected="false" aria-expanded="false" tabindex="-1" data-wob_ref="5" data-wob_eps="e0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span> Section #2</h3><div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-4" aria-labelledby="ui-id-3" role="tabpanel" aria-hidden="true" style="display: none; height: 69px;">Diam integer pellentesque quam <span class="alink">diam.</span> Phasellus enim lacus mauris feugiat scelerisque elementum nisl <span class="alink">nascetur.</span> Ac, accumsan, turpis pellentesque id. Enim.</div><h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-5" aria-controls="ui-id-6" aria-selected="false" aria-expanded="false" tabindex="-1" data-wob_ref="6" data-wob_eps="e0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span> Section #3</h3><div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-6" aria-labelledby="ui-id-5" role="tabpanel" aria-hidden="true" style="display: none; height: 69px;">Augue interdum viverra dictum rhoncus,. Enim. <span class="alink">Gravida.</span> Malesuada. Magna quam in venenatis posuere mattis id vitae, vitae. Urna, interdum interdum.</div></div>
+</div>
+Reformation:
+
+OUTPUT:
+Expand Section #3 (because "Gravida." is in Section #3), and then click "Gravida.".
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+The IDs for Section #1, Section #2, and Section #3 are "ui-id-1", "ui-id-3", and "ui-id-5", respectively.
+
+Observation:
+Expand Section #1 (because "morbi" is in Section #1), and then click "morbi".
+Plan:
+1. `clickxpath //*[@id='ui-id-1']` (Expand Section #1)
+2. `clickxpath //*[@class='alink' and text()='morbi']` (Click on the link 'morbi')
+
+Observation:
+Expand Section #2 (because "integer." is in Section #2), and then click "integer.".
+Plan:
+1. `clickxpath //*[@id='ui-id-3']` (Expand Section #2)
+2. `clickxpath //*[@class='alink' and text()='integer.']` (Click on the link 'integer.')
+
+Observation:
+Expand Section #3 (because "vitae" is in Section #3), and then click "vitae".
+Plan:
+1. `clickxpath //*[@id='ui-id-5']` (Expand Section #3)
+2. `clickxpath //*[@class='alink' and text()='vitae']` (Click on the link 'vitae')
+
+Observation:
+Expand Section #3 (because "Gravida." is in Section #3), and then click "Gravida.".
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='ui-id-5']` (Expand Section #3)
+2. `clickxpath //*[@class='alink' and text()='Gravida.']` (Click on the link 'Gravida.')
+------------------------------
+SUCCESS

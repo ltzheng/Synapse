@@ -1,0 +1,141 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+2. "press": Press a key combination on the keyboard, including "command+a", "command+c", and "command+v".
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Copy the text from the <span class="bold">1st</span> text area below and paste it into the text input, then press Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <textarea id="text-1" style="width: 85px;" data-wob_ref="4" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-2" style="width: 95px;" data-wob_ref="5" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-3" style="width: 140px;" data-wob_ref="6" data-wob_eps="e0"></textarea>
+    <input id="answer-input" type="text" data-wob_ref="7" data-wob_eps="e0">
+    <button id="subbtn" class="secondary-action" data-wob_ref="8" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='text-1']`
+2. `press command+a`
+3. `press command+c`
+4. `clickxpath //*[@id='answer-input']`
+5. `press command+v`
+6. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Copy the text from the <span class="bold">2nd</span> text area below and paste it into the text input, then press Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <textarea id="text-1" style="width: 110px;" data-wob_ref="4" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-2" style="width: 100px;" data-wob_ref="5" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-3" style="width: 90px;" data-wob_ref="6" data-wob_eps="e0"></textarea>
+    <input id="answer-input" type="text" data-wob_ref="7" data-wob_eps="e0">
+    <button id="subbtn" class="secondary-action" data-wob_ref="8" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='text-2']`
+2. `press command+a`
+3. `press command+c`
+4. `clickxpath //*[@id='answer-input']`
+5. `press command+v`
+6. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Copy the text from the <span class="bold">3rd</span> text area below and paste it into the text input, then press Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <textarea id="text-1" style="width: 130px;" data-wob_ref="4" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-2" style="width: 110px;" data-wob_ref="5" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-3" style="width: 105px;" data-wob_ref="6" data-wob_eps="e0"></textarea>
+    <input id="answer-input" type="text" data-wob_ref="7" data-wob_eps="e0">
+    <button id="subbtn" class="secondary-action" data-wob_ref="8" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='text-3']`
+2. `press command+a`
+3. `press command+c`
+4. `clickxpath //*[@id='answer-input']`
+5. `press command+v`
+6. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Copy the text from the <span class="bold">3rd</span> text area below and paste it into the text input, then press Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <textarea id="text-1" style="width: 130px;" data-wob_ref="4" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-2" style="width: 110px;" data-wob_ref="5" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-3" style="width: 105px;" data-wob_ref="6" data-wob_eps="e0"></textarea>
+    <input id="answer-input" type="text" data-wob_ref="7" data-wob_eps="e0">
+    <button id="subbtn" class="secondary-action" data-wob_ref="8" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='text-3']`
+2. `press command+a`
+3. `press command+c`
+4. `clickxpath //*[@id='answer-input']`
+5. `press command+v`
+6. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Copy the text from the <span class="bold">2nd</span> text area below and paste it into the text input, then press Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <textarea id="text-1" style="width: 110px;" data-wob_ref="4" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-2" style="width: 100px;" data-wob_ref="5" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-3" style="width: 90px;" data-wob_ref="6" data-wob_eps="e0"></textarea>
+    <input id="answer-input" type="text" data-wob_ref="7" data-wob_eps="e0">
+    <button id="subbtn" class="secondary-action" data-wob_ref="8" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='text-2']`
+2. `press command+a`
+3. `press command+c`
+4. `clickxpath //*[@id='answer-input']`
+5. `press command+v`
+6. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Copy the text from the <span class="bold">1st</span> text area below and paste it into the text input, then press Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <textarea id="text-1" style="width: 55px;" data-wob_ref="4" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-2" style="width: 60px;" data-wob_ref="5" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-3" style="width: 135px;" data-wob_ref="6" data-wob_eps="e0"></textarea>
+    <input id="answer-input" type="text" data-wob_ref="7" data-wob_eps="e0">
+    <button id="subbtn" class="secondary-action" data-wob_ref="8" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='text-1']`
+2. `press command+a`
+3. `press command+c`
+4. `clickxpath //*[@id='answer-input']`
+5. `press command+v`
+6. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Copy the text from the <span class="bold">1st</span> text area below and paste it into the text input, then press Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <textarea id="text-1" style="width: 95px;" data-wob_ref="4" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-2" style="width: 105px;" data-wob_ref="5" data-wob_eps="e0"></textarea>
+    <br><textarea id="text-3" style="width: 115px;" data-wob_ref="6" data-wob_eps="e0"></textarea>
+    <input id="answer-input" type="text" data-wob_ref="7" data-wob_eps="e0">
+    <button id="subbtn" class="secondary-action" data-wob_ref="8" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='text-1']`
+2. `press command+a`
+3. `press command+c`
+4. `clickxpath //*[@id='answer-input']`
+5. `press command+v`
+6. `clickxpath //*[@id='subbtn']`
+------------------------------
+SUCCESS

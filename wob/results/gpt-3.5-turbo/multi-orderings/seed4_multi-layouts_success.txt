@@ -1,0 +1,107 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Search for <b>historical</b> movies directed by <b>Hurley</b> from year <b>2013</b>.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div class="ui-entry-wrap" data-wob_ref="4" data-wob_eps="e0"><div class="ui-entry" data-wob_ref="5" data-wob_eps="e0"><input type="text" data-wob_ref="6" data-wob_eps="e0"><div class="ui-label" data-wob_ref="7" data-wob_eps="e0">Director</div></div><div class="ui-entry" data-wob_ref="8" data-wob_eps="e0"><input type="text" data-wob_ref="9" data-wob_eps="e0"><div class="ui-label" data-wob_ref="10" data-wob_eps="e0">Year</div></div><div class="ui-entry" data-wob_ref="11" data-wob_eps="e0"><input type="text" data-wob_ref="12" data-wob_eps="e0"><div class="ui-label" data-wob_ref="13" data-wob_eps="e0">Genre</div></div></div><div class="ui-footer" data-wob_ref="14" data-wob_eps="e0"><div class="ui-submit" data-wob_ref="15" data-wob_eps="e0">Search</div></div><style>
+#area .ui-entry-wrap { width: 140px; margin: 3px auto; padding: 2px 5px; background-color: #333; border-radius: 5px;}
+#area .ui-entry { margin: 8px auto; }
+#area .ui-entry input[type=text] { padding: 0; margin: 0; width: 95%; }
+#area .ui-label { font-weight: bold; color: white; }
+#area .ui-footer { margin: 0 auto; text-align: center; }
+#area .ui-submit { display: inline-block; border: 1px solid gray; background-color: #BBB; border-radius: 3px; padding: 3px; width: 50px; text-align: center; box-shadow: inset 0px 1px 0px 0px #EEE; cursor: pointer; }
+#area .ui-submit:active { box-shadow: inset 0px 1px 0px 0px #999; }
+</style></div>
+</div>
+Plan:
+1. `clickxpath //input[@data-wob_ref='6']` (Locate the input box of Director by clicking on it)
+2. `type 'Hurley'` (Type the director in the input box)
+3. `clickxpath //input[@data-wob_ref='12']` (Locate the input box of Genre by clicking on it)
+4. `type 'historical'` (Type the genre in the input box)
+5. `clickxpath //input[@data-wob_ref='9']` (Locate the input box of Year by clicking on it)
+6. `type '2013'` (Type the year in the input box)
+7. `clickxpath //*[@data-wob_ref='15']` (Click the Submit button)
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Search for <b>action</b> movies directed by <b>Beck</b> from year <b>2011</b>.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><p data-wob_ref="4" data-wob_eps="e0"><span data-wob_ref="5" data-wob_eps="e0">Year:</span><input type="text" data-wob_ref="6" data-wob_eps="e0"></p><p data-wob_ref="7" data-wob_eps="e0"><span data-wob_ref="8" data-wob_eps="e0">Director:</span><input type="text" data-wob_ref="9" data-wob_eps="e0"></p><p data-wob_ref="10" data-wob_eps="e0"><span data-wob_ref="11" data-wob_eps="e0">Genre:</span><input type="text" data-wob_ref="12" data-wob_eps="e0"></p><button type="button" data-wob_ref="13" data-wob_eps="e0">Submit</button><style>
+#area span { width: 50px; display: inline-block; margin-left: 10px;}
+#area input[type=text] { width: 80px; }
+</style></div>
+</div>
+Plan:
+1. `clickxpath //input[@data-wob_ref='9']` (Locate the input box of Director by clicking on it)
+2. `type 'Beck'` (Type the director in the input box)
+3. `clickxpath //input[@data-wob_ref='12']` (Locate the input box of Genre by clicking on it)
+4. `type 'action'` (Type the genre in the input box)
+5. `clickxpath //input[@data-wob_ref='6']` (Locate the input box of Year by clicking on it)
+6. `type '2011'` (Type the year in the input box)
+7. `clickxpath //*[@data-wob_ref='13']` (Click the Submit button)
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Search for <b>thriller</b> movies directed by <b>Mcdowell</b> from year <b>1996</b>.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div class="title-div" data-wob_ref="4" data-wob_eps="e0">Movie Search</div><table data-wob_ref="5" data-wob_eps="e0"><tbody data-wob_ref="6" data-wob_eps="e0"><tr data-wob_ref="7" data-wob_eps="e0"><th data-wob_ref="8" data-wob_eps="e0">Director</th><td data-wob_ref="9" data-wob_eps="e0"><input type="text" data-wob_ref="10" data-wob_eps="e0"></td></tr><tr data-wob_ref="11" data-wob_eps="e0"><th data-wob_ref="12" data-wob_eps="e0">Genre</th><td data-wob_ref="13" data-wob_eps="e0"><input type="text" data-wob_ref="14" data-wob_eps="e0"></td></tr><tr data-wob_ref="15" data-wob_eps="e0"><th data-wob_ref="16" data-wob_eps="e0">Year</th><td data-wob_ref="17" data-wob_eps="e0"><input type="text" data-wob_ref="18" data-wob_eps="e0"></td></tr></tbody></table><div class="final" data-wob_ref="19" data-wob_eps="e0">Submit</div><style>
+#area div.title-div { text-align: center; font-weight: bold; margin-top: 10px; font-size: 120%; }
+#area table { margin: 5px auto; }
+#area th { text-align: right; }
+#area input[type=text] { width: 90px; }
+#area .final { padding: 2px; border: 1px solid gray; margin: 2px auto; width: 50px; text-align: center; background: #fed; cursor: pointer; }
+#area .final:hover { background: #fcc; }
+</style></div>
+</div>
+Plan:
+1. `clickxpath //input[@data-wob_ref='10']` (Locate the input box of Director by clicking on it)
+2. `type 'Mcdowell'` (Type the director in the input box)
+3. `clickxpath //input[@data-wob_ref='14']` (Locate the input box of Genre by clicking on it)
+4. `type 'thriller'` (Type the genre in the input box)
+5. `clickxpath //input[@data-wob_ref='18']` (Locate the input box of Year by clicking on it)
+6. `type '1996'` (Type the year in the input box)
+7. `clickxpath //*[@data-wob_ref='19']` (Click the Submit button)
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Search for <b>satire</b> movies directed by <b>Jarvis</b> from year <b>2001</b>.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div class="field" data-wob_ref="4" data-wob_eps="e0"><div class="label" data-wob_ref="5" data-wob_eps="e0">Director Name</div><div class="input" data-wob_ref="6" data-wob_eps="e0"><input type="text" data-wob_ref="7" data-wob_eps="e0"></div></div><div class="field" data-wob_ref="8" data-wob_eps="e0"><div class="label" data-wob_ref="9" data-wob_eps="e0">Released Date</div><div class="input" data-wob_ref="10" data-wob_eps="e0"><input type="text" data-wob_ref="11" data-wob_eps="e0"></div></div><div class="field" data-wob_ref="12" data-wob_eps="e0"><div class="label" data-wob_ref="13" data-wob_eps="e0">Movie Genre</div><div class="input" data-wob_ref="14" data-wob_eps="e0"><input type="text" data-wob_ref="15" data-wob_eps="e0"></div></div><div class="submit-row" data-wob_ref="16" data-wob_eps="e0"><button type="button" data-wob_ref="17" data-wob_eps="e0">Go!</button></div><style>
+#area div.field { background-color: #DDD; margin: 2px; padding: 3px 8px; border-radius: 3px;}
+#area input[type=text] { width: 98%; }
+#area .submit-row { text-align: center; }
+</style></div>
+</div>
+Plan:
+1. `clickxpath //input[@data-wob_ref='7']` (Locate the input box of Director by clicking on it)
+2. `type 'Jarvis'` (Type the director in the input box)
+3. `clickxpath //input[@data-wob_ref='15']` (Locate the input box of Genre by clicking on it)
+4. `type 'satire'` (Type the genre in the input box)
+5. `clickxpath //input[@data-wob_ref='11']` (Locate the input box of Year by clicking on it)
+6. `type '2001'` (Type the year in the input box)
+7. `clickxpath //*[@data-wob_ref='17']` (Click the Submit button)
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Search for <b>historical</b> movies directed by <b>West</b> from year <b>2010</b>.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0"><div class="title-div" data-wob_ref="4" data-wob_eps="e0">Movie Search</div><table data-wob_ref="5" data-wob_eps="e0"><tbody data-wob_ref="6" data-wob_eps="e0"><tr data-wob_ref="7" data-wob_eps="e0"><th data-wob_ref="8" data-wob_eps="e0">Director</th><td data-wob_ref="9" data-wob_eps="e0"><input type="text" data-wob_ref="10" data-wob_eps="e0"></td></tr><tr data-wob_ref="11" data-wob_eps="e0"><th data-wob_ref="12" data-wob_eps="e0">Genre</th><td data-wob_ref="13" data-wob_eps="e0"><input type="text" data-wob_ref="14" data-wob_eps="e0"></td></tr><tr data-wob_ref="15" data-wob_eps="e0"><th data-wob_ref="16" data-wob_eps="e0">Year</th><td data-wob_ref="17" data-wob_eps="e0"><input type="text" data-wob_ref="18" data-wob_eps="e0"></td></tr></tbody></table><div class="final" data-wob_ref="19" data-wob_eps="e0">Submit</div><style>
+#area div.title-div { text-align: center; font-weight: bold; margin-top: 10px; font-size: 120%; }
+#area table { margin: 5px auto; }
+#area th { text-align: right; }
+#area input[type=text] { width: 90px; }
+#area .final { padding: 2px; border: 1px solid gray; margin: 2px auto; width: 50px; text-align: center; background: #fed; cursor: pointer; }
+#area .final:hover { background: #fcc; }
+</style></div>
+</div>
+Plan:
+
+OUTPUT:
+1. `clickxpath //input[@data-wob_ref='10']` (Locate the input box of Director by clicking on it)
+2. `type 'West'` (Type the director in the input box)
+3. `clickxpath //input[@data-wob_ref='14']` (Locate the input box of Genre by clicking on it)
+4. `type 'historical'` (Type the genre in the input box)
+5. `clickxpath //input[@data-wob_ref='18']` (Locate the input box of Year by clicking on it)
+6. `type '2010'` (Type the year in the input box)
+7. `clickxpath //*[@data-wob_ref='19']` (Click the Submit button)
+------------------------------
+SUCCESS

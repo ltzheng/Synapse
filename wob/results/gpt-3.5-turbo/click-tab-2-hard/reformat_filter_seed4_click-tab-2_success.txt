@@ -1,0 +1,95 @@
+INPUT:
+Extract the tabs out of HTML.
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Switch between the tabs to find and click on the link "pretium".</div>
+  <div id="area" class="ui-tabs ui-corner-all ui-widget ui-widget-content" data-wob_ref="3" data-wob_eps="e0">...<div id="tabs-1">...</div><div id="tabs-2">...</div></div>
+</div>
+Observation:
+<div id="tabs-1">...</div><div id="tabs-2">...</div>
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Switch between the tabs to find and click on the link "Sed".</div>
+  <div id="area" class="ui-tabs ui-corner-all ui-widget ui-widget-content" data-wob_ref="3" data-wob_eps="e0"><ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header" data-wob_ref="4" data-wob_eps="e0"><li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="tabs-1" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true" data-wob_ref="5" data-wob_eps="e0"><a href="#tabs-1" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-1" data-wob_ref="6" data-wob_eps="e0">1</a></li><li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-2" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false" data-wob_ref="7" data-wob_eps="e0"><a href="#tabs-2" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-2" data-wob_ref="8" data-wob_eps="e0">2</a></li><li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-3" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false" data-wob_ref="9" data-wob_eps="e0"><a href="#tabs-3" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-3" data-wob_ref="10" data-wob_eps="e0">3</a></li></ul><div id="tabs-1" aria-labelledby="ui-id-1" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false" data-wob_ref="11" data-wob_eps="e0"><p data-wob_ref="12" data-wob_eps="e0">Egestas lectus <span class="alink" data-wob_ref="13" data-wob_eps="e0">sit</span> commodo turpis ultrices <span class="alink" data-wob_ref="14" data-wob_eps="e0">ut</span> malesuada vestibulum <span class="alink" data-wob_ref="15" data-wob_eps="e0">sit</span> <span class="alink" data-wob_ref="16" data-wob_eps="e0">amet</span> <span class="alink" data-wob_ref="17" data-wob_eps="e0">et</span> elementum feugiat tristique vulputate donec cras. <span class="alink" data-wob_ref="18" data-wob_eps="e0">Sed</span> sed.</p></div><div id="tabs-2" aria-labelledby="ui-id-2" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;"><p>Id est nec. Curabitur <span class="alink">arcu</span> <span class="alink">dictum</span> massa, eget id egestas lorem <span class="alink">at</span> <span class="alink">non</span> lacus neque cursus dignissim <span class="alink">at</span> <span class="alink">sed</span> faucibus.</p></div><div id="tabs-3" aria-labelledby="ui-id-3" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;"><p>Est. Nunc,. Sed dignissim pellentesque nibh facilisi feugiat viverra amet at. Urna, pellentesque volutpat. <span class="alink">Habitant</span> amet, lorem. Tempus vel. Blandit.</p></div></div>
+</div>
+Observation:
+
+OUTPUT:
+<div id="tabs-1" aria-labelledby="ui-id-1" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false" data-wob_ref="11" data-wob_eps="e0"><p data-wob_ref="12" data-wob_eps="e0">Egestas lectus <span class="alink" data-wob_ref="13" data-wob_eps="e0">sit</span> commodo turpis ultrices <span class="alink" data-wob_ref="14" data-wob_eps="e0">ut</span> malesuada vestibulum <span class="alink" data-wob_ref="15" data-wob_eps="e0">sit</span> <span class="alink" data-wob_ref="16" data-wob_eps="e0">amet</span> <span class="alink" data-wob_ref="17" data-wob_eps="e0">et</span> elementum feugiat tristique vulputate donec cras. <span class="alink" data-wob_ref="18" data-wob_eps="e0">Sed</span> sed.</p></div><div id="tabs-2" aria-labelledby="ui-id-2" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;"><p>Id est nec. Curabitur <span class="alink">arcu</span> <span class="alink">dictum</span> massa, eget id egestas lorem <span class="alink">at</span> <span class="alink">non</span> lacus neque cursus dignissim <span class="alink">at</span> <span class="alink">sed</span> faucibus.</p></div><div id="tabs-3" aria-labelledby="ui-id-3" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;"><p>Est. Nunc,. Sed dignissim pellentesque nibh facilisi feugiat viverra amet at. Urna, pellentesque volutpat. <span class="alink">Habitant</span> amet, lorem. Tempus vel. Blandit.</p></div>
+------------------------------
+INPUT:
+Extract all links for each tab.
+
+State:
+<div id="tabs-1" aria-labelledby="ui-id-1" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false" data-wob_ref="11" data-wob_eps="e0"><p data-wob_ref="12" data-wob_eps="e0"><span class="alink" data-wob_ref="13" data-wob_eps="e0">Ultrices</span> <span class="alink" data-wob_ref="14" data-wob_eps="e0">odio</span> neque, pharetra, <span class="alink" data-wob_ref="15" data-wob_eps="e0">etiam.</span> Nam luctus ac neque. Mattis. Vitae ut etiam odio amet morbi proin <span class="alink" data-wob_ref="16" data-wob_eps="e0">viverra</span> at sapien.</p></div><div id="tabs-2" aria-labelledby="ui-id-2" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;"><p>Massa neque odio volutpat parturient <span class="alink">senectus</span> <span class="alink">tristique</span> aenean <span class="alink">volutpat</span> vestibulum,. <span class="alink">Porttitor</span> feugiat <span class="alink">ultricies</span> quis sit <span class="alink">integer.</span> Ut <span class="alink">rhoncus</span> aliquam, <span class="alink">massa.</span></p></div><div id="tabs-3" aria-labelledby="ui-id-3" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;"><p>Cursus. Varius congue at mauris. <span class="alink">Ridiculus.</span> In. Sodales quis nulla. <span class="alink">Habitant</span> ac aliquet feugiat risus. Elementum magna enim. Hendrerit feugiat.</p></div>
+Observation:
+{"tabs-1": {<span class="alink">Ultrices</span>, <span class="alink">odio</span>, <span class="alink">etiam.</span>, <span class="alink">viverra</span>}, "tabs-2": {<span class="alink">senectus</span>, <span class="alink">tristique</span>, <span class="alink">volutpat</span>, <span class="alink">Porttitor</span>, <span class="alink">ultricies</span>, <span class="alink">integer.</span>, <span class="alink">rhoncus</span>, <span class="alink">massa.</span>}, "tabs-3": {<span class="alink">Ridiculus.</span>, <span class="alink">Habitant</span>}}
+
+State:
+<div id="tabs-1" aria-labelledby="ui-id-1" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false" data-wob_ref="11" data-wob_eps="e0"><p data-wob_ref="12" data-wob_eps="e0">Egestas lectus <span class="alink" data-wob_ref="13" data-wob_eps="e0">sit</span> commodo turpis ultrices <span class="alink" data-wob_ref="14" data-wob_eps="e0">ut</span> malesuada vestibulum <span class="alink" data-wob_ref="15" data-wob_eps="e0">sit</span> <span class="alink" data-wob_ref="16" data-wob_eps="e0">amet</span> <span class="alink" data-wob_ref="17" data-wob_eps="e0">et</span> elementum feugiat tristique vulputate donec cras. <span class="alink" data-wob_ref="18" data-wob_eps="e0">Sed</span> sed.</p></div><div id="tabs-2" aria-labelledby="ui-id-2" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;"><p>Id est nec. Curabitur <span class="alink">arcu</span> <span class="alink">dictum</span> massa, eget id egestas lorem <span class="alink">at</span> <span class="alink">non</span> lacus neque cursus dignissim <span class="alink">at</span> <span class="alink">sed</span> faucibus.</p></div><div id="tabs-3" aria-labelledby="ui-id-3" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;"><p>Est. Nunc,. Sed dignissim pellentesque nibh facilisi feugiat viverra amet at. Urna, pellentesque volutpat. <span class="alink">Habitant</span> amet, lorem. Tempus vel. Blandit.</p></div>
+Observation:
+
+OUTPUT:
+{"tabs-1": {<span class="alink">sit</span>, <span class="alink">ut</span>, <span class="alink">sit</span>, <span class="alink">amet</span>, <span class="alink">et</span>, <span class="alink">Sed</span>}, "tabs-2": {<span class="alink">arcu</span>, <span class="alink">dictum</span>, <span class="alink">at</span>, <span class="alink">non</span>, <span class="alink">at</span>, <span class="alink">sed</span>}, "tabs-3": {<span class="alink">Habitant</span>}}
+------------------------------
+INPUT:
+
+Observation:
+{"tabs-1": {<span class="alink">Ultrices</span>, <span class="alink">odio</span>, <span class="alink">etiam.</span>, <span class="alink">viverra</span>}, "tabs-2": {<span class="alink">senectus</span>, <span class="alink">tristique</span>, <span class="alink">volutpat</span>, <span class="alink">Porttitor</span>, <span class="alink">ultricies</span>, <span class="alink">integer.</span>, <span class="alink">rhoncus</span>, <span class="alink">massa.</span>}, "tabs-3": {<span class="alink">Ridiculus.</span>, <span class="alink">Habitant</span>}}
+Switch between the tabs to find and click on the link "integer.".
+Reformation:
+Click Tab #2 (because "integer." is in Tab #2), and then click "integer.".
+
+Observation:
+{"tabs-1": {<span class="alink">Ornare</span>, <span class="alink">tincidunt</span>, <span class="alink">morbi</span>}, "tabs-2": {<span class="alink">Sit</span>, <span class="alink">faucibus</span>, <span class="alink">at</span>, <span class="alink">egestas</span>}, "tabs-3": {<span class="alink">Hendrerit</span>, <span class="alink">ultrices</span>, <span class="alink">facilisis</span>, <span class="alink">in</span>, <span class="alink">diam</span>, <span class="alink">condimentum.</span>}}
+Switch between the tabs to find and click on the link "morbi".
+Reformation:
+Click Tab #1 (because "morbi" is in Tab #1), and then click "morbi".
+
+Observation:
+{"tabs-1": {<span class="alink">morbi</span>, <span class="alink">donec</span>, <span class="alink">proin</span>, <span class="alink">volutpat.</span>}, "tabs-2": {<span class="alink">Viverra</span>, <span class="alink">Nibh</span>, <span class="alink">Neque</span>}, "tabs-3": {<span class="alink">Orci</span>, <span class="alink">at.</span>, <span class="alink">vitae</span>, <span class="alink">scelerisque</span>, <span class="alink">quis</span>, <span class="alink">lacinia</span>}}
+Switch tabs to find and click on the link "vitae".
+Reformation:
+Click Tab #3 (because "vitae" is in Tab #3), and then click "vitae".
+
+Observation:
+{"tabs-1": {<span class="alink">sit</span>, <span class="alink">ut</span>, <span class="alink">sit</span>, <span class="alink">amet</span>, <span class="alink">et</span>, <span class="alink">Sed</span>}, "tabs-2": {<span class="alink">arcu</span>, <span class="alink">dictum</span>, <span class="alink">at</span>, <span class="alink">non</span>, <span class="alink">at</span>, <span class="alink">sed</span>}, "tabs-3": {<span class="alink">Habitant</span>}}
+Switch between the tabs to find and click on the link "Sed".
+Reformation:
+
+OUTPUT:
+Click Tab #1 (because "Sed" is in Tab #1), and then click "Sed".
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+Click Tab #2 (because "integer." is in Tab #2), and then click "integer.".
+Plan:
+1. `clickxpath //*[@data-wob_ref='8']` (Switch to Tab #2)
+2. `clickxpath //*[@id='tabs-2']/p/span[text()='integer.']` (Click on the link 'integer.')
+
+Observation:
+Click Tab #1 (because "morbi" is in Tab #1), and then click "morbi".
+Plan:
+1. `clickxpath //*[@data-wob_ref='6']` (Switch to Tab #1)
+2. `clickxpath //*[@id='tabs-1']/p/span[text()='morbi']` (Click on the link 'morbi')
+
+Observation:
+Click Tab #3 (because "vitae" is in Tab #3), and then click "vitae".
+Plan:
+1. `clickxpath //*[@data-wob_ref='10']` (Switch to Tab #3)
+2. `clickxpath //*[@id='tabs-3']/p/span[text()='vitae']` (Click on the link 'vitae')
+
+Observation:
+Click Tab #1 (because "Sed" is in Tab #1), and then click "Sed".
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@data-wob_ref='6']` (Switch to Tab #1)
+2. `clickxpath //*[@id='tabs-1']/p/span[text()='Sed']` (Click on the link 'Sed')
+------------------------------
+SUCCESS

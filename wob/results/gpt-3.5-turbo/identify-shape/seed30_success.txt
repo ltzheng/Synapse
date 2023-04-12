@@ -1,0 +1,111 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Output the plan given the observation in the same format as provided examples.
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click the button that best describes the figure below.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <svg id="area_svg" data-wob_ref="4" data-wob_eps="e0"><circle cx="22" cy="22" r="15" fill="yellow" style="cursor:pointer;" data-wob_ref="5" data-wob_eps="e0"></circle></svg>
+    <div id="area-buttons" data-wob_ref="6" data-wob_eps="e0">
+      <button data-type="rectangle" data-wob_ref="7" data-wob_eps="e0">Rectangle</button>
+      <button data-type="circle" data-wob_ref="8" data-wob_eps="e0">Circle</button>
+      <button data-type="triangle" data-wob_ref="9" data-wob_eps="e0">Triangle</button>
+      <button data-type="letter" data-wob_ref="10" data-wob_eps="e0">Letter</button>
+      <button data-type="digit" data-wob_ref="11" data-wob_eps="e0">Number</button>
+    </div>
+  </div>
+</div>
+Plan:
+1. `clickxpath //button[text()='Circle']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click the button that best describes the figure below.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <svg id="area_svg" data-wob_ref="4" data-wob_eps="e0"><text x="22" y="22" fill="yellow" text-anchor="middle" alignment-baseline="central" font-size="30px" style="cursor:pointer;" data-wob_ref="5" data-wob_eps="e0">o</text></svg>
+    <div id="area-buttons" data-wob_ref="6" data-wob_eps="e0">
+      <button data-type="rectangle" data-wob_ref="7" data-wob_eps="e0">Rectangle</button>
+      <button data-type="circle" data-wob_ref="8" data-wob_eps="e0">Circle</button>
+      <button data-type="triangle" data-wob_ref="9" data-wob_eps="e0">Triangle</button>
+      <button data-type="letter" data-wob_ref="10" data-wob_eps="e0">Letter</button>
+      <button data-type="digit" data-wob_ref="11" data-wob_eps="e0">Number</button>
+    </div>
+  </div>
+</div>
+Plan:
+1. `clickxpath //button[text()='Letter']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click the button that best describes the figure below.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <svg id="area_svg" data-wob_ref="4" data-wob_eps="e0"><text x="22" y="22" fill="aqua" text-anchor="middle" alignment-baseline="central" font-size="30px" style="cursor:pointer;" data-wob_ref="5" data-wob_eps="e0">9</text></svg>
+    <div id="area-buttons" data-wob_ref="6" data-wob_eps="e0">
+      <button data-type="rectangle" data-wob_ref="7" data-wob_eps="e0">Rectangle</button>
+      <button data-type="circle" data-wob_ref="8" data-wob_eps="e0">Circle</button>
+      <button data-type="triangle" data-wob_ref="9" data-wob_eps="e0">Triangle</button>
+      <button data-type="letter" data-wob_ref="10" data-wob_eps="e0">Letter</button>
+      <button data-type="digit" data-wob_ref="11" data-wob_eps="e0">Number</button>
+    </div>
+  </div>
+</div>
+Plan:
+1. `clickxpath //button[text()='Number']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click the button that best describes the figure below.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <svg id="area_svg" data-wob_ref="4" data-wob_eps="e0"><polygon points="7,37 22,7 37,37" fill="blue" style="cursor:pointer;" data-wob_ref="5" data-wob_eps="e0"></polygon></svg>
+    <div id="area-buttons" data-wob_ref="6" data-wob_eps="e0">
+      <button data-type="rectangle" data-wob_ref="7" data-wob_eps="e0">Rectangle</button>
+      <button data-type="circle" data-wob_ref="8" data-wob_eps="e0">Circle</button>
+      <button data-type="triangle" data-wob_ref="9" data-wob_eps="e0">Triangle</button>
+      <button data-type="letter" data-wob_ref="10" data-wob_eps="e0">Letter</button>
+      <button data-type="digit" data-wob_ref="11" data-wob_eps="e0">Number</button>
+    </div>
+  </div>
+</div>
+Plan:
+1. `clickxpath //button[text()='Triangle']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click the button that best describes the figure below.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <svg id="area_svg" data-wob_ref="4" data-wob_eps="e0"><rect x="7" y="7" width="30" height="30" fill="yellow" style="cursor:pointer;" data-wob_ref="5" data-wob_eps="e0"></rect></svg>
+    <div id="area-buttons" data-wob_ref="6" data-wob_eps="e0">
+      <button data-type="rectangle" data-wob_ref="7" data-wob_eps="e0">Rectangle</button>
+      <button data-type="circle" data-wob_ref="8" data-wob_eps="e0">Circle</button>
+      <button data-type="triangle" data-wob_ref="9" data-wob_eps="e0">Triangle</button>
+      <button data-type="letter" data-wob_ref="10" data-wob_eps="e0">Letter</button>
+      <button data-type="digit" data-wob_ref="11" data-wob_eps="e0">Number</button>
+    </div>
+  </div>
+</div>
+Plan:
+1. `clickxpath //button[text()='Rectangle']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click the button that best describes the figure below.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <svg id="area_svg" data-wob_ref="4" data-wob_eps="e0"><rect x="7" y="7" width="30" height="30" fill="red" style="cursor:pointer;" data-wob_ref="5" data-wob_eps="e0"></rect></svg>
+    <div id="area-buttons" data-wob_ref="6" data-wob_eps="e0">
+      <button data-type="rectangle" data-wob_ref="7" data-wob_eps="e0">Rectangle</button>
+      <button data-type="circle" data-wob_ref="8" data-wob_eps="e0">Circle</button>
+      <button data-type="triangle" data-wob_ref="9" data-wob_eps="e0">Triangle</button>
+      <button data-type="letter" data-wob_ref="10" data-wob_eps="e0">Letter</button>
+      <button data-type="digit" data-wob_ref="11" data-wob_eps="e0">Number</button>
+    </div>
+  </div>
+</div>
+Plan:
+
+OUTPUT:
+1. `clickxpath //button[text()='Rectangle']`
+------------------------------
+SUCCESS

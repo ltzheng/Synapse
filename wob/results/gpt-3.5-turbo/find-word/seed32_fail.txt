@@ -1,0 +1,78 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Find the <span class="bold">5th word</span> in the paragraph, type that into the textbox and press "Submit".</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <p data-wob_ref="4" data-wob_eps="e0">Pulvinar lacinia. Vestibulum. Eget etiam. Eu condimentum. Sit tristique </p>
+    <input id="answer-input" type="text" data-wob_ref="5" data-wob_eps="e0">
+    <button id="subbtn" class="secondary-action" data-wob_ref="6" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='answer-input']`
+2. `type '1620'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Find the <span class="bold">1st word</span> in the paragraph, type that into the textbox and press "Submit".</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <p data-wob_ref="4" data-wob_eps="e0">Morbi. Morbi id nisl. Mi donec </p>
+    <input id="answer-input" type="text" data-wob_ref="5" data-wob_eps="e0">
+    <button id="subbtn" class="secondary-action" data-wob_ref="6" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='answer-input']`
+2. `type 'Morbi'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Find the <span class="bold">6th word</span> in the paragraph, type that into the textbox and press "Submit".</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <p data-wob_ref="4" data-wob_eps="e0">Cras. Dolor, diam ante viverra nisi mi fames aliquet. Condimentum faucibus </p>
+    <input id="answer-input" type="text" data-wob_ref="5" data-wob_eps="e0">
+    <button id="subbtn" class="secondary-action" data-wob_ref="6" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='answer-input']`
+2. `type 'nisi'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Find the <span class="bold">8th word</span> in the paragraph, type that into the textbox and press "Submit".</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <p data-wob_ref="4" data-wob_eps="e0">Ornare augue purus ac. Mus aliquet vitae. Orci, donec. Sed. Lectus sit neque, </p>
+    <input id="answer-input" type="text" data-wob_ref="5" data-wob_eps="e0">
+    <button id="subbtn" class="secondary-action" data-wob_ref="6" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='answer-input']`
+2. `type 'Orci'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Find the <span class="bold">8th word</span> in the paragraph, type that into the textbox and press "Submit".</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <p data-wob_ref="4" data-wob_eps="e0">Maecenas massa feugiat. Facilisis fringilla eu tristique egestas blandit turpis </p>
+    <input id="answer-input" type="text" data-wob_ref="5" data-wob_eps="e0">
+    <button id="subbtn" class="secondary-action" data-wob_ref="6" data-wob_eps="e0">Submit</button>
+  </div>
+</div>
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='answer-input']`
+2. `type 'tristique'`
+3. `clickxpath //*[@id='subbtn']`
+------------------------------
+FAIL

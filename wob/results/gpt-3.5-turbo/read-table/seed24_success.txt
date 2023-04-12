@@ -1,0 +1,88 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Enter the value of <span class="bold">Color</span> into the text field and press Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="tab" data-wob_ref="4" data-wob_eps="e0"><table data-wob_ref="5" data-wob_eps="e0"><tr data-wob_ref="6" data-wob_eps="e0"><td data-wob_ref="7" data-wob_eps="e0">Religion</td><td data-wob_ref="8" data-wob_eps="e0">Hinduism</td></tr><tr data-wob_ref="9" data-wob_eps="e0"><td data-wob_ref="10" data-wob_eps="e0">First name</td><td data-wob_ref="11" data-wob_eps="e0">Tabbitha</td></tr><tr data-wob_ref="12" data-wob_eps="e0"><td data-wob_ref="13" data-wob_eps="e0">Year of Birth</td><td data-wob_ref="14" data-wob_eps="e0">1943</td></tr><tr data-wob_ref="15" data-wob_eps="e0"><td data-wob_ref="16" data-wob_eps="e0">Color</td><td data-wob_ref="17" data-wob_eps="e0">maroon</td></tr><tr data-wob_ref="18" data-wob_eps="e0"><td data-wob_ref="19" data-wob_eps="e0">Gender</td><td data-wob_ref="20" data-wob_eps="e0">Female</td></tr></table></div>
+    <div id="form" data-wob_ref="21" data-wob_eps="e0">
+      <input type="text" id="tt" data-wob_ref="22" data-wob_eps="e0">
+      <button id="subbtn" class="secondary-action" data-wob_ref="23" data-wob_eps="e0">Submit</button>
+    </div>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `type 'maroon'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Enter the value of <span class="bold">First name</span> into the text field and press Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="tab" data-wob_ref="4" data-wob_eps="e0"><table data-wob_ref="5" data-wob_eps="e0"><tr data-wob_ref="6" data-wob_eps="e0"><td data-wob_ref="7" data-wob_eps="e0">Country</td><td data-wob_ref="8" data-wob_eps="e0">Bahrain</td></tr><tr data-wob_ref="9" data-wob_eps="e0"><td data-wob_ref="10" data-wob_eps="e0">Last name</td><td data-wob_ref="11" data-wob_eps="e0">Cabrera</td></tr><tr data-wob_ref="12" data-wob_eps="e0"><td data-wob_ref="13" data-wob_eps="e0">First name</td><td data-wob_ref="14" data-wob_eps="e0">Tamara</td></tr><tr data-wob_ref="15" data-wob_eps="e0"><td data-wob_ref="16" data-wob_eps="e0">Gender</td><td data-wob_ref="17" data-wob_eps="e0">Female</td></tr><tr data-wob_ref="18" data-wob_eps="e0"><td data-wob_ref="19" data-wob_eps="e0">Year of Birth</td><td data-wob_ref="20" data-wob_eps="e0">1989</td></tr></table></div>
+    <div id="form" data-wob_ref="21" data-wob_eps="e0">
+      <input type="text" id="tt" data-wob_ref="22" data-wob_eps="e0">
+      <button id="subbtn" class="secondary-action" data-wob_ref="23" data-wob_eps="e0">Submit</button>
+    </div>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `type 'Tamara'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Enter the value of <span class="bold">Last name</span> into the text field and press Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="tab" data-wob_ref="4" data-wob_eps="e0"><table data-wob_ref="5" data-wob_eps="e0"><tr data-wob_ref="6" data-wob_eps="e0"><td data-wob_ref="7" data-wob_eps="e0">First name</td><td data-wob_ref="8" data-wob_eps="e0">Kathryn</td></tr><tr data-wob_ref="9" data-wob_eps="e0"><td data-wob_ref="10" data-wob_eps="e0">Last name</td><td data-wob_ref="11" data-wob_eps="e0">Schneider</td></tr><tr data-wob_ref="12" data-wob_eps="e0"><td data-wob_ref="13" data-wob_eps="e0">Gender</td><td data-wob_ref="14" data-wob_eps="e0">Male</td></tr><tr data-wob_ref="15" data-wob_eps="e0"><td data-wob_ref="16" data-wob_eps="e0">Color</td><td data-wob_ref="17" data-wob_eps="e0">yellow</td></tr><tr data-wob_ref="18" data-wob_eps="e0"><td data-wob_ref="19" data-wob_eps="e0">Language</td><td data-wob_ref="20" data-wob_eps="e0">Bengali</td></tr></table></div>
+    <div id="form" data-wob_ref="21" data-wob_eps="e0">
+      <input type="text" id="tt" data-wob_ref="22" data-wob_eps="e0">
+      <button id="subbtn" class="secondary-action" data-wob_ref="23" data-wob_eps="e0">Submit</button>
+    </div>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `type 'Schneider'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Enter the value of <span class="bold">Year of Birth</span> into the text field and press Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="tab" data-wob_ref="4" data-wob_eps="e0"><table data-wob_ref="5" data-wob_eps="e0"><tr data-wob_ref="6" data-wob_eps="e0"><td data-wob_ref="7" data-wob_eps="e0">Country</td><td data-wob_ref="8" data-wob_eps="e0">New Caledonia</td></tr><tr data-wob_ref="9" data-wob_eps="e0"><td data-wob_ref="10" data-wob_eps="e0">Year of Birth</td><td data-wob_ref="11" data-wob_eps="e0">1941</td></tr><tr data-wob_ref="12" data-wob_eps="e0"><td data-wob_ref="13" data-wob_eps="e0">Last name</td><td data-wob_ref="14" data-wob_eps="e0">Berger</td></tr><tr data-wob_ref="15" data-wob_eps="e0"><td data-wob_ref="16" data-wob_eps="e0">Gender</td><td data-wob_ref="17" data-wob_eps="e0">Female</td></tr><tr data-wob_ref="18" data-wob_eps="e0"><td data-wob_ref="19" data-wob_eps="e0">Language</td><td data-wob_ref="20" data-wob_eps="e0">Spanish</td></tr></table></div>
+    <div id="form" data-wob_ref="21" data-wob_eps="e0">
+      <input type="text" id="tt" data-wob_ref="22" data-wob_eps="e0">
+      <button id="subbtn" class="secondary-action" data-wob_ref="23" data-wob_eps="e0">Submit</button>
+    </div>
+  </div>
+</div>
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `type '1941'`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Enter the value of <span class="bold">Gender</span> into the text field and press Submit.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="tab" data-wob_ref="4" data-wob_eps="e0"><table data-wob_ref="5" data-wob_eps="e0"><tr data-wob_ref="6" data-wob_eps="e0"><td data-wob_ref="7" data-wob_eps="e0">Country</td><td data-wob_ref="8" data-wob_eps="e0">New Zealand</td></tr><tr data-wob_ref="9" data-wob_eps="e0"><td data-wob_ref="10" data-wob_eps="e0">Gender</td><td data-wob_ref="11" data-wob_eps="e0">Female</td></tr><tr data-wob_ref="12" data-wob_eps="e0"><td data-wob_ref="13" data-wob_eps="e0">First name</td><td data-wob_ref="14" data-wob_eps="e0">Annnora</td></tr><tr data-wob_ref="15" data-wob_eps="e0"><td data-wob_ref="16" data-wob_eps="e0">Last name</td><td data-wob_ref="17" data-wob_eps="e0">Byers</td></tr><tr data-wob_ref="18" data-wob_eps="e0"><td data-wob_ref="19" data-wob_eps="e0">Religion</td><td data-wob_ref="20" data-wob_eps="e0">Islam</td></tr></table></div>
+    <div id="form" data-wob_ref="21" data-wob_eps="e0">
+      <input type="text" id="tt" data-wob_ref="22" data-wob_eps="e0">
+      <button id="subbtn" class="secondary-action" data-wob_ref="23" data-wob_eps="e0">Submit</button>
+    </div>
+  </div>
+</div>
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='tt']`
+2. `type 'Female'`
+3. `clickxpath //*[@id='subbtn']`
+------------------------------
+SUCCESS

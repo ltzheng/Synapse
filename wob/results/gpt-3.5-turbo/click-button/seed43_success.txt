@@ -1,0 +1,47 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+    <div id="query">Click on the "okay" button.</div>
+    <div id="area" data-wob_ref="3" data-wob_eps="e0"><span data-wob_ref="4" data-wob_eps="e0"> pulvinar neque, lacinia: </span><input type="text" style="width:44px;" data-wob_ref="5" data-wob_eps="e0"><br><button data-wob_ref="6" data-wob_eps="e0">okay</button><br><button data-wob_ref="7" data-wob_eps="e0">Submit</button><div data-wob_ref="8" data-wob_eps="e0"> fermentum sit pulvinar</div><button data-wob_ref="9" data-wob_eps="e0">Previous</button><div data-wob_ref="10" data-wob_eps="e0"> dolor massa tempus</div></div>
+  </div>
+Plan:
+1. `clickxpath //button[text()='okay']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+    <div id="query">Click on the "Ok" button.</div>
+    <div id="area" data-wob_ref="3" data-wob_eps="e0"><div data-wob_ref="4" data-wob_eps="e0"> eros morbi sodales</div><div data-wob_ref="5" data-wob_eps="e0"> odio id sodales</div><span data-wob_ref="6" data-wob_eps="e0"> mi lacus donec: </span><input type="text" style="width:111px;" data-wob_ref="7" data-wob_eps="e0"><br><div data-wob_ref="8" data-wob_eps="e0"> ornare enim amet</div><div data-wob_ref="9" data-wob_eps="e0"> nulla viverra amet,</div><button data-wob_ref="10" data-wob_eps="e0">Ok</button></div>
+  </div>
+Plan:
+1. `clickxpath //button[text()='Ok']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+    <div id="query">Click on the "ok" button.</div>
+    <div id="area" data-wob_ref="3" data-wob_eps="e0"><button data-wob_ref="4" data-wob_eps="e0">yes</button><div data-wob_ref="5" data-wob_eps="e0"> fermentum nec nec</div><div data-wob_ref="6" data-wob_eps="e0"> vel eu ac</div><button data-wob_ref="7" data-wob_eps="e0">ok</button><br><div data-wob_ref="8" data-wob_eps="e0"> ullamcorper pharetra est</div><div data-wob_ref="9" data-wob_eps="e0"> mauris, quis pharetra,</div></div>
+  </div>
+Plan:
+1. `clickxpath //button[text()='ok']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+    <div id="query">Click on the "submit" button.</div>
+    <div id="area" data-wob_ref="3" data-wob_eps="e0"><button data-wob_ref="4" data-wob_eps="e0">submit</button><button data-wob_ref="5" data-wob_eps="e0">previous</button><br><input type="text" style="width:83px;" data-wob_ref="6" data-wob_eps="e0"><br><button data-wob_ref="7" data-wob_eps="e0">Ok</button><div data-wob_ref="8" data-wob_eps="e0"> platea commodo ornare</div><button data-wob_ref="9" data-wob_eps="e0">Yes</button><br></div>
+  </div>
+Plan:
+1. `clickxpath //button[text()='submit']`
+
+Observation:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+    <div id="query">Click on the "Cancel" button.</div>
+    <div id="area" data-wob_ref="3" data-wob_eps="e0"><span data-wob_ref="4" data-wob_eps="e0"> ultricies hac netus: </span><input type="text" style="width:56px;" data-wob_ref="5" data-wob_eps="e0"><br><input type="text" style="width:92px;" data-wob_ref="6" data-wob_eps="e0"><br><span data-wob_ref="7" data-wob_eps="e0"> nunc et, pellentesque: </span><input type="text" style="width:122px;" data-wob_ref="8" data-wob_eps="e0"><br><button data-wob_ref="9" data-wob_eps="e0">Cancel</button><span data-wob_ref="10" data-wob_eps="e0"> sit eget feugiat: </span><input type="text" style="width:90px;" data-wob_ref="11" data-wob_eps="e0"><br><div data-wob_ref="12" data-wob_eps="e0"> fermentum sed orci,</div></div>
+  </div>
+Plan:
+
+OUTPUT:
+1. `clickxpath //button[text()='Cancel']`
+------------------------------
+SUCCESS

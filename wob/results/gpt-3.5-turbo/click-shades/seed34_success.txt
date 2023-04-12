@@ -1,0 +1,25 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+Select all the shades of green and press Submit.
+Plan:
+1. `clickxpath //span[@data-color='green']`
+2. `clickxpath //*[@id='submit']`
+
+Observation:
+Select all the shades of red and press Submit.
+Plan:
+1. `clickxpath //span[@data-color='red']`
+2. `clickxpath //*[@id='submit']`
+
+Observation:
+Select all the shades of green and press Submit.
+Plan:
+
+OUTPUT:
+1. `clickxpath //span[@data-color='green']`
+2. `clickxpath //*[@id='submit']`
+------------------------------
+SUCCESS

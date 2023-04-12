@@ -1,0 +1,132 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+Select 05/12/2016 as the date and hit submit.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //*[@title='Prev']`
+7. `clickxpath //*[@title='Prev']`
+8. `clickxpath //*[@title='Prev']`
+9. `clickxpath //a[text()='12']`
+10. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select 01/01/2016 as the date and hit submit.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //*[@title='Prev']`
+7. `clickxpath //*[@title='Prev']`
+8. `clickxpath //*[@title='Prev']`
+9. `clickxpath //*[@title='Prev']`
+10. `clickxpath //*[@title='Prev']`
+11. `clickxpath //*[@title='Prev']`
+12. `clickxpath //*[@title='Prev']`
+13. `clickxpath //a[text()='1']`
+14. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select 08/04/2016 as the date and hit submit.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //a[text()='4']`
+7. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select 11/01/2016 as the date and hit submit.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //a[text()='1']`
+4. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select 12/03/2016 as the date and hit submit.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //a[text()='2']`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select 05/12/2016 as the date and hit submit.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //*[@title='Prev']`
+7. `clickxpath //*[@title='Prev']`
+8. `clickxpath //*[@title='Prev']`
+9. `clickxpath //a[text()='12']`
+10. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select 03/01/2016 as the date and hit submit.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //*[@title='Prev']`
+7. `clickxpath //*[@title='Prev']`
+8. `clickxpath //*[@title='Prev']`
+9. `clickxpath //*[@title='Prev']`
+10. `clickxpath //*[@title='Prev']`
+11. `clickxpath //a[text()='1']`
+12. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select 11/13/2016 as the date and hit submit.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //a[text()='13']`
+4. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select 08/14/2016 as the date and hit submit.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //a[text()='14']`
+7. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select 02/15/2016 as the date and hit submit.
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //*[@title='Prev']`
+7. `clickxpath //*[@title='Prev']`
+8. `clickxpath //*[@title='Prev']`
+9. `clickxpath //*[@title='Prev']`
+10. `clickxpath //*[@title='Prev']`
+11. `clickxpath //*[@title='Prev']`
+12. `clickxpath //*[@title='Prev']`
+13. `clickxpath //a[text()='15']`
+14. `clickxpath //*[@id='subbtn']`
+------------------------------
+FAIL

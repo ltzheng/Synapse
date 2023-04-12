@@ -1,0 +1,49 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "clickxpath": Click an HTML element with a valid xpath.
+3. "press": Press a key on the keyboard, including "enter", "space", "arrowleft", "arrowright", "backspace", "arrowup", and "arrowdown".
+
+Observation:
+Enter 08/20/2013 as the date and hit submit.
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `press arrowleft`
+3. `type '2013'`
+4. `press arrowright`
+5. `type '0820'`
+6. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Enter 01/09/2010 as the date and hit submit.
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `press arrowleft`
+3. `type '2010'`
+4. `press arrowright`
+5. `type '0109'`
+6. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Enter 12/09/2015 as the date and hit submit.
+Plan:
+1. `clickxpath //*[@id='tt']`
+2. `press arrowleft`
+3. `type '2015'`
+4. `press arrowright`
+5. `type '1209'`
+6. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Enter 01/05/2015 as the date and hit submit.
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='tt']`
+2. `press arrowleft`
+3. `type '2015'`
+4. `press arrowright`
+5. `type '0105'`
+6. `clickxpath //*[@id='subbtn']`
+------------------------------
+SUCCESS

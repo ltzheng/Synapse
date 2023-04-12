@@ -1,0 +1,505 @@
+INPUT:
+
+Task:
+Book the cheapest one-way flight from: Hartford, CT to: TVC on 10/05/2016.
+Subtasks:
+1. `Type the flight from: 'Hartford, CT' to: 'TVC', and select the date 10/05/2016 by clicking 'Prev' twice (October is two months before December) and click the date '5', and finally search. (For the airport code, you must use parentheses)`
+2. `Book the cheapest one-way flight by clicking the button with text 'Book flight for $xxx' where xxx is the price of the ticket.`
+
+Task:
+Book the shortest one-way flight from: Abilene, TX to: St Petersburg/Clearwater, FL on 10/15/2016.
+Subtasks:
+1. `Type the flight from: 'Abilene, TX' to: 'St Petersburg/Clearwater, FL', and select the date 10/15/2016 by clicking 'Prev' twice (October is two months before December) and click the date '15', and finally search. (For the airport code, you must use parentheses)`
+2. `Book the shortest one-way flight by clicking the button with text 'Book flight for $xxx' where xxx is the price of the ticket.`
+
+Task:
+Book the shortest one-way flight from: MNT to: Islip, NY on 11/05/2016.
+Subtasks:
+1. `Type the flight from: 'MNT' to: 'Islip, NY', and select the date 11/05/2016 by by clicking 'Prev' once (November is one month before December) and click the date '5', and finally search. (For the airport code, you must use parentheses)`
+2. `Book the shortest one-way flight by clicking the button with text 'Book flight for $xxx' where xxx is the price of the ticket.`
+
+Task:
+Book the cheapest one-way flight from: LKE to: Manhattan, KS on 12/12/2016.
+Subtasks:
+1. `Type the flight from: 'LKE' to: 'Manhattan, KS', and select the date 12/12/2016 by clicking the date '12' directly (it is already December), and finally search. (For the airport code, you must use parentheses)`
+2. `Book the cheapest one-way flight by clicking the button with text 'Book flight for $xxx' where xxx is the price of the ticket.`
+
+Task:
+Book the shortest one-way flight from: Chefornak, AK to: TOL on 12/10/2016.
+Subtasks:
+
+OUTPUT:
+1. `Type the flight from: 'Chefornak, AK' to: 'TOL', and select the date 12/10/2016 by clicking the date '10' directly (it is already December), and finally search. (For the airport code, you must use parentheses)`
+2. `Book the shortest one-way flight by clicking the button with text 'Book flight for $xxx' where xxx is the price of the ticket.`
+------------------------------
+INPUT:
+Extract the depart, arrival, and date.
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Book the <span class="bold">cheapest</span> one-way flight from: <span class="bold">Hartford, CT</span> to: <span class="bold">TVC</span> on <span class="bold">10/05/2016</span>.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="menu" data-wob_ref="4" data-wob_eps="e0">
+      <h2 id="header-book" data-wob_ref="5" data-wob_eps="e0">Book Your One-Way Flight</h2>
+      <div class="input-container" data-wob_ref="6" data-wob_eps="e0"><input id="flight-from" class="flight-input ui-autocomplete-input" type="text" placeholder="From:" autocomplete="off" data-wob_ref="7" data-wob_eps="e0"></div>
+      <div class="input-container" data-wob_ref="8" data-wob_eps="e0"><input id="flight-to" class="flight-input ui-autocomplete-input" type="text" placeholder="To:" autocomplete="off" data-wob_ref="9" data-wob_eps="e0"></div>
+      <div class="departure-container" data-wob_ref="10" data-wob_eps="e0">
+        <div class="departure-header" data-wob_ref="11" data-wob_eps="e0">Departure Date</div>
+        <div class="input-container" data-wob_ref="12" data-wob_eps="e0"><input id="datepicker" class="flight-input hasDatepicker" type="text" readonly="" data-wob_ref="13" data-wob_eps="e0"></div>
+      </div>
+      <div class="search-container" data-wob_ref="14" data-wob_eps="e0">
+        <button id="search" data-wob_ref="15" data-wob_eps="e0">Search</button>
+      </div>
+    </div>
+  <div id="results" class="hide"></div>
+  </div>
+</div>
+Observation:
+<input id="flight-from" data-wob_ref="7">
+<input id="flight-to" data-wob_ref="9">
+<input id="datepicker" data-wob_ref="13">
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Book the <span class="bold">shortest</span> one-way flight from: <span class="bold">Abilene, TX</span> to: <span class="bold">St Petersburg/Clearwater, FL</span> on <span class="bold">10/15/2016</span>.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="menu" data-wob_ref="4" data-wob_eps="e0">
+      <h2 id="header-book" data-wob_ref="5" data-wob_eps="e0">Book Your One-Way Flight</h2>
+      <div class="input-container" data-wob_ref="6" data-wob_eps="e0"><input id="flight-from" class="flight-input ui-autocomplete-input" type="text" placeholder="From:" autocomplete="off" data-wob_ref="7" data-wob_eps="e0"></div>
+      <div class="input-container" data-wob_ref="8" data-wob_eps="e0"><input id="flight-to" class="flight-input ui-autocomplete-input" type="text" placeholder="To:" autocomplete="off" data-wob_ref="9" data-wob_eps="e0"></div>
+      <div class="departure-container" data-wob_ref="10" data-wob_eps="e0">
+        <div class="departure-header" data-wob_ref="11" data-wob_eps="e0">Departure Date</div>
+        <div class="input-container" data-wob_ref="12" data-wob_eps="e0"><input id="datepicker" class="flight-input hasDatepicker" type="text" readonly="" data-wob_ref="13" data-wob_eps="e0"></div>
+      </div>
+      <div class="search-container" data-wob_ref="14" data-wob_eps="e0">
+        <button id="search" data-wob_ref="15" data-wob_eps="e0">Search</button>
+      </div>
+    </div>
+  <div id="results" class="hide"></div>
+  </div>
+</div>
+Observation:
+<input id="flight-from" data-wob_ref="7">
+<input id="flight-to" data-wob_ref="9">
+<input id="datepicker" data-wob_ref="13">
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Book the <span class="bold">shortest</span> one-way flight from: <span class="bold">Chefornak, AK</span> to: <span class="bold">TOL</span> on <span class="bold">12/10/2016</span>.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="menu" data-wob_ref="4" data-wob_eps="e0">
+      <h2 id="header-book" data-wob_ref="5" data-wob_eps="e0">Book Your One-Way Flight</h2>
+      <div class="input-container" data-wob_ref="6" data-wob_eps="e0"><input id="flight-from" class="flight-input ui-autocomplete-input" type="text" placeholder="From:" autocomplete="off" data-wob_ref="7" data-wob_eps="e0"></div>
+      <div class="input-container" data-wob_ref="8" data-wob_eps="e0"><input id="flight-to" class="flight-input ui-autocomplete-input" type="text" placeholder="To:" autocomplete="off" data-wob_ref="9" data-wob_eps="e0"></div>
+      <div class="departure-container" data-wob_ref="10" data-wob_eps="e0">
+        <div class="departure-header" data-wob_ref="11" data-wob_eps="e0">Departure Date</div>
+        <div class="input-container" data-wob_ref="12" data-wob_eps="e0"><input id="datepicker" class="flight-input hasDatepicker" type="text" readonly="" data-wob_ref="13" data-wob_eps="e0"></div>
+      </div>
+      <div class="search-container" data-wob_ref="14" data-wob_eps="e0">
+        <button id="search" data-wob_ref="15" data-wob_eps="e0">Search</button>
+      </div>
+    </div>
+  <div id="results" class="hide"></div>
+  </div>
+</div>
+Observation:
+
+OUTPUT:
+<input id="flight-from" data-wob_ref="7">
+<input id="flight-to" data-wob_ref="9">
+<input id="datepicker" data-wob_ref="13">
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "press": Press a key on the keyboard, including "enter", "space", "arrowleft", "arrowright", "backspace", "arrowup", and "arrowdown".
+
+Observation:
+<input id="flight-from" data-wob_ref="7">
+<input id="flight-to" data-wob_ref="9">
+<input id="datepicker" data-wob_ref="13">
+Type the flight from: 'Hartford, CT' to: 'TVC', and select the date 10/05/2016 by clicking 'Prev' twice (October is two months before December) and click the date '5', and finally search. (For the airport code, you must use parentheses)
+Plan:
+1. `clickxpath //*[@id='flight-from']`
+2. `type 'Hartford, CT'`
+3. `press arrowdown`
+4. `press enter`
+5. `clickxpath //*[@id='flight-to']`
+6. `type '(TVC)'`
+7. `press arrowdown`
+8. `press enter`
+9. `clickxpath //*[@id='datepicker']`
+10. `clickxpath //*[@title='Prev']`
+11. `clickxpath //*[@title='Prev']`
+12. `clickxpath //a[text()='5']`
+13. `clickxpath //*[@id='search']`
+
+Observation:
+<input id="flight-from" data-wob_ref="7">
+<input id="flight-to" data-wob_ref="9">
+<input id="datepicker" data-wob_ref="13">
+Type the flight from: 'Abilene, TX' to: 'St Petersburg/Clearwater, FL', and select the date 10/15/2016 by clicking 'Prev' twice (October is two months before December) and click the date '15', and finally search. (For the airport code, you must use parentheses)
+Plan:
+1. `clickxpath //*[@id='flight-from']`
+2. `type 'Abilene, TX'`
+3. `press arrowdown`
+4. `press enter`
+5. `clickxpath //*[@id='flight-to']`
+6. `type 'St Petersburg/Clearwater, FL'`
+7. `press arrowdown`
+8. `press enter`
+9. `clickxpath //*[@id='datepicker']`
+10. `clickxpath //*[@title='Prev']`
+11. `clickxpath //*[@title='Prev']`
+12. `clickxpath //a[text()='15']`
+13. `clickxpath //*[@id='search']`
+
+Observation:
+<input id="flight-from" data-wob_ref="7">
+<input id="flight-to" data-wob_ref="9">
+<input id="datepicker" data-wob_ref="13">
+Type the flight from: 'MNT' to: 'Islip, NY', and select the date 11/05/2016 by by clicking 'Prev' once (November is one month before December) and click the date '5', and finally search. (For the airport code, you must use parentheses)
+Plan:
+1. `clickxpath //*[@id='flight-from']`
+2. `type '(MNT)'`
+3. `press arrowdown`
+4. `press enter`
+5. `clickxpath //*[@id='flight-to']`
+6. `type 'Islip, NY'`
+7. `press arrowdown`
+8. `press enter`
+9. `clickxpath //*[@id='datepicker']`
+10. `clickxpath //*[@title='Prev']`
+11. `clickxpath //a[text()='5']`
+12. `clickxpath //*[@id='search']`
+
+Observation:
+<input id="flight-from" data-wob_ref="7">
+<input id="flight-to" data-wob_ref="9">
+<input id="datepicker" data-wob_ref="13">
+Type the flight from: 'LKE' to: 'Manhattan, KS', and select the date 12/12/2016 by clicking the date '12' directly (it is already December), and finally search. (For the airport code, you must use parentheses)
+Plan:
+1. `clickxpath //*[@id='flight-from']`
+2. `type '(LKE)'`
+3. `press arrowdown`
+4. `press enter`
+5. `clickxpath //*[@id='flight-to']`
+6. `type 'Manhattan, KS'`
+7. `press arrowdown`
+8. `press enter`
+9. `clickxpath //*[@id='datepicker']`
+10. `clickxpath //a[text()='12']`
+11. `clickxpath //*[@id='search']`
+
+Observation:
+<input id="flight-from" data-wob_ref="7">
+<input id="flight-to" data-wob_ref="9">
+<input id="datepicker" data-wob_ref="13">
+Type the flight from: 'Chefornak, AK' to: 'TOL', and select the date 12/10/2016 by clicking the date '10' directly (it is already December), and finally search. (For the airport code, you must use parentheses)
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='flight-from']`
+2. `type 'Chefornak, AK'`
+3. `press arrowdown`
+4. `press enter`
+5. `clickxpath //*[@id='flight-to']`
+6. `type '(TOL)'`
+7. `press arrowdown`
+8. `press enter`
+9. `clickxpath //*[@id='datepicker']`
+10. `clickxpath //a[text()='10']`
+11. `clickxpath //*[@id='search']`
+------------------------------
+INPUT:
+Extract the Depart, Arrives, Duration, and Prices for each ticket in the HTML.
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Book the <span class="bold">shortest</span> one-way flight from: <span class="bold">Chefornak, AK</span> to: <span class="bold">TOL</span> on <span class="bold">12/10/2016</span>.</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <div id="menu" data-wob_ref="4" data-wob_eps="e0" class="hide">
+      <h2 id="header-book" data-wob_ref="5" data-wob_eps="e0">Book Your One-Way Flight</h2>
+      <div class="input-container" data-wob_ref="6" data-wob_eps="e0"><input id="flight-from" class="flight-input ui-autocomplete-input" type="text" placeholder="From:" autocomplete="off" data-wob_ref="7" data-wob_eps="e0" data-tampered="e0"></div>
+      <div class="input-container" data-wob_ref="8" data-wob_eps="e0"><input id="flight-to" class="flight-input ui-autocomplete-input" type="text" placeholder="To:" autocomplete="off" data-wob_ref="9" data-wob_eps="e0" data-tampered="e0"></div>
+      <div class="departure-container" data-wob_ref="10" data-wob_eps="e0">
+        <div class="departure-header" data-wob_ref="11" data-wob_eps="e0">Departure Date</div>
+        <div class="input-container" data-wob_ref="12" data-wob_eps="e0"><input id="datepicker" class="flight-input hasDatepicker" type="text" readonly="" data-wob_ref="13" data-wob_eps="e0" data-tampered="e0"></div>
+      </div>
+      <div class="search-container" data-wob_ref="14" data-wob_eps="e0">
+        <button id="search" data-wob_ref="15" data-wob_eps="e0" data-tampered="e0">Search</button>
+      </div>
+    </div>
+  <div id="results" class="" data-wob_ref="126" data-wob_eps="e0"><div class="flight-header" data-wob_ref="127" data-wob_eps="e0">
+<span data-wob_ref="128" data-wob_eps="e0"><button id="menu-back" data-wob_ref="129" data-wob_eps="e0">Back</button></span>
+<div class="flight-summary" data-wob_ref="130" data-wob_eps="e0">
+  <span class="flight-codes" data-wob_ref="131" data-wob_eps="e0">CYF to TOL</span>
+  <span data-wob_ref="132" data-wob_eps="e0"> | </span>
+  <span class="flight-date" data-wob_ref="133" data-wob_eps="e0">12/10/2016</span>
+</div>
+</div><div class="flight" data-result="undefined" data-wob_ref="134" data-wob_eps="e0">
+<div class="flight-depart" data-wob_ref="135" data-wob_eps="e0">
+  <div class="label-container" data-wob_ref="136" data-wob_eps="e0"><label data-wob_ref="137" data-wob_eps="e0">Depart:</label></div>
+  <div class="details-container" data-wob_ref="138" data-wob_eps="e0">
+    <div class="depart-time" data-wob_ref="139" data-wob_eps="e0">3:20 AM</div>
+    <div class="depart-day" data-wob_ref="140" data-wob_eps="e0">Sat Dec 10 2016</div>
+    <div class="depart-city" data-wob_ref="141" data-wob_eps="e0">Chefornak, AK (CYF)</div>
+  </div>
+</div>
+<div class="flight-arrive" data-wob_ref="142" data-wob_eps="e0">
+  <div class="label-container" data-wob_ref="143" data-wob_eps="e0"><label data-wob_ref="144" data-wob_eps="e0">Arrives:</label></div>
+  <div class="details-container" data-wob_ref="145" data-wob_eps="e0">
+    <div class="arrive-time" data-wob_ref="146" data-wob_eps="e0">6:35 PM</div>
+    <div class="arrive-day" data-wob_ref="147" data-wob_eps="e0">Sat Dec 10 2016</div>
+    <div class="arrive-city" data-wob_ref="148" data-wob_eps="e0">TOL</div>
+  </div>
+</div>
+<div class="flight-duration" data-wob_ref="149" data-wob_eps="e0">
+  <div class="label-container" data-wob_ref="150" data-wob_eps="e0"><label data-wob_ref="151" data-wob_eps="e0">Duration:</label></div>
+  <div class="details-container" data-wob_ref="152" data-wob_eps="e0">
+    <div class="time-duration" data-duration="54935837" data-wob_ref="153" data-wob_eps="e0">15h 15m</div>
+  </div>
+</div>
+<div class="book" data-wob_ref="154" data-wob_eps="e0">
+  <button class="flight-price" data-price="890" data-wob_ref="155" data-wob_eps="e0">Book flight for $890</button>
+</div>
+</div><div class="flight" data-result="undefined" data-wob_ref="156" data-wob_eps="e0">
+<div class="flight-depart" data-wob_ref="157" data-wob_eps="e0">
+  <div class="label-container" data-wob_ref="158" data-wob_eps="e0"><label data-wob_ref="159" data-wob_eps="e0">Depart:</label></div>
+  <div class="details-container" data-wob_ref="160" data-wob_eps="e0">
+    <div class="depart-time" data-wob_ref="161" data-wob_eps="e0">8:59 PM</div>
+    <div class="depart-day" data-wob_ref="162" data-wob_eps="e0">Sat Dec 10 2016</div>
+    <div class="depart-city" data-wob_ref="163" data-wob_eps="e0">Chefornak, AK (CYF)</div>
+  </div>
+</div>
+<div class="flight-arrive" data-wob_ref="164" data-wob_eps="e0">
+  <div class="label-container" data-wob_ref="165" data-wob_eps="e0"><label data-wob_ref="166" data-wob_eps="e0">Arrives:</label></div>
+  <div class="details-container" data-wob_ref="167" data-wob_eps="e0">
+    <div class="arrive-time" data-wob_ref="168" data-wob_eps="e0">9:01 PM</div>
+    <div class="arrive-day" data-wob_ref="169" data-wob_eps="e0">Sat Dec 10 2016</div>
+    <div class="arrive-city" data-wob_ref="170" data-wob_eps="e0">TOL</div>
+  </div>
+</div>
+<div class="flight-duration" data-wob_ref="171" data-wob_eps="e0">
+  <div class="label-container" data-wob_ref="172" data-wob_eps="e0"><label data-wob_ref="173" data-wob_eps="e0">Duration:</label></div>
+  <div class="details-container" data-wob_ref="174" data-wob_eps="e0">
+    <div class="time-duration" data-duration="109984" data-wob_ref="175" data-wob_eps="e0">0h 1m</div>
+  </div>
+</div>
+<div class="book" data-wob_ref="176" data-wob_eps="e0">
+  <button class="flight-price" data-price="1095" data-wob_ref="177" data-wob_eps="e0">Book flight for $1095</button>
+</div>
+</div><div class="flight" data-result="undefined" data-wob_ref="178" data-wob_eps="e0">
+<div class="flight-depart" data-wob_ref="179" data-wob_eps="e0">
+  <div class="label-container" data-wob_ref="180" data-wob_eps="e0"><label data-wob_ref="181" data-wob_eps="e0">Depart:</label></div>
+  <div class="details-container" data-wob_ref="182" data-wob_eps="e0">
+    <div class="depart-time" data-wob_ref="183" data-wob_eps="e0">1:32 AM</div>
+    <div class="depart-day" data-wob_ref="184" data-wob_eps="e0">Sat Dec 10 2016</div>
+    <div class="depart-city" data-wob_ref="185" data-wob_eps="e0">Chefornak, AK (CYF)</div>
+  </div>
+</div>
+<div class="flight-arrive" data-wob_ref="186" data-wob_eps="e0">
+  <div class="label-container" data-wob_ref="187" data-wob_eps="e0"><label data-wob_ref="188" data-wob_eps="e0">Arrives:</label></div>
+  <div class="details-container" data-wob_ref="189" data-wob_eps="e0">
+    <div class="arrive-time" data-wob_ref="190" data-wob_eps="e0">7:30 PM</div>
+    <div class="arrive-day" data-wob_ref="191" data-wob_eps="e0">Sat Dec 10 2016</div>
+    <div class="arrive-city" data-wob_ref="192" data-wob_eps="e0">TOL</div>
+  </div>
+</div>
+<div class="flight-duration" data-wob_ref="193" data-wob_eps="e0">
+  <div class="label-container" data-wob_ref="194" data-wob_eps="e0"><label data-wob_ref="195" data-wob_eps="e0">Duration:</label></div>
+  <div class="details-container" data-wob_ref="196" data-wob_eps="e0">
+    <div class="time-duration" data-duration="64720612" data-wob_ref="197" data-wob_eps="e0">17h 58m</div>
+  </div>
+</div>
+<div class="book" data-wob_ref="198" data-wob_eps="e0">
+  <button class="flight-price" data-price="885" data-wob_ref="199" data-wob_eps="e0">Book flight for $885</button>
+</div>
+</div><div class="flight" data-result="undefined" data-wob_ref="200" data-wob_eps="e0">
+<div class="flight-depart" data-wob_ref="201" data-wob_eps="e0">
+  <div class="label-container" data-wob_ref="202" data-wob_eps="e0"><label data-wob_ref="203" data-wob_eps="e0">Depart:</label></div>
+  <div class="details-container" data-wob_ref="204" data-wob_eps="e0">
+    <div class="depart-time" data-wob_ref="205" data-wob_eps="e0">2:48 AM</div>
+    <div class="depart-day" data-wob_ref="206" data-wob_eps="e0">Sat Dec 10 2016</div>
+    <div class="depart-city" data-wob_ref="207" data-wob_eps="e0">Chefornak, AK (CYF)</div>
+  </div>
+</div>
+<div class="flight-arrive" data-wob_ref="208" data-wob_eps="e0">
+  <div class="label-container" data-wob_ref="209" data-wob_eps="e0"><label data-wob_ref="210" data-wob_eps="e0">Arrives:</label></div>
+  <div class="details-container" data-wob_ref="211" data-wob_eps="e0">
+    <div class="arrive-time" data-wob_ref="212" data-wob_eps="e0">8:03 AM</div>
+    <div class="arrive-day" data-wob_ref="213" data-wob_eps="e0">Sun Dec 11 2016</div>
+    <div class="arrive-city" data-wob_ref="214" data-wob_eps="e0">TOL</div>
+  </div>
+</div>
+<div class="flight-duration" data-wob_ref="215" data-wob_eps="e0">
+  <div class="label-container" data-wob_ref="216" data-wob_eps="e0"><label data-wob_ref="217" data-wob_eps="e0">Duration:</label></div>
+  <div class="details-container" data-wob_ref="218" data-wob_eps="e0">
+    <div class="time-duration" data-duration="105288549" data-wob_ref="219" data-wob_eps="e0">29h 14m</div>
+  </div>
+</div>
+<div class="book" data-wob_ref="220" data-wob_eps="e0">
+  <button class="flight-price" data-price="1128" data-wob_ref="221" data-wob_eps="e0">Book flight for $1128</button>
+</div>
+</div></div>
+  </div>
+</div>
+OUTPUT:
+Ticket 1:
+Depart: Chefornak, AK (CYF)
+Arrives: TOL
+Duration: 15h 15m
+Price: $890
+
+Ticket 2:
+Depart: Chefornak, AK (CYF)
+Arrives: TOL
+Duration: 0h 1m
+Price: $1095
+
+Ticket 3:
+Depart: Chefornak, AK (CYF)
+Arrives: TOL
+Duration: 17h 58m
+Price: $885
+
+Ticket 4:
+Depart: Chefornak, AK (CYF)
+Arrives: TOL
+Duration: 29h 14m
+Price: $1128
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "press": Press a key on the keyboard, including "enter", "space", "arrowleft", "arrowright", "backspace", "arrowup", and "arrowdown".
+
+Observation:
+Ticket 1:
+Depart: Hartford, CT (BDL) at 3:51 AM on Wed Oct 05 2016
+Arrives: TVC at 11:53 PM on Wed Oct 05 2016
+Duration: 20h 2m
+Price: $616
+
+Ticket 2:
+Depart: Hartford, CT (BDL) at 9:57 PM on Wed Oct 05 2016
+Arrives: TVC at 10:40 PM on Wed Oct 05 2016
+Duration: 0h 42m
+Price: $488
+
+Ticket 3:
+Depart: Hartford, CT (BDL) at 3:17 PM on Wed Oct 05 2016
+Arrives: TVC at 6:31 PM on Wed Oct 05 2016
+Duration: 3h 14m
+Price: $92
+
+Ticket 4:
+Depart: Hartford, CT (BDL) at 5:48 AM on Wed Oct 05 2016
+Arrives: TVC at 10:29 AM on Thu Oct 06 2016
+Duration: 28h 41m
+Price: $838
+Book the cheapest one-way flight by clicking the button with text 'Book flight for $xxx' where xxx is the price of the ticket.
+Plan:
+1. `clickxpath //button[text()='Book flight for $92']`
+
+Observation:
+Ticket 1:
+Depart: Abilene, TX (ABI) at 6:45 PM on Sat Oct 15 2016
+Arrives: St Petersburg/Clearwater, FL at 4:21 AM on Sun Oct 16 2016
+Duration: 9h 36m
+Price: $135
+
+Ticket 2:
+Depart: Abilene, TX (ABI) at 3:07 AM on Sat Oct 15 2016
+Arrives: St Petersburg/Clearwater, FL at 9:17 AM on Sun Oct 16 2016
+Duration: 30h 10m
+Price: $1176
+
+Ticket 3:
+Depart: Abilene, TX (ABI) at 3:38 PM on Sat Oct 15 2016
+Arrives: St Petersburg/Clearwater, FL at 7:30 PM on Sat Oct 15 2016
+Duration: 3h 51m
+Price: $680
+
+Ticket 4:
+Depart: Abilene, TX (ABI) at 2:08 PM on Sat Oct 15 2016
+Arrives: St Petersburg/Clearwater, FL at 9:05 AM on Sun Oct 16 2016
+Duration: 18h 57m
+Price: $131
+Book the shortest one-way flight by clicking the button with text 'Book flight for $xxx' where xxx is the price of the ticket.
+Plan:
+1. `clickxpath //button[text()='Book flight for $680']`
+
+Observation:
+Ticket 1:
+Depart: Minto, AK (MNT) at 6:02 AM on Sat Nov 05 2016
+Arrives: Islip, NY at 7:28 AM on Sun Nov 06 2016
+Duration: 25h 26m
+Price: $1102
+
+Ticket 2:
+Depart: Minto, AK (MNT) at 12:59 AM on Sat Nov 05 2016
+Arrives: Islip, NY at 3:27 PM on Sat Nov 05 2016
+Duration: 14h 27m
+Price: $591
+
+Ticket 3:
+Depart: Minto, AK (MNT) at 2:14 PM on Sat Nov 05 2016
+Arrives: Islip, NY at 3:47 AM on Sun Nov 06 2016
+Duration: 13h 32m
+Price: $341
+Book the shortest one-way flight by clicking the button with text 'Book flight for $xxx' where xxx is the price of the ticket.
+Plan:
+1. `clickxpath //button[text()='Book flight for $341']`
+
+Observation:
+Ticket 1:
+Depart: Seattle, WA - Lake Union SPB (LKE)
+Arrives: Manhattan, KS
+Duration: 7h 29m
+Price: $152
+
+Ticket 2:
+Depart: Seattle, WA - Lake Union SPB (LKE)
+Arrives: Manhattan, KS
+Duration: 22h 40m
+Price: $539
+
+Ticket 3:
+Depart: Seattle, WA - Lake Union SPB (LKE)
+Arrives: Manhattan, KS
+Duration: 1h 21m
+Price: $160
+Book the cheapest one-way flight by clicking the button with text 'Book flight for $xxx' where xxx is the price of the ticket.
+Plan:
+1. `clickxpath //button[text()='Book flight for $152']`
+
+Observation:
+Ticket 1:
+Depart: Chefornak, AK (CYF)
+Arrives: TOL
+Duration: 15h 15m
+Price: $890
+
+Ticket 2:
+Depart: Chefornak, AK (CYF)
+Arrives: TOL
+Duration: 0h 1m
+Price: $1095
+
+Ticket 3:
+Depart: Chefornak, AK (CYF)
+Arrives: TOL
+Duration: 17h 58m
+Price: $885
+
+Ticket 4:
+Depart: Chefornak, AK (CYF)
+Arrives: TOL
+Duration: 29h 14m
+Price: $1128
+Book the shortest one-way flight by clicking the button with text 'Book flight for $xxx' where xxx is the price of the ticket.
+Plan:
+
+OUTPUT:
+1. `clickxpath //button[text()='Book flight for $890']`
+------------------------------
+FAIL

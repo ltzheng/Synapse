@@ -1,0 +1,458 @@
+INPUT:
+Formatting the noisy natural language observation. There are four tasks. For forwarding, the format is "Forward the email from {Sender} to {Receiver}.". For replying, the format is "Reply the email from {Sender} with {Message}.". For starring (aka marking as important), the format is "Star the email from {Sender}.". For deletion, the format is "Delete the email from {Sender}.". Ignore other conditions such as "this morning", "latest", etc.
+
+Observation:
+I want to forward Dale's email to Philippe.
+Reformation:
+Forward the email from Dale to Philippe.
+
+Observation:
+Forward Jourdan the latest email from Linnet.
+Reformation:
+Forward the email from Linnet to Jourdan.
+
+Observation:
+please forward Rainas last email to Janenna
+Reformation:
+Forward the email from Raina to Janenna.
+
+Observation:
+I'd like to email Gates the email I got from Arlina.
+Reformation:
+Forward the email from Arlina to Gates.
+
+Observation:
+send Kala the email from Hilda
+Reformation:
+Forward the email from Hilda to Kala.
+
+Observation:
+Find the Arabelle email and forward it to Ulrike.
+Reformation:
+Forward the email from Arabelle to Ulrike.
+
+Observation:
+Take Joyce's email and reply with "Non odio.".
+Reformation:
+Reply the email from Joyce with "Non odio.".
+
+Observation:
+In my inbox, there should be an email from Kelly, respond and tell her "Dictum urna, hendrerit.".
+Reformation:
+Reply the email from Kelly with "Dictum urna, hendrerit.".
+
+Observation:
+Create a reply email to Almire saying "Congue.".
+Reformation:
+Reply the email from Almire with "Congue.".
+
+Observation:
+Siri, Email Terra, "Scelerisque. Tristique volutpat.".
+Reformation:
+Reply the email from Terra with "Scelerisque. Tristique volutpat.".
+
+Observation:
+Send, "Tortor.", to Blake.
+Reformation:
+Reply the email from Blake with "Tortor.".
+
+Observation:
+Tell Kata it "Tortor. Viverra massa." in response to his email.
+Reformation:
+Reply the email from Kata with "Tortor. Viverra massa.".
+
+Observation:
+mark any of Kylen's incoming emails as important
+Reformation:
+Star the email from Kylen.
+
+Observation:
+change the email from Ada to important
+Reformation:
+Star the email from Ada.
+
+Observation:
+Mark Vickie's email important.
+Reformation:
+Star the email from Vickie.
+
+Observation:
+Find Lanny's email and mark it as important.
+Reformation:
+Star the email from Lanny.
+
+Observation:
+Find email that I sent to Theresina this morning and mark as important.
+Reformation:
+Star the email from Theresina.
+
+Observation:
+Mark all emails written by Clareta as important.
+Reformation:
+Star the email from Clareta.
+
+Observation:
+Find Sadye's email and delete it.
+Reformation:
+Delete the email from Sadye.
+
+Observation:
+Please delete Naomi's emails.
+Reformation:
+Delete the email from Naomi.
+
+Observation:
+Delete the email from Starr, please.
+Reformation:
+Delete the email from Starr.
+
+Observation:
+Delete Essa's message.
+Reformation:
+Delete the email from Essa.
+
+Observation:
+Delete all emails that I have sent to Essa.
+Reformation:
+Delete the email from Essa.
+
+Observation:
+get rid of this email from Tawnya
+Reformation:
+Delete the email from Tawnya.
+
+Observation:
+Locate and delete the email from Aurea.
+Reformation:
+Delete the email from Aurea.
+
+Observation:
+Search todays email and send the one from Roma, to Calvin.
+Reformation:
+Forward the email from Roma to Calvin.
+
+Observation:
+Ask Steph to forward his messages to Coron.
+Reformation:
+Forward the email from Steph to Coron.
+
+Observation:
+Give Elun Adele's Email
+Reformation:
+Forward the email from Adele to Elun.
+
+Observation:
+Can you email Amy and tell her "Hi."
+Reformation:
+Reply the email from Amy with "Hi.".
+
+Observation:
+find Pia mail and reply with a "ABCDEFG."
+Reformation:
+Reply the email from Pia with "ABCDEFG.".
+
+Observation:
+send "Thanks." to contact Alfred
+Reformation:
+Reply the email from Alfred with "Thanks.".
+
+Observation:
+write to Alfred "Thank you."
+Reformation:
+Reply the email from Alfred with "Thank you.".
+
+Observation:
+mark all emails in primary with Jeff.
+Reformation:
+Star the email from Jeff.
+
+Observation:
+Constantine's appointment needs to be marked important.
+Reformation:
+Star the email from Constantine.
+
+Observation:
+Please locate Jackqueline's email and put a copy in Wenonah's inbox.
+Reformation:
+
+OUTPUT:
+Forward the email from Jackqueline to Wenonah.
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "type": Type a string via the keyboard.
+2. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+Forward the email from Dale to Philippe.
+Plan:
+1. `clickxpath //*[@class='email-sender' and text()='Dale']`
+2. `clickxpath //span[@class='email-forward']`
+3. `clickxpath //input[@class='forward-sender']`
+4. `type 'Philippe'`
+5. `clickxpath //span[@id='send-forward']`
+
+Observation:
+Forward the email from Linnet to Jourdan.
+Plan:
+1. `clickxpath //*[@class='email-sender' and text()='Linnet']`
+2. `clickxpath //span[@class='email-forward']`
+3. `clickxpath //input[@class='forward-sender']`
+4. `type 'Jourdan'`
+5. `clickxpath //span[@id='send-forward']`
+
+Observation:
+Forward the email from Raina to Janenna.
+Plan:
+1. `clickxpath //*[@class='email-sender' and text()='Raina']`
+2. `clickxpath //span[@class='email-forward']`
+3. `clickxpath //input[@class='forward-sender']`
+4. `type 'Janenna'`
+5. `clickxpath //span[@id='send-forward']`
+
+Observation:
+Forward the email from Arlina to Gates.
+Plan:
+1. `clickxpath //*[@class='email-sender' and text()='Arlina']`
+2. `clickxpath //span[@class='email-forward']`
+3. `clickxpath //input[@class='forward-sender']`
+4. `type 'Gates'`
+5. `clickxpath //span[@id='send-forward']`
+
+Observation:
+Forward the email from Hilda to Kala.
+Plan:
+1. `clickxpath //*[@class='email-sender' and text()='Hilda']`
+2. `clickxpath //span[@class='email-forward']`
+3. `clickxpath //input[@class='forward-sender']`
+4. `type 'Kala'`
+5. `clickxpath //span[@id='send-forward']`
+
+Observation:
+Forward the email from Arabelle to Ulrike.
+Plan:
+1. `clickxpath //*[@class='email-sender' and text()='Arabelle']`
+2. `clickxpath //span[@class='email-forward']`
+3. `clickxpath //input[@class='forward-sender']`
+4. `type 'Ulrike'`
+5. `clickxpath //span[@id='send-forward']`
+
+Observation:
+Reply the email from Joyce with "Non odio.".
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Joyce']`
+2. `clickxpath //span[@class='email-reply']`
+3. `clickxpath //textarea[@id='reply-text']`
+4. `type 'Non odio.'`
+5. `clickxpath //*[@id='send-reply']`
+
+Observation:
+Reply the email from Kelly with "Dictum urna, hendrerit.".
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Kelly']`
+2. `clickxpath //span[@class='email-reply']`
+3. `clickxpath //textarea[@id='reply-text']`
+4. `type 'Dictum urna, hendrerit.'`
+5. `clickxpath //*[@id='send-reply']`
+
+Observation:
+Reply the email from Almire with "Congue.".
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Almire']`
+2. `clickxpath //span[@class='email-reply']`
+3. `clickxpath //textarea[@id='reply-text']`
+4. `type 'Congue.'`
+5. `clickxpath //*[@id='send-reply']`
+
+Observation:
+Reply the email from Terra with "Scelerisque. Tristique volutpat.".
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Terra']`
+2. `clickxpath //span[@class='email-reply']`
+3. `clickxpath //textarea[@id='reply-text']`
+4. `type 'Scelerisque. Tristique volutpat.'`
+5. `clickxpath //*[@id='send-reply']`
+
+Observation:
+Reply the email from Blake with "Tortor.".
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Blake']`
+2. `clickxpath //span[@class='email-reply']`
+3. `clickxpath //textarea[@id='reply-text']`
+4. `type 'Tortor.'`
+5. `clickxpath //*[@id='send-reply']`
+
+Observation:
+Reply the email from Kata with "Tortor. Viverra massa.".
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Kata']`
+2. `clickxpath //span[@class='email-reply']`
+3. `clickxpath //textarea[@id='reply-text']`
+4. `type 'Tortor. Viverra massa.'`
+5. `clickxpath //*[@id='send-reply']`
+
+Observation:
+Star the email from Kylen.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Kylen']`
+2. `clickxpath //span[@class='star']`
+
+Observation:
+Star the email from Ada.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Ada']`
+2. `clickxpath //span[@class='star']`
+
+Observation:
+Star the email from Vickie.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Vickie']`
+2. `clickxpath //span[@class='star']`
+
+Observation:
+Star the email from Lanny.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Lanny']`
+2. `clickxpath //span[@class='star']`
+
+Observation:
+Star the email from Theresina.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Theresina']`
+2. `clickxpath //span[@class='star']`
+
+Observation:
+Star the email from Clareta.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Clareta']`
+2. `clickxpath //span[@class='star']`
+
+Observation:
+Delete the email from Sadye.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Sadye']`
+2. `clickxpath //span[@class='trash']`
+
+Observation:
+Delete the email from Naomi.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Naomi']`
+2. `clickxpath //span[@class='trash']`
+
+Observation:
+Delete the email from Starr.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Starr']`
+2. `clickxpath //span[@class='trash']`
+
+Observation:
+Delete the email from Essa.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Essa']`
+2. `clickxpath //span[@class='trash']`
+
+Observation:
+Delete the email from Essa.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Essa']`
+2. `clickxpath //span[@class='trash']`
+
+Observation:
+Delete the email from Tawnya.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Tawnya']`
+2. `clickxpath //span[@class='trash']`
+
+Observation:
+Delete the email from Aurea.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Aurea']`
+2. `clickxpath //span[@class='trash']`
+
+Observation:
+Forward the email from Roma to Calvin.
+Plan:
+1. `clickxpath //*[@class='email-sender' and text()='Roma']`
+2. `clickxpath //span[@class='email-forward']`
+3. `clickxpath //input[@class='forward-sender']`
+4. `type 'Calvin'`
+5. `clickxpath //span[@id='send-forward']`
+
+Observation:
+Forward the email from Steph to Coron.
+Plan:
+1. `clickxpath //*[@class='email-sender' and text()='Steph']`
+2. `clickxpath //span[@class='email-forward']`
+3. `clickxpath //input[@class='forward-sender']`
+4. `type 'Coron'`
+5. `clickxpath //span[@id='send-forward']`
+
+Observation:
+Forward the email from Adele to Elun.
+Plan:
+1. `clickxpath //*[@class='email-sender' and text()='Adele']`
+2. `clickxpath //span[@class='email-forward']`
+3. `clickxpath //input[@class='forward-sender']`
+4. `type 'Elun'`
+5. `clickxpath //span[@id='send-forward']`
+
+Observation:
+Reply the email from Amy with "Hi.".
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Amy']`
+2. `clickxpath //span[@class='email-reply']`
+3. `clickxpath //textarea[@id='reply-text']`
+4. `type 'Hi.'`
+5. `clickxpath //*[@id='send-reply']`
+
+Observation:
+Reply the email from Pia with "ABCDEFG.".
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Pia']`
+2. `clickxpath //span[@class='email-reply']`
+3. `clickxpath //textarea[@id='reply-text']`
+4. `type 'ABCDEFG.'`
+5. `clickxpath //*[@id='send-reply']`
+
+Observation:
+Reply the email from Alfred with "Thanks.".
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Alfred']`
+2. `clickxpath //span[@class='email-reply']`
+3. `clickxpath //textarea[@id='reply-text']`
+4. `type 'Thanks.'`
+5. `clickxpath //*[@id='send-reply']`
+
+Observation:
+Reply the email from Alfred with "Thank you.".
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Alfred']`
+2. `clickxpath //span[@class='email-reply']`
+3. `clickxpath //textarea[@id='reply-text']`
+4. `type 'Thank you.'`
+5. `clickxpath //*[@id='send-reply']`
+
+Observation:
+Star the email from Jeff.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Jeff']`
+2. `clickxpath //span[@class='star']`
+
+Observation:
+Star the email from Constantine.
+Plan:
+1. `clickxpath //div[@class='email-sender' and text()='Constantine']`
+2. `clickxpath //span[@class='star']`
+
+Observation:
+Forward the email from Jackqueline to Wenonah.
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@class='email-sender' and text()='Jackqueline']`
+2. `clickxpath //span[@class='email-forward']`
+3. `clickxpath //input[@class='forward-sender']`
+4. `type 'Wenonah'`
+5. `clickxpath //span[@id='send-forward']`
+------------------------------
+SUCCESS

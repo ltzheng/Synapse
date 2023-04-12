@@ -1,0 +1,186 @@
+INPUT:
+
+Observation:
+Select 05/12/2016 as the date and hit submit.
+Reformation:
+Select the datepicker at step 1, click 'Prev' 7 times at step 2-8 (May is 7 months before December), click the date '12' at step 9, and finally submit at step 10.
+
+Observation:
+Select 01/01/2016 as the date and hit submit.
+Reformation:
+Select the datepicker at step 1, click 'Prev' 11 times at step 2-12 (January is 11 months before December), click the date '1' at step 13, and finally submit at step 14.
+
+Observation:
+Select 08/04/2016 as the date and hit submit.
+Reformation:
+Select the datepicker at step 1, click 'Prev' 4 times at step 2-5 (August is 4 months before December), click the date '4' at step 6, and finally submit at step 7.
+
+Observation:
+Select 11/01/2016 as the date and hit submit.
+Reformation:
+Select the datepicker at step 1, click 'Prev' 1 time at step 2 (November is 1 month before December), click the date '1' at step 3, and finally submit at step 4.
+
+Observation:
+Select 12/03/2016 as the date and hit submit.
+Reformation:
+Select the datepicker at step 1, click the date '3' at step 2 (it is already December), and finally submit at step 3.
+
+Observation:
+Select 05/12/2016 as the date and hit submit.
+Reformation:
+Select the datepicker at step 1, click 'Prev' 7 times at step 2-8 (May is 7 months before December), click the date '12' at step 9, and finally submit at step 10.
+
+Observation:
+Select 03/01/2016 as the date and hit submit.
+Reformation:
+Select the datepicker at step 1, click 'Prev' 9 times at step 2-10 (March is 9 months before December), click the date '1' at step 11, and finally submit at step 12.
+
+Observation:
+Select 11/13/2016 as the date and hit submit.
+Reformation:
+Select the datepicker at step 1, click 'Prev' 1 time at step 2 (November is 1 month before December), click the date '13' at step 3, and finally submit at step 4.
+
+Observation:
+Select 08/14/2016 as the date and hit submit.
+Reformation:
+Select the datepicker at step 1, click 'Prev' 4 times at step 2-5 (August is 4 months before December), click the date '14' at step 6, and finally submit at step 7.
+
+Observation:
+Select 01/31/2016 as the date and hit submit.
+Reformation:
+
+OUTPUT:
+Select the datepicker at step 1, click 'Prev' 11 times at step 2-12 (January is 11 months before December), click the date '31' at step 13, and finally submit at step 14.
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+Select the datepicker at step 1, click 'Prev' 7 times at step 2-8 (May is 7 months before December), click the date '12' at step 9, and finally submit at step 10.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //*[@title='Prev']`
+7. `clickxpath //*[@title='Prev']`
+8. `clickxpath //*[@title='Prev']`
+9. `clickxpath //a[text()='12']`
+10. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select the datepicker at step 1, click 'Prev' 11 times at step 2-12 (January is 11 months before December), click the date '1' at step 13, and finally submit at step 14.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //*[@title='Prev']`
+7. `clickxpath //*[@title='Prev']`
+8. `clickxpath //*[@title='Prev']`
+9. `clickxpath //*[@title='Prev']`
+10. `clickxpath //*[@title='Prev']`
+11. `clickxpath //*[@title='Prev']`
+12. `clickxpath //*[@title='Prev']`
+13. `clickxpath //a[text()='1']`
+14. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select the datepicker at step 1, click 'Prev' 4 times at step 2-5 (August is 4 months before December), click the date '4' at step 6, and finally submit at step 7.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //a[text()='4']`
+7. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select the datepicker at step 1, click 'Prev' 1 time at step 2 (November is 1 month before December), click the date '1' at step 3, and finally submit at step 4.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //a[text()='1']`
+4. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select the datepicker at step 1, click the date '3' at step 2 (it is already December), and finally submit at step 3.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //a[text()='2']`
+3. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select the datepicker at step 1, click 'Prev' 7 times at step 2-8 (May is 7 months before December), click the date '12' at step 9, and finally submit at step 10.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //*[@title='Prev']`
+7. `clickxpath //*[@title='Prev']`
+8. `clickxpath //*[@title='Prev']`
+9. `clickxpath //a[text()='12']`
+10. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select the datepicker at step 1, click 'Prev' 9 times at step 2-10 (March is 9 months before December), click the date '1' at step 11, and finally submit at step 12.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //*[@title='Prev']`
+7. `clickxpath //*[@title='Prev']`
+8. `clickxpath //*[@title='Prev']`
+9. `clickxpath //*[@title='Prev']`
+10. `clickxpath //*[@title='Prev']`
+11. `clickxpath //a[text()='1']`
+12. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select the datepicker at step 1, click 'Prev' 1 time at step 2 (November is 1 month before December), click the date '13' at step 3, and finally submit at step 4.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //a[text()='13']`
+4. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select the datepicker at step 1, click 'Prev' 4 times at step 2-5 (August is 4 months before December), click the date '14' at step 6, and finally submit at step 7.
+Plan:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //a[text()='14']`
+7. `clickxpath //*[@id='subbtn']`
+
+Observation:
+Select the datepicker at step 1, click 'Prev' 11 times at step 2-12 (January is 11 months before December), click the date '31' at step 13, and finally submit at step 14.
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@id='datepicker']`
+2. `clickxpath //*[@title='Prev']`
+3. `clickxpath //*[@title='Prev']`
+4. `clickxpath //*[@title='Prev']`
+5. `clickxpath //*[@title='Prev']`
+6. `clickxpath //*[@title='Prev']`
+7. `clickxpath //*[@title='Prev']`
+8. `clickxpath //*[@title='Prev']`
+9. `clickxpath //*[@title='Prev']`
+10. `clickxpath //*[@title='Prev']`
+11. `clickxpath //*[@title='Prev']`
+12. `clickxpath //*[@title='Prev']`
+13. `clickxpath //a[text()='31']`
+14. `clickxpath //*[@id='subbtn']`
+------------------------------
+SUCCESS

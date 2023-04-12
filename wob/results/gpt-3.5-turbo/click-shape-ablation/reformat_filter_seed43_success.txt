@@ -1,0 +1,107 @@
+INPUT:
+Extract the SVG out of HTML. There are five types of items in the SVG:
+1. Digit (0-9). If the font size is 10px, it is a small one. If the font size if 20px, it is a large one. For example, <text font-size="10px">5</text> is small and <text font-size="20px">p</text> is large.
+2. Letter (A-Z, a-z). If the font size is 10px, it is a small one. If the font size if 20px, it is a large one. For example, <text font-size="10px">5</text> is small and <text font-size="20px">p</text> is large.
+3. Triangle. If the distance between the x coordinates of two pointes is 5, it is a small one. If it is 10, it is a large one. For example, <polygon points="85,95 90,85 95,95"></polygon> is small because the distance of x coordinates between two points is 5, and <polygon points="80,40 90,20 100,40"></polygon> is large because the distance of x coordinates between two points is 10.
+4. Circle. If the radius is 5, it is a small one. If the radius is 10, it is a large one. For example, <circle r="5"></circle> is small and <circle r="10"></circle> is large.
+5. Rectangle. If the width or height is both 10, it is a small one. If one of them is 20, it is a large one. For example, <rect width="10" height="10"></rect> is small and <rect width="20" height="20"></rect> is large.
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click on a green E</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <svg id="area_svg" data-wob_ref="4" data-wob_eps="e0"><text x="70" y="130" fill="magenta" text-anchor="middle" alignment-baseline="central" font-size="20px" style="cursor:pointer;" data-wob_ref="5" data-wob_eps="e0">D</text><text x="30" y="90" fill="aqua" text-anchor="middle" alignment-baseline="central" font-size="10px" style="cursor:pointer;" data-wob_ref="6" data-wob_eps="e0">z</text><polygon points="80,40 90,20 100,40" fill="red" style="cursor:pointer;" data-wob_ref="7" data-wob_eps="e0"></polygon><text x="130" y="30" fill="aqua" text-anchor="middle" alignment-baseline="central" font-size="20px" style="cursor:pointer;" data-wob_ref="8" data-wob_eps="e0">p</text><polygon points="60,40 70,20 80,40" fill="black" style="cursor:pointer;" data-wob_ref="9" data-wob_eps="e0"></polygon><text x="70" y="70" fill="red" text-anchor="middle" alignment-baseline="central" font-size="20px" style="cursor:pointer;" data-wob_ref="10" data-wob_eps="e0">0</text><polygon points="85,95 90,85 95,95" fill="aqua" style="cursor:pointer;" data-wob_ref="11" data-wob_eps="e0"></polygon><text x="30" y="130" fill="green" text-anchor="middle" alignment-baseline="central" font-size="20px" style="cursor:pointer;" data-wob_ref="12" data-wob_eps="e0">E</text><text x="70" y="110" fill="aqua" text-anchor="middle" alignment-baseline="central" font-size="10px" style="cursor:pointer;" data-wob_ref="13" data-wob_eps="e0">g</text></svg>
+  </div>
+</div>
+Observation:
+{a large magenta 'D' (data-wob_ref="5"), a small aqua 'z' (data-wob_ref="6"), a large red triangle (data-wob_ref="7"), a large aqua 'p' (data-wob_ref="8"), a large black triangle (data-wob_ref="9"), a large red '0' (data-wob_ref="10"), a small aqua triangle (data-wob_ref="11"), a large green 'E' (data-wob_ref="12"), a small aqua 'g' (data-wob_ref="13")}
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click on a small aqua circle</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <svg id="area_svg" data-wob_ref="4" data-wob_eps="e0"><text x="10" y="130" fill="red" text-anchor="middle" alignment-baseline="central" font-size="20px" style="cursor:pointer;" data-wob_ref="5" data-wob_eps="e0">6</text><polygon points="100,80 110,60 120,80" fill="red" style="cursor:pointer;" data-wob_ref="6" data-wob_eps="e0"></polygon><circle cx="90" cy="30" r="5" fill="aqua" style="cursor:pointer;" data-wob_ref="7" data-wob_eps="e0"></circle></svg>
+  </div>
+</div>
+Observation:
+{a large red '6' (data-wob_ref="5"), a large red triangle (data-wob_ref="6"), a small aqua circle (data-wob_ref="7")}
+
+State:
+<div id="wrap" data-wob_ref="2" data-wob_eps="e0">
+  <div id="query">Click on a small black rectangle</div>
+  <div id="area" data-wob_ref="3" data-wob_eps="e0">
+    <svg id="area_svg" data-wob_ref="4" data-wob_eps="e0"><text x="30" y="90" fill="green" text-anchor="middle" alignment-baseline="central" font-size="20px" style="cursor:pointer;" data-wob_ref="5" data-wob_eps="e0">E</text><text x="130" y="70" fill="black" text-anchor="middle" alignment-baseline="central" font-size="20px" style="cursor:pointer;" data-wob_ref="6" data-wob_eps="e0">H</text><text x="30" y="110" fill="yellow" text-anchor="middle" alignment-baseline="central" font-size="10px" style="cursor:pointer;" data-wob_ref="7" data-wob_eps="e0">A</text><rect x="65" y="25" width="10" height="10" fill="black" style="cursor:pointer;" data-wob_ref="8" data-wob_eps="e0"></rect><rect x="0" y="0" width="20" height="20" fill="blue" style="cursor:pointer;" data-wob_ref="9" data-wob_eps="e0"></rect><polygon points="100,140 110,120 120,140" fill="magenta" style="cursor:pointer;" data-wob_ref="10" data-wob_eps="e0"></polygon><text x="30" y="10" fill="black" text-anchor="middle" alignment-baseline="central" font-size="10px" style="cursor:pointer;" data-wob_ref="11" data-wob_eps="e0">L</text><text x="70" y="130" fill="aqua" text-anchor="middle" alignment-baseline="central" font-size="10px" style="cursor:pointer;" data-wob_ref="12" data-wob_eps="e0">t</text><circle cx="110" cy="70" r="10" fill="green" style="cursor:pointer;" data-wob_ref="13" data-wob_eps="e0"></circle><text x="90" y="10" fill="aqua" text-anchor="middle" alignment-baseline="central" font-size="10px" style="cursor:pointer;" data-wob_ref="14" data-wob_eps="e0">o</text><polygon points="105,15 110,5 115,15" fill="aqua" style="cursor:pointer;" data-wob_ref="15" data-wob_eps="e0"></polygon><text x="70" y="10" fill="green" text-anchor="middle" alignment-baseline="central" font-size="20px" style="cursor:pointer;" data-wob_ref="16" data-wob_eps="e0">2</text></svg>
+  </div>
+</div>
+Observation:
+
+OUTPUT:
+{a small black rectangle (data-wob_ref="8")}
+------------------------------
+INPUT:
+Select exactly one of the items that satisfy the given conditions.
+
+Observation:
+{a large magenta 'D' (data-wob_ref="5"), a small aqua 'z' (data-wob_ref="6"), a large red triangle (data-wob_ref="7"), a large aqua 'p' (data-wob_ref="8"), a large black triangle (data-wob_ref="9"), a large red '0' (data-wob_ref="10"), a small aqua triangle (data-wob_ref="11"), a large green 'E' (data-wob_ref="12"), a small aqua 'g' (data-wob_ref="13")}
+Click on a green E
+Reformation:
+One of the item with a green E from the options is the large green 'E' (data-wob_ref="12").
+
+Observation:
+{a large red '6' (data-wob_ref="5"), a large red triangle (data-wob_ref="6"), a small aqua circle (data-wob_ref="7")}
+Click on a small aqua circle
+Reformation:
+One of the item with a small aqua circle from the options is the small aqua circle (data-wob_ref="7").
+
+Observation:
+{a large red circle (data-wob_ref="5"), a large yellow 'n' (data-wob_ref="6"), a small green '2' (data-wob_ref="7"), a small green 'f' (data-wob_ref="8"), a large magenta 'g' (data-wob_ref="9"), a small yellow 'V' (data-wob_ref="10"), a large black 'y' (data-wob_ref="11"), a large blue '5' (data-wob_ref="12"), a small black 'e' (data-wob_ref="13"), a large yellow '0' (data-wob_ref="14"), a small magenta rectangle (data-wob_ref="15"), a large magenta '0' (data-wob_ref="16"), a large magenta 'g' (data-wob_ref="17")}
+Click on a magenta item
+Reformation:
+One of the item with a magenta item from the options is the large magenta 'g' (data-wob_ref="9").
+
+Observation:
+{a large green rectangle (data-wob_ref="5"), a large black 'E' (data-wob_ref="6"), a large red 'i' (data-wob_ref="7"), a large red '1' (data-wob_ref="8")}
+Click on a red digit
+Reformation:
+One of the item with a red digit from the options is the large red '1' (data-wob_ref="8").
+
+Observation:
+{a small black rectangle (data-wob_ref="8")}
+Click on a small black rectangle
+Reformation:
+
+OUTPUT:
+The only item that satisfies the given condition is the small black rectangle (data-wob_ref="8").
+------------------------------
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+One of the item with a green E from the options is the large green 'E' (data-wob_ref="12").
+Plan:
+1. `clickxpath //*[@data-wob_ref='12']`
+
+Observation:
+One of the item with a small aqua circle from the options is the small aqua circle (data-wob_ref="7").
+Plan:
+1. `clickxpath //*[@data-wob_ref='7']`
+
+Observation:
+One of the item with a magenta item from the options is the large magenta 'g' (data-wob_ref="9").
+Plan:
+1. `clickxpath //*[@data-wob_ref='9']`
+
+Observation:
+One of the item with a red digit from the options is the large red '1' (data-wob_ref="8").
+Plan:
+1. `clickxpath //*[@data-wob_ref='8']`
+
+Observation:
+The only item that satisfies the given condition is the small black rectangle (data-wob_ref="8").
+Plan:
+
+OUTPUT:
+1. `clickxpath //*[@data-wob_ref='8']`
+------------------------------
+SUCCESS

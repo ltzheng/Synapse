@@ -1,0 +1,57 @@
+INPUT:
+We have an autonomous agent that can perform atomic actions specified by natural language. Here are the available actions:
+1. "clickxpath": Click an HTML element with a valid xpath.
+
+Observation:
+Click the "Like" button on 1 post by @pulvinar and then click Submit.
+Plan:
+1. `clickxpath (//div[@class='details']/span[@class='username' and text()='@pulvinar']/../../div[@class='controls']/span[@class='like'])[1]`
+2. `clickxpath //p[@id='submitRow']/button[@type='button']`
+
+Observation:
+Click the "Retweet" button on 2 posts by @morbi and then click Submit.
+Plan:
+1. `clickxpath (//div[@class='details']/span[@class='username' and text()='@morbi']/../../div[@class='controls']/span[@class='retweet'])[1]`
+2. `clickxpath (//div[@class='details']/span[@class='username' and text()='@morbi']/../../div[@class='controls']/span[@class='retweet'])[1]`
+3. `clickxpath //p[@id='submitRow']/button[@type='button']`
+
+Observation:
+Click the "Share" button on 4 posts by @cristin and then click Submit.
+Plan:
+1. `clickxpath (//div[@class='details']/span[@class='username' and text()='@cristin']/../../div[@class='controls']/span[@class='share'])[1]`
+2. `clickxpath (//div[@class='details']/span[@class='username' and text()='@cristin']/../../div[@class='controls']/span[@class='share'])[1]`
+3. `clickxpath (//div[@class='details']/span[@class='username' and text()='@cristin']/../../div[@class='controls']/span[@class='share'])[1]`
+4. `clickxpath (//div[@class='details']/span[@class='username' and text()='@cristin']/../../div[@class='controls']/span[@class='share'])[1]`
+5. `clickxpath //p[@id='submitRow']/button[@type='button']`
+
+Observation:
+Click the "Reply" button on 1 post by @augue and then click Submit.
+Plan:
+1. `clickxpath (//div[@class='details']/span[@class='username' and text()='@augue']/../../div[@class='controls']/span[@class='reply'])[1]`
+2. `clickxpath //p[@id='submitRow']/button[@type='button']`
+
+Observation:
+Click the "Share" button on 4 posts by @cristin and then click Submit.
+Plan:
+1. `clickxpath (//div[@class='details']/span[@class='username' and text()='@cristin']/../../div[@class='controls']/span[@class='share'])[1]`
+2. `clickxpath (//div[@class='details']/span[@class='username' and text()='@cristin']/../../div[@class='controls']/span[@class='share'])[1]`
+3. `clickxpath (//div[@class='details']/span[@class='username' and text()='@cristin']/../../div[@class='controls']/span[@class='share'])[1]`
+4. `clickxpath (//div[@class='details']/span[@class='username' and text()='@cristin']/../../div[@class='controls']/span[@class='share'])[1]`
+5. `clickxpath //p[@id='submitRow']/button[@type='button']`
+
+Observation:
+Click the "Retweet" button on 2 posts by @morbi and then click Submit.
+Plan:
+1. `clickxpath (//div[@class='details']/span[@class='username' and text()='@morbi']/../../div[@class='controls']/span[@class='retweet'])[1]`
+2. `clickxpath (//div[@class='details']/span[@class='username' and text()='@morbi']/../../div[@class='controls']/span[@class='retweet'])[1]`
+3. `clickxpath //p[@id='submitRow']/button[@type='button']`
+
+Observation:
+Click the "Like" button on 1 post by @neque and then click Submit.
+Plan:
+
+OUTPUT:
+1. `clickxpath (//div[@class='details']/span[@class='username' and text()='@neque']/../../div[@class='controls']/span[@class='like'])[1]`
+2. `clickxpath //p[@id='submitRow']/button[@type='button']`
+------------------------------
+SUCCESS
