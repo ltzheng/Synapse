@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Synapse: Leveraging Few-Shot Exemplars for Human-Level Computer Control</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Synapse: Leveraging Few-Shot Exemplars for Human-Level Computer Control." />
+    <meta name="twitter:description"
+        content="Project page for Synapse: Leveraging Few-Shot Exemplars for Human-Level Computer Control" />
+    <meta name="twitter:image" content="https://ltzheng.github.io/Synapse/figs/mean_scores.png" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                <span><b>Synapse</b>: Leveraging Few-Shot Exemplars for</br>Human-Level Computer Control</br>
+                </span>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <br>
+
+                    <div id="authors">
+                        <div style="text-align: center;">
+                            <div class="author-row-new">
+                                <span style="font-size: larger; "><a href="https://ltzheng.github.io/">Longtao
+                                        Zheng</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="https://scholar.google.com/citations?user=JEVpgE8AAAAJ&hl=en">Rundong
+                                        Wang</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="https://personal.ntu.edu.sg/boan/index.html">Bo An</a>
+                                </span>
+                            </div>
+                        </div>
+                        <br>Nanyang Technological University, Singapore<br>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://arxiv.org/abs/2306.07863">
+                            <image src="figs/paper-icon.png" height="40px">
+                                <h4><strong>Paper</strong></h4>
+                            </image>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/ltzheng/Synapse">
+                            <image src="figs/github-mark.png" height="40px">
+                                <h4><strong>Code</strong></h4>
+                            </image>
+                        </a>
+                    </li>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="text-center">
+                    <h4>
+                        Examples of MiniWob++ tasks:
+                    </h4>
+                    <video id="v0" width="50%" playsinline loop controls muted autoplay>
+                        <source src="figs/miniwob.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="text-center">
+                    <h4>
+                        Overview of Synapse:
+                    </h4>
+                    <video id="v0" width="80%" playsinline loop controls muted autoplay>
+                        <source src="figs/overview.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    This paper investigates the design of few-shot exemplars for computer automation through prompting large language models (LLMs). While previous prompting approaches focus on self-correction, we find that well-structured exemplars alone are sufficient for human-level performance. We present Synapse, an in-context computer control agent demonstrating human-level performance on the MiniWob++ benchmark. Synapse consists of three main components: 1) <b>state-conditional decomposition</b>, which divides demonstrations into exemplar sets based on the agent's need for new environment states, enabling temporal abstraction; 2) <b>structured prompting</b>, which filters states and reformulates task descriptions for each set to improve planning correctness; and 3) <b>exemplar retrieval</b>, which associates incoming tasks with corresponding exemplars in an exemplar database for multi-task adaptation and generalization. Synapse overcomes context length limits, reduces errors in multi-step control, and allows for more exemplars within the context. Importantly, Synapse complements existing prompting approaches that enhance LLMs' reasoning and planning abilities. Synapse outperforms previous methods, including behavioral cloning, reinforcement learning, finetuning, and prompting, with an average success rate of 98.5% across 63 tasks in MiniWob++. Notably, Synapse relies on exemplars from only 47 tasks, demonstrating effective generalization to novel tasks. Our results highlight the potential of in-context learning to advance the integration of LLMs into practical tool automation.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <br>
+                <h3>
+                    Method
+                </h3>
+                <p class="text-justify">
+                    Synapse focuses on designing few-shot exemplars orthogonal to existing prompting methods. First, state-conditional decomposition divides demonstrations into sets of exemplars specific to particular states, i.e., demonstrations are broken down when the agent requires new environment states to proceed. This technique allows for temporally abstracted action generation. Second, structured prompting has three stages: filtering relevant elements from raw HTML states, standardizing task descriptions, and generating temporally abstracted action sequences based on the filtered state and the standardized task. Finally, task-state pairs of exemplars are embedded and stored in a vector database. When a new task occurs, we retrieve relevant exemplars by similarity search between the embedding of the new task-state pair and the database.
+                    <figure>
+                        <a>
+                            <div style="text-align: center;">
+                            <img class="centered" width="80%" src="figs/overview.png"> 
+                            </div>
+                        </a>
+                        <p class="caption">
+                            <b>Overview of Synapse.</b> It consists of three main components: 1) <b>state-conditional decomposition</b> for temporal abstraction, 2) <b>structured prompting</b> to improve planning correctness, and 3) <b>exemplar retrieval</b> to match relevant exemplars and facilitate generalization in unseen tasks.<br>
+                    </figure>
+                    <br>
+                    <figure>
+                        <a>
+                            <div style="text-align: center;">
+                            <img class="centered" width="80%" src="figs/structured_prompt.png"> 
+                            </div>
+                        </a>
+                        <p class="caption"><br>
+                            <b>Examples of structured prompting.</b> <i>Top: State filtering</i>. The examples are from find-word and click-tab-2. In the former, we query the LLM to extract the word list from HTML. In the latter, with multi-stage filtering, the LLMs first identify the code of the tab elements and then transform it into a dictionary. <i>Bottom: Task reformulation</i>. The examples are from use-spinner, where we query LLM to transform tasks into descriptions of action plans.<br>
+                    </figure>
+                        
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Results
+                </h3>
+                <p class="text-justify">
+                    We conduct extensive experiments to evaluate the performance of Synapse compared to SOTA approaches on the MiniWob++ benchmark.
+                </p>
+                <figure>
+                    <a>
+                        <div style="text-align: center;">
+                        <img class="centered" width="90%" src="figs/mean_scores.png"> 
+                        </div>
+                    </a>
+                    <p class="caption">
+                        Synapse achieves human-level mean performance across the MiniWob++ task suite and outperforms all other methods with a mean success rate of 98.5%. Note that our work is concurrent with Pix2Act and AdaPlanner.<br>
+                </figure>
+                <h4>
+                    Task-wise Evaluation
+                </h4>
+                <figure>
+                    <p class="caption">
+                        Performance vs Human:<br>
+                    <a>
+                        <div style="text-align: center;">
+                        <img class="centered" width="90%" src="figs/performance_human.png"> 
+                        </div>
+                    </a>
+                </figure>
+                <figure>
+                    <p class="caption">
+                        Performance vs RCI:<br>
+                    <a>
+                        <div style="text-align: center;">
+                        <img class="centered" width="90%" src="figs/performance_rci.png"> 
+                        </div>
+                    </a>
+                </figure>
+                <figure>
+                    <p class="caption">
+                        Performance vs AdaPlanner:<br>
+                    <a>
+                        <div style="text-align: center;">
+                        <img class="centered" width="90%" src="figs/performance_adaplanner.png"> 
+                        </div>
+                    </a>
+                </figure>
+                <figure>
+                    <p class="caption">
+                        Performance vs WebGUM & WebN-T5:<br>
+                    <a>
+                        <div style="text-align: center;">
+                        <img class="centered" width="90%" src="figs/performance_finetuning_sota.png">
+                        </div>
+                    </a>
+                </figure>
+                <figure>
+                    <p class="caption">
+                        Performance vs CC-Net:<br>
+                    <a>
+                        <div style="text-align: center;">
+                        <img class="centered" width="90%" src="figs/performance_ccnet.png"> 
+                        </div>
+                    </a>
+                </figure>
+                <figure>
+                    <p class="caption">
+                        Performance vs Pix2Act:<br>
+                    <a>
+                        <div style="text-align: center;">
+                        <img class="centered" width="90%" src="figs/performance_pix2act.png"> 
+                        </div>
+                    </a>
+                </figure>
+                <p class="text-justify">
+                    For detailed results, please refer to our paper.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-10 col-md-offset-1">
+            <h3>
+                Citation
+            </h3>
+                <pre><code>@misc{zheng2023synapse,
+    title={Synapse: Leveraging Few-Shot Exemplars for Human-Level Computer Control}, 
+    author={Longtao Zheng and Rundong Wang and Bo An},
+    year={2023},
+    eprint={2306.07863},
+    archivePrefix={arXiv},
+    primaryClass={cs.AI}
+}</code></pre>
+        </div>
+
+        <div class="col-md-10 col-md-offset-1">
+            <p class="text-justify">
+                The website template was borrowed from <a href="http://jonbarron.info/">Jon Barron</a>.
+            </p>
+        </div>
+
+    </div>
+</body>
+
+</html>
