@@ -3,6 +3,8 @@
 
 # Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control
 
+[[Paper](https://arxiv.org/abs/2306.07863)][[Project Website](https://ltzheng.github.io/Synapse/)]
+
 ## News
 
 [9/30/2023] We've updated the code format, added evaluation with Mind2Web, and transferred the results to Google Drive. Please kindly re-clone the repository. Our paper on arXiv will be updated soon. Stay tuned!
@@ -17,12 +19,6 @@ We introduce Synapse, an agent that incorporates trajectory-as-exemplar promptin
 
 ![](assets/trajectory_prompt.png)
 
-Synapse outperforms the state-of-the-art methods on both MiniWoB++ and Mind2Web benchmarks.
-
-![](assets/miniwob_box_plot.png)
-
-![](assets/mind2web.png)
-
 ## Install
 
 ```bash
@@ -31,7 +27,21 @@ conda activate synapse
 pip install -r requirements.txt
 ```
 
-Install [Faiss](https://github.com/facebookresearch/faiss/blob/main/INSTALL.md) and Download [Mind2Web](https://github.com/OSU-NLP-Group/Mind2Web) dataset and element rankings.
+Install [Faiss](https://github.com/facebookresearch/faiss/blob/main/INSTALL.md) and Download [Mind2Web](https://github.com/OSU-NLP-Group/Mind2Web) dataset and element rankings. The directory structure should look like this:
+```
+Mind2Web
+├── data
+|   |── scores_all_data.pkl
+│   ├── train
+│   │   └── train_*.json
+│   ├── test_task
+│   │   └── test_task_*.json
+│   ├── test_website
+│   │   └── test_website_*.json
+│   └── test_domain
+│       └── test_domain_*.json
+└── ...
+```
 
 ## Run
 Use `build_memory.py` to setup the exemplar memory.
@@ -53,11 +63,21 @@ python run_mind2web.py --benchmark <test_task/test_website/test_domain> --no_mem
 
 ## Results
 
+Synapse outperforms the state-of-the-art methods on both MiniWoB++ and Mind2Web benchmarks.
+
+![](assets/miniwob_box_plot.png)
+
 <div style="display: flex; justify-content: space-between;">
-    <img src="assets/performance_human.png" alt="Human Performance" width="33%">
-    <img src="assets/performance_ccnet.png" alt="CCNet Performance" width="33%">
-    <img src="assets/performance_rci.png" alt="RCI Performance" width="33%">
+    <img src="assets/performance_human.png" alt="Human Performance" width="45%">
+    <img src="assets/performance_ccnet.png" alt="CCNet Performance" width="45%">
 </div>
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="assets/performance_ccnet.png" alt="CCNet Performance" width="45%">
+    <img src="assets/performance_webgum.png" alt="WebGUM Performance" width="45%">
+</div>
+
+![](assets/mind2web.png)
 
 The trajectories of all experiments can be downloaded from [here](https://drive.google.com/file/d/1hiPQj7m06xU9FEhQTqIJfIlajbov5aWj/view?usp=sharing).
 
@@ -65,8 +85,8 @@ The trajectories of all experiments can be downloaded from [here](https://drive.
 
 ```bibtex
 @article{zheng2023synapse,
-  title={Synapse: Leveraging Few-Shot Exemplars for Human-Level Computer Control},
-  author={Zheng, Longtao and Wang, Rundong and An, Bo},
+  title={Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control},
+  author={Zheng, Longtao and Wang, Rundong and Wang, Xinrun and An, Bo},
   journal={arXiv preprint arXiv:2306.07863},
   year={2023}
 }
