@@ -61,6 +61,32 @@ python run_mind2web.py --data_dir <path_to_mind2web_dataset> --benchmark <test_t
 python run_mind2web.py --benchmark <test_task/test_website/test_domain> --no_memory --no_trajectory
 ```
 
+## Fine-tuning
+
+```bash
+pip install git+https://github.com/huggingface/peft.git@e536616888d51b453ed354a6f1e243fecb02ea08
+pip install git+https://github.com/huggingface/transformers.git@c030fc891395d11249046e36b9e0219685b33399
+```
+
+Build Mind2Web datasets for Synapse and memory:
+```bash
+python build_dataset.py --data_dir <MIND2WEB_DATA_PATH> --no_trajectory --top_k_elements 20 --benchmark train
+python build_dataset.py --data_dir <MIND2WEB_DATA_PATH> --top_k_elements 20 --benchmark train
+python build_memory.py --env mind2web --mind2web_data_dir <MIND2WEB_DATA_PATH>
+```
+
+Fine-tune:
+```bash
+python finetune_mind2web.py --data_dir <MIND2WEB_DATA_PATH> --base_model codellama/CodeLlama-7b-Instruct-hf --cache_dir <MODEL_PATH> --lora_dir <CHECKPOINT_PATH> --no_trajectory --top_k_elements 20
+python finetune_mind2web.py --data_dir <MIND2WEB_DATA_PATH> --base_model codellama/CodeLlama-7b-Instruct-hf --cache_dir <MODEL_PATH> --lora_dir <CHECKPOINT_PATH> --top_k_elements 20
+```
+
+Evaluate:
+```bash
+python evaluate_mind2web.py --data_dir <MIND2WEB_DATA_PATH> --no_memory --no_trajectory --benchmark test_domain --base_model codellama/CodeLlama-7b-Instruct-hf --cache_dir <MODEL_PATH> --lora_dir <CHECKPOINT_PATH> --top_k_elements 20
+python evaluate_mind2web.py --data_dir <MIND2WEB_DATA_PATH> --no_memory --benchmark test_domain --base_model codellama/CodeLlama-7b-Instruct-hf --cache_dir <MODEL_PATH> --lora_dir <CHECKPOINT_PATH> --top_k_elements 20
+```
+
 ## Results
 
 Synapse outperforms the state-of-the-art methods on both MiniWoB++ and Mind2Web benchmarks.

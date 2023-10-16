@@ -12,7 +12,7 @@ from synapse.envs.miniwob.action import (
     MiniWoBElementClickOption,
     MiniWoBMoveXpath,
 )
-from synapse.memory.miniwob.builde_memory import load_memory, retrieve_exemplar_name
+from synapse.memory.miniwob.build_memory import load_memory, retrieve_exemplar_name
 from synapse.utils.llm import (
     generate_response,
     extract_from_response,
