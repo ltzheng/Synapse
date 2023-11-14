@@ -7,7 +7,9 @@
 
 ## News
 
-[9/30/2023] We've updated the code format, added evaluation with Mind2Web, and transferred the results to Google Drive. Please kindly re-clone the repository. Our paper on arXiv will be updated soon. Stay tuned!
+[10/30/2023] Our paper is accepted by NeurIPS 2023 Foundation Models for Decision Making Workshop.
+
+[9/30/2023] We updated the preprint, refactored the code, added evaluation with Mind2Web, and transferred the results to Google Drive. Please kindly re-clone the repository.
 
 [6/13/2023] We preprinted our v1-paper on arXiv.
 
@@ -45,7 +47,10 @@ Mind2Web
 
 ## Run
 Use `build_memory.py` to setup the exemplar memory.
-
+```bash
+python build_memory.py --env miniwob
+python build_memory.py --env mind2web --mind2web_data_dir <MIND2WEB_DATA_PATH>
+```
 The `memory` folder should contain the following two files:
 `index.faiss` and `index.pkl`.
 
@@ -57,8 +62,9 @@ python run_miniwob.py --env_name <subdomain> --no_memory --no_filter --seed 0 --
 
 Run Mind2Web experiments:
 ```bash
-python run_mind2web.py --data_dir <path_to_mind2web_dataset> --benchmark <test_task/test_website/test_domain>
-python run_mind2web.py --benchmark <test_task/test_website/test_domain> --no_memory --no_trajectory
+python run_mind2web.py --data_dir <MIND2WEB_DATA_PATH> --benchmark <test_task/test_website/test_domain> --no_memory --no_trajectory
+python run_mind2web.py --data_dir <MIND2WEB_DATA_PATH> --benchmark <test_task/test_website/test_domain> --no_memory
+python run_mind2web.py --data_dir <MIND2WEB_DATA_PATH> --benchmark <test_task/test_website/test_domain>
 ```
 
 ## Fine-tuning
@@ -72,7 +78,7 @@ Build Mind2Web datasets for Synapse and memory:
 ```bash
 python build_dataset.py --data_dir <MIND2WEB_DATA_PATH> --no_trajectory --top_k_elements 20 --benchmark train
 python build_dataset.py --data_dir <MIND2WEB_DATA_PATH> --top_k_elements 20 --benchmark train
-python build_memory.py --env mind2web --mind2web_data_dir <MIND2WEB_DATA_PATH>
+python build_memory.py --env mind2web --mind2web_data_dir <MIND2WEB_DATA_PATH> --mind2web_top_k_elements 3
 ```
 
 Fine-tune:

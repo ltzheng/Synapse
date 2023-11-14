@@ -1,17 +1,20 @@
 import logging
 import re
+import os
 import inspect
 import tiktoken
 import backoff
 import openai
-from openai.error import (
+from openai import (
+    OpenAI,
     APIConnectionError,
     APIError,
     RateLimitError,
-    ServiceUnavailableError,
 )
 
 logger = logging.getLogger("main")
+
+client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 
 def num_tokens_from_messages(messages, model):
@@ -26,6 +29,7 @@ def num_tokens_from_messages(messages, model):
     if model in {
         "gpt-3.5-turbo-0613",
         "gpt-3.5-turbo-16k-0613",
+        "gpt-3.5-turbo-1106",
         "gpt-4-0314",
         "gpt-4-32k-0314",
         "gpt-4-0613",
@@ -57,6 +61,7 @@ MAX_TOKENS = {
     "gpt-3.5-turbo-0301": 4097,
     "gpt-3.5-turbo-0613": 4097,
     "gpt-3.5-turbo-16k-0613": 16385,
+    "gpt-3.5-turbo-1106": 16385,
 }
 
 
@@ -66,6 +71,7 @@ def get_mode(model: str) -> str:
     if model in [
         "gpt-3.5-turbo-0301",
         "gpt-3.5-turbo-0613",
+        "gpt-3.5-turbo-1106",
         "gpt-3.5-turbo-16k-0613",
         "gpt-4-0314",
         "gpt-4-32k-0314",
@@ -84,7 +90,7 @@ def get_mode(model: str) -> str:
 
 @backoff.on_exception(
     backoff.constant,
-    (APIError, RateLimitError, APIConnectionError, ServiceUnavailableError),
+    (APIError, RateLimitError, APIConnectionError),
     interval=10,
 )
 def generate_response(
@@ -100,13 +106,13 @@ def generate_response(
     )
 
     if get_mode(model) == "chat":
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model=model,
             messages=messages,
             temperature=temperature,
             stop=stop_tokens if stop_tokens else None,
         )
-        message = response["choices"][0]["message"]["content"]
+        message = response.choices[0].message.content
     else:
         prompt = "\n\n".join(m["content"] for m in messages) + "\n\n"
         response = openai.Completion.create(
@@ -117,8 +123,9 @@ def generate_response(
         )
         message = response["choices"][0]["text"]
     info = {
-        key: response["usage"][key]
-        for key in ["prompt_tokens", "completion_tokens", "total_tokens"]
+        "prompt_tokens": response.usage.prompt_tokens,
+        "completion_tokens": response.usage.completion_tokens,
+        "total_tokens": response.usage.total_tokens,
     }
 
     return message, info
