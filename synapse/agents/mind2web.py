@@ -133,7 +133,7 @@ def eval_sample(task_id, args, sample):
                         {
                             "role": "user",
                             "content": f"Task: {sample['confirmed_task']}\nTrajectory:\n"
-                                       + o,
+                            + o,
                         }
                     )
                 else:
@@ -145,9 +145,9 @@ def eval_sample(task_id, args, sample):
                     {
                         "role": "user",
                         "content": f"Task: {sample['confirmed_task']}\nTrajectory:\n"
-                                   + "Observation: `"
-                                   + obs
-                                   + "`",
+                        + "Observation: `"
+                        + obs
+                        + "`",
                     }
                 )
             else:
@@ -260,7 +260,9 @@ def eval_sample_llama(
     if args.no_trajectory:
         assert args.no_memory
         if args.retrieve_top_k != 3:
-            assert args.retrieve_top_k == 0, "We only support zero-shot or three-shot evaluation"
+            assert (
+                args.retrieve_top_k == 0
+            ), "We only support zero-shot or three-shot evaluation"
             exemplars = []
         else:
             exemplars = [
@@ -387,15 +389,21 @@ def eval_sample_llama(
             max_new_tokens=100,
         )
         output = tokenizer.decode(generation_output[0])
-        output = output[len(input):]
+        output = output[len(input) :]
         print("OUTPUTS:", output)
         conversation.append({"input": input, "output": output})
         if args.no_trajectory and "`" not in output:
             try:
                 import re
-                pattern = r'\[?(CLICK|SELECT|TYPE)\]?\s*\[(\d+)]\s*(?:\[(.+?)\])?'
+
+                pattern = r"\[?(CLICK|SELECT|TYPE)\]?\s*\[(\d+)]\s*(?:\[(.+?)\])?"
                 matches = re.findall(pattern, output.strip().replace("</s>", ""))
-                result = ['{} [{}] [{}]'.format(m[0], m[1], m[2]) if len(m) > 2 and m[2] else '{} [{}]'.format(m[0], m[1]) for m in matches]
+                result = [
+                    "{} [{}] [{}]".format(m[0], m[1], m[2])
+                    if len(m) > 2 and m[2]
+                    else "{} [{}]".format(m[0], m[1])
+                    for m in matches
+                ]
                 pred_act = result[0]
             except:
                 pred_act = output.strip().replace("</s>", "")
