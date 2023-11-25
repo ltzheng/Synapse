@@ -96,7 +96,7 @@
               </span>
               <!-- Trajectories Link. -->
               <span class="link-block">
-                <a href="https://drive.google.com/file/d/1hiPQj7m06xU9FEhQTqIJfIlajbov5aWj/view?usp=sharing"
+                <a href="https://drive.google.com/file/d/1CnM3GF4kTAMZkGFasSXZ4Z2n5eiV8M9Z/view?usp=sharing"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
@@ -147,10 +147,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Building agents using large language models (LLMs) to control computers is an emerging research field. In this setting, agents process computer states and generate actions to fulfill tasks specified in natural language. Previous computer agents have demonstrated the benefits of in-context learning (ICL), i.e., prompting LLMs with a few exemplars; however, their performance is hindered by several issues. First, the limited context length of LLMs and complex computer states restrict the number of exemplars, as a single webpage might consume the entire context. Second, prompting with exemplars such as high-level plans or multi-choice questions fails to capture the trajectory of controlling processes, thereby struggling with tasks requiring many steps or repeated actions. Third, existing computer agents rely on task-specific exemplars and overlook the similarity among tasks, resulting in poor generalization to new tasks.
-          </p>
-          <p>
-            To address these challenges, we introduce Synapse, a computer agent featuring trajectory-as-exemplar prompting and exemplar memory. Specifically, Synapse has three key components: i) <b>state abstraction</b>, which filters out task-irrelevant information from raw states, allowing more exemplars within the limited context, ii) <b>trajectory-as-exemplar prompting</b>, which prompts the LLM with complete trajectories of the abstracted states and actions for enhanced multi-step decision-making, and iii) <b>exemplar memory</b>, which stores the embeddings of exemplars and retrieves them via similarity search for generalization to novel tasks. We evaluate Synapse on two benchmarks: MiniWoB++, a standard task suite, and Mind2Web, a real-world website benchmark. In MiniWoB++, Synapse achieves a 99.2% average success rate (a 10% relative improvement) across 64 tasks using demonstrations from only 48 tasks. Notably, Synapse is the first ICL method that solves the book-flight challenge in MiniWoB++. In Mind2Web, Synapse exhibits a 53% relative improvement in average step success rate over the previous state-of-the-art ICL approach.
+            Building agents with large language models (LLMs) for computer control is a burgeoning research area, where the agent receives computer states and performs actions to complete complex tasks. Previous computer agents have demonstrated the benefits of in-context learning (ICL); however, their performance is hindered by several issues. First, the limited context length of LLMs and complex computer states restrict the number of exemplars, as a single webpage can consume the entire context. Second, the exemplars in current methods, such as high-level plans and multi-choice questions, cannot represent complete trajectories, leading to suboptimal performance in long-horizon tasks. Third, existing computer agents rely on task-specific exemplars and overlook the similarity among tasks, resulting in poor generalization to novel tasks. To address these challenges, we introduce Synapse, a computer agent featuring three key components: i) state abstraction, which filters out task-irrelevant information from raw states, allowing more exemplars within the limited context, ii) trajectory-as-exemplar prompting, which prompts the LLM with complete trajectories of the abstracted states and actions for improved multi-step decision-making, and iii) exemplar memory, which stores the embeddings of exemplars and retrieves them via similarity search for generalization to novel tasks. We evaluate Synapse on MiniWoB++, a standard task suite, and Mind2Web, a real-world website benchmark. In MiniWoB++, Synapse achieves a 99.2% average success rate (a 10% relative improvement) across 64 tasks using demonstrations from only 48 tasks. Notably, Synapse is the first ICL method to solve the book-flight task in MiniWoB++. Synapse also exhibits a 56% relative improvement in average step success rate over the previous state-of-the-art prompting scheme in Mind2Web.
           </p>
         </div>
       </div>
@@ -169,7 +166,7 @@
           </div>
       </a>
       <p class="caption">
-          <b>Synapse consists of three main components.</b> The process begins with state abstraction, where raw computer states (e.g., the HTML of webpages) are processed into concise task-relevant information via few-shot learning of the LLM. This step reduces the number of tokens needed for each state, a prerequisite for the second component: trajectory-as-exemplar (TaE) prompting. In TaE prompting, the LLM is prompted with exemplary trajectories (a sequence of abstracted states and actions) and the current history to determine the next action. Finally, the prompts are retrieved from the exemplar memory using similarity search. The retrieval process utilizes the embeddings of task metadata, with each metadata mapped to the corresponding exemplars.<br>
+          <b>Synapse consists of three main components. The process begins with state abstraction, where raw computer states (e.g., the HTML of webpages) are processed into concise task-relevant observations via few-shot learning of the LLM. This step reduces the number of tokens needed for each state, a prerequisite for the second component: trajectory-as-exemplar (TaE) prompting. In TaE prompting, the LLM is prompted with exemplary trajectories (a sequence of abstracted states and actions) and the current history to determine the next action. These prompts are retrieved from the exemplar memory using similarity search. The retrieval process utilizes the embeddings of task metadata, with each metadata mapped to the corresponding exemplars.<br>
     </figure>
     <br>
     <figure>
@@ -179,7 +176,7 @@
           </div>
       </a>
       <p class="caption">
-          <b>Comparison of TaE prompting with state-of-the-art prompting schemes.</b> The illustration is based on the terminal task in MiniWob++, where the agent is asked to delete a file ending with a specific extension. To solve this task, RCI prompts the LLM with a semantic plan combined with the current state and the previous actions to generate each action, while MindAct prompts the LLM with MCQ-formatted exemplars at each step. In contrast, Synapse uses a straightforward prompting scheme based on trajectory-level exemplars, i.e., observation-action pairs. This exemplar structure utilizes a consistent interactive format, provides more information, and enables the LLM to produce temporally abstracted actions until a new state is required. As shown above, the LLM generates two actions, i.e., type `ls' and press `enter', together without querying the new state and pauses for the new state for subsequent actions.<br>
+          <b>Comparison of trajectory-as-exemplar prompting with other prompting schemes. The illustration is based on the terminal task in MiniWoB++, where the agent is asked to delete a file ending with a specific extension. To solve this task, RCI (Kim et al., 2023) prompts the LLM with a step-by-step plan combined with the current state and the previous actions to generate each action, while MindAct (Deng et al., 2023) prompts the LLM with MCQ-formatted exemplars at each step. In contrast, Synapse uses a straightforward prompting scheme based on trajectory-level exemplars. This exemplar structure offers a consistent and interactive format, is more informative, and enables the LLM to produce temporally abstracted actions until a new state is required. As shown above, the LLM generates two consecutive actions: type(ls) and press(enter) without querying the new state. After executing these actions, it pauses to receive the new state for subsequent actions.<br>
     </figure>
   </div>
 </section>
@@ -194,7 +191,7 @@
           </div>
       </a>
       <p class="caption">
-          In MiniWoB++, Synapse outperforms previous methods and is the first in-context learning method that achieves human-level performance. RCI and AdaPlanner both employ self-correction. *Pix2Act and AdaPlanner are concurrent with our work. The outlier tasks are determined with a 1.5 interquartile range.<br>
+          Synapse is the first ICL method that achieves human-level performance in MiniWoB++. It outperforms previous self-correction methods, including RCI and AdaPlanner. *Pix2Act and AdaPlanner are concurrent with our work. The outlier tasks are determined with an interquartile range of 1.5.<br>
     </figure>
     <br>
     <div class="columns is-centered">
@@ -252,7 +249,7 @@
     <br>
     <figure>
       <p class="caption">
-          In Mind2Web, we incrementally equip the LLM with state abstraction, trajectory prompting, and exemplar memory, which achieves improvements of 25%, 48%, and 53% in average step success rates across three levels of generalization, respectively.<br>
+          Mind2Web results and ablations with CodeLlama-7B (top) and GPT-3.5 (bottom). We gradually add state abstraction, TaE prompting, and memory to demonstrate the effectiveness of each component. In Synapse w/ state abstraction, we simply use direct generation with fewer top-ranked elements in clean observations, outperforming the MCQ-formatted prompting used in MindAct. Synapse w/ state abstraction + TaE further shows the benefits of using trajectories as exemplars. In both these variants, we use static few-shot exemplars. Finally, we encode the training set as memory and retrieve exemplars via similarity search, which further improves performance.<br>
       <a>
           <div style="text-align: center;">
           <img class="centered" src="./static/images/mind2web.png">
