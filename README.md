@@ -75,8 +75,8 @@ Synapse outperforms the state-of-the-art methods on both MiniWoB++ and Mind2Web 
 ![](assets/miniwob_box_plot.png)
 
 <div style="display: flex; justify-content: space-between;">
-    <img src="assets/performance_human.png" alt="Human Performance" width="49%">
-    <img src="assets/performance_ccnet.png" alt="CCNet Performance" width="49%">
+    <img src="assets/performance_human.png" alt="Human Performance" width="54%">
+    <img src="assets/performance_ccnet.png" alt="CCNet Performance" width="45%">
 </div>
 
 <div style="display: flex; justify-content: space-between;">
