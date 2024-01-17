@@ -1,18 +1,18 @@
+<p align="center">
+  <a href="https://ltzheng.github.io/Synapse/">
+    <img src="assets/logo.png" width="50%" />
+  </a>
+</p>
+
+---
+
+Code for our ICLR 2024 paper [Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control](https://openreview.net/forum?id=Pc8AU1aF5e)
+
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-31012/)
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 <img alt="License" src="https://img.shields.io/badge/License-MIT-blue">
 
-# Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control
-
-[[Paper](https://arxiv.org/abs/2306.07863)][[Project Website](https://ltzheng.github.io/Synapse/)]
-
-## News
-
-[10/30/2023] Our paper is accepted by NeurIPS 2023 Foundation Models for Decision Making Workshop.
-
-[9/30/2023] We updated the preprint, refactored the code, added evaluation with Mind2Web, and transferred the results to Google Drive. Please kindly re-clone the repository.
-
-[6/13/2023] We preprinted our v1-paper on arXiv.
+The agent trajectories and latest updates can be found at our [website](https://ltzheng.github.io/Synapse/).
 
 ## Overview
 
@@ -121,11 +121,12 @@ python evaluate_mind2web.py --data_dir path/to/Mind2Web/data --no_memory --bench
 
 ## Citation
 
+If you find our work helpful, please use the following citation:
 ```bibtex
-@article{zheng2023synapse,
+@inproceedings{zheng2023synapse,
   title={Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control},
   author={Zheng, Longtao and Wang, Rundong and Wang, Xinrun and An, Bo},
-  journal={arXiv preprint arXiv:2306.07863},
+  booktitle={The Twelfth International Conference on Learning Representations},
   year={2023}
 }
 ```
