@@ -97,7 +97,7 @@ class MiniWoBInstance(Thread):
             self.task_width = self.FLIGHT_TASK_WIDTH
             self.task_height = self.FLIGHT_TASK_HEIGHT
         else:
-            self.url = urlparse.urljoin(base_url, "miniwob/{}.html".format(subdomain))
+            self.url = urlparse.urljoin(base_url, "{}.html".format(subdomain))
             self.window_width = self.WINDOW_WIDTH
             self.window_height = self.WINDOW_HEIGHT
             self.task_width = self.TASK_WIDTH
@@ -169,11 +169,12 @@ class MiniWoBInstance(Thread):
             options.add_argument(
                 f"window-size={self.window_width},{self.window_height}"
             )
-            options.add_argument(
-                "window-position={},{}".format(
-                    9000, 30 + self.index * (self.window_height + 30)
-                )
-            )
+            # commeting because this is not working on all the display sizes
+            # options.add_argument(
+            #     "window-position={},{}".format(
+            #         9000, 30 + self.index * (self.window_height + 30)
+            #     )
+            # )
         self.driver = webdriver.Chrome(options=options)
         self.driver.implicitly_wait(5)
 
