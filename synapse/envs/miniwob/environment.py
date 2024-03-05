@@ -3,7 +3,7 @@ import os
 from synapse.envs.miniwob.instance import MiniWoBInstance
 
 MINIWOB_DIR = os.path.join(
-    os.path.dirname(os.path.realpath(__file__)), "html", "miniwob"
+    os.path.dirname(os.path.realpath(__file__)), "html", "miniwob/"
 )
 
 EXTRA_HTML_TASKS = [
